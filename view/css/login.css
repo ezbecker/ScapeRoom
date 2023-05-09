@@ -1,116 +1,104 @@
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    align-items: center;
-    text-align: center;
-    width: 390px;
-}
-
-img {
-    position: relative;
-    width: 231px;
-    height: 225px;
-    left: 78px;
-    top: 48px;
-
-    background: url(computer-security-with-login-password-padlock.jpg);
-}
-
-.title {
-    position: relative;
-    text-align: left;
-    margin-left: 16px;
-    margin-top: 56px;
-
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 33px;
-}
-
-.subtitle {
-    position: relative;
-    text-align: left;
-    margin-left: 16px;
-    
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 24px;
-    letter-spacing: 0.5px;
-}
-
-.container-fluid {
-    position: relative;
-    width: 90%;
-    margin-top: 48px;
-}
-
-.container-fluid input {
-    box-sizing: border-box;
-    
-    margin-top: 16px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
-    height: 64px;
-    padding-left: 24px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-
-    letter-spacing: 0.5px;
-}
-
-.entrar {
-    position: relative;
-    width: 98%;
-    height: 52px;
-    margin-top: 56px;
-
-    background: #1F64B4;
-    border-radius: 999px;
-    border: 0px;
-
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: 0.5px;
-
-    color: #FFFFFF;
-}
-
-.helpText {
-    position: relative;
-    text-align: center;
-    margin-top: 72px;
-
-    height: 24px;
-
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 24px;
-
-    align-items: center;
-    letter-spacing: 0.5px;
-
-    color: rgba(0, 0, 0, 0.5);
-}
-
-a {
-    box-sizing: border-box;
-    position: relative;
-    top: 8px;
-
-    width: 98%;
-    height: 52px;
-
-    border: 2px solid #1F64B4;
-    border-radius: 999px;
-
-    padding: 16px 25% 16px 25%;
-    font-weight: 400;
-    font-size: 14px;
-
-    text-align: center;
-    letter-spacing: 0.5px;
-
-    color: #1F64B4;
+/* Define o tamanho mínimo e máximo da largura da tela */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    /* Estilos para dispositivos móveis */
+    body {
+      width: 100%;
+      padding: 0 10px;
     }
+  
+    img {
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin-top: 30px;
+    }
+  
+    .title {
+      margin-top: 30px;
+      font-size: 24px;
+    }
+  
+    .subtitle {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  
+    .container-fluid {
+      margin-top: 30px;
+      width: 100%;
+    }
+  
+    .container-fluid input {
+      height: 48px;
+      font-size: 14px;
+      padding-left: 16px;
+    }
+  
+    .entrar {
+      margin-top: 30px;
+      font-size: 14px;
+      height: 44px;
+    }
+  
+    .helpText {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  
+    a {
+      margin-top: 20px;
+      font-size: 14px;
+      height: 44px;
+      padding: 12px 20%;
+    }
+  }
+  
+  /* Estilos para desktops */
+  @media only screen and (min-width: 768px) {
+    body {
+      width: 390px;
+      margin: auto;
+    }
+  
+    img {
+      left: 78px;
+      top: 48px;
+    }
+  
+    .title {
+      margin-left: 16px;
+      margin-top: 56px;
+    }
+  
+    .subtitle {
+      margin-left: 16px;
+    }
+  
+    .container-fluid {
+      margin-top: 48px;
+      width: 90%;
+    }
+  
+    .container-fluid input {
+      height: 64px;
+      font-size: 16px;
+      padding-left: 24px;
+    }
+  
+    .entrar {
+      margin-top: 56px;
+      font-size: 14px;
+      height: 52px;
+    }
+  
+    .helpText {
+      margin-top: 72px;
+      font-size: 12px;
+    }
+  
+    a {
+      height: 52px;
+      font-size: 14px;
+      padding: 16px 25%;
+    }
+  }
