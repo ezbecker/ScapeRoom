@@ -18,7 +18,7 @@
   <p class="subtitle">Digite as suas informações</p>
 
   <div class="container-fluid">
-    <form action="../control/autenticar.php" method="POST">
+    <form action="../controller/autenticar.php" method="POST">
       <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
         <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email" autofocus required>

@@ -1,16 +1,38 @@
 <?php
-include("../model/conexao.php");
-$email = mysqli_real_escape_string($conectado, trim($_POST['email']));
-$senhaCr = md5($_POST['senha']);
+require_once "../model/conexao.php";
 
-$sql = "SELECT * FROM usuario WHERE email = '$email' and senha = '$senhaCr'";
-$dados = mysqli_query($conectado, $sql);
-$row = mysqli_num_rows($dados);
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+	$email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+	$senha = filter_input(INPUT_POST, "senha");
 
-if ($row > 0) {
-	session_start();
-	$_SESSION['email'] = $email;
-	header('location: ../view/inicio.php');
+	if ($email && $senha) {
+		$senhaCr = password_hash($senha, PASSWORD_DEFAULT);
+		$query = "SELECT * FROM usuario WHERE email = ?";
+		$stmt = mysqli_prepare($conectado, $query);
+		mysqli_stmt_bind_param($stmt, "s", $email);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+
+		if (mysqli_num_rows($result) === 1) {
+			$row = mysqli_fetch_assoc($result);
+			if (password_verify($senha, $row["senha"])) {
+				session_start();
+				$_SESSION["email"] = $email;
+				header("Location: ../view/inicio.php");
+				exit();
+			} else {
+				header("Location: ../view/login.php?erro=credenciais");
+				exit();
+			}
+		} else {
+			header("Location: ../view/login.php?erro=credenciais");
+			exit();
+		}
+	} else {
+		header("Location: ../view/login.php?erro=campos");
+		exit();
+	}
 } else {
-	header('location: ../view/login.php');
+	header("Location: ../view/login.php");
+	exit();
 }

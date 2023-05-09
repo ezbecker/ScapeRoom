@@ -20,7 +20,7 @@
 
   <div class="container-fluid">
 
-    <form name="frmUsuario" action="escolheUser.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+    <form name="frmUsuario" action="../model/incluirUser.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
       <div class="nomeTextField">
         <input type="text" name="nome" class="form-control" placeholder="Nome" required>
       </div>
@@ -36,35 +36,35 @@
         </small>
       </div>
   </div>
-</div>
-<br>
-<button type="submit" class="entrar">Criar conta</button><br>
+  </div>
+  <br>
+  <button type="submit" class="entrar">Criar conta</button><br>
 
-<p class="helpText">Se já esteve aqui antes, faça o login!</p>
-<a href="login.php">Fazer login</a>
-<br>
+  <p class="helpText">Se já esteve aqui antes, faça o login!</p>
+  <a href="login.php">Fazer login</a>
+  <br>
 
-</form>
-</fieldset>
-<script>
-  (function() {
-    'use strict';
-    window.addEventListener('load', function() {
+  </form>
+  </fieldset>
+  <script>
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
 
-      var forms = document.getElementsByClassName('needs-validation');
+        var forms = document.getElementsByClassName('needs-validation');
 
-      var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
-</script>
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
