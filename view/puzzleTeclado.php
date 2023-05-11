@@ -1,5 +1,21 @@
 <!DOCTYPE html>
 <html>
+<?php
+require_once "../model/conexao.php";
+$idPergunta = $_GET["idPergunta"];
+$query = "SELECT * FROM perguntas WHERE idPergunta =" . $idPergunta;
+$stmt = mysqli_prepare($conectado, $query);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+if (mysqli_num_rows($result) === 1) {
+  $row = mysqli_fetch_assoc($result);
+  $resposta = $row["resposta"];
+} else {
+  //colocar isso para voltar para o quarto
+  header("Location: ../view/login.php?erro=credenciais");
+  exit();
+}
+?>
 
 <head>
   <title>Puzzle do Teclado</title>
@@ -48,10 +64,16 @@
     <div class="button" data-symbol="2">2</div>
     <div class="button" data-symbol="3">3</div>
     <div class="button" data-symbol="4">4</div>
+    <div class="button" data-symbol="5">5</div>
+    <div class="button" data-symbol="6">6</div>
+    <div class="button" data-symbol="7">7</div>
+    <div class="button" data-symbol="8">8</div>
+    <div class="button" data-symbol="9">9</div>
   </div>
 
   <script type="text/javascript">
-    const code = ['2', '4', '1', '3'];
+    const resposta = "<?php echo $resposta; ?>"; // Adiciona a resposta do PHP ao JavaScript
+    const code = resposta.split(''); // Converte a resposta em um array de caracteres
     let currentInput = '';
     let reseting = false;
 
@@ -63,7 +85,7 @@
       }
       setTimeout(() => {
         reseting = false;
-      }, 1000);
+      }, 500);
     }
 
     function checkInput() {
@@ -102,6 +124,7 @@
       }
     });
   </script>
+
 </body>
 
 </html>
