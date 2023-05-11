@@ -10,6 +10,31 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        .image:nth-child(2) {
+            top: calc(50% - 100px);
+        }
+
+        .image:nth-child(3) {
+            left: calc(50% - 100px);
+        }
+
+        .image:nth-child(4) {
+            left: calc(50% + 50px);
+            top: calc(50% - 100px);
+        }
+
+        .image:nth-child(5) {
+            left: calc(50% + 100px);
+        }
+
+        .image:nth-child(6) {
+            top: calc(50% + 100px);
+        }
+
+        .selected {
+            border: none;
+        }
     </style>
 </head>
 
@@ -26,31 +51,24 @@
         const images = document.querySelectorAll('.image');
         let offsetX = 0;
         let offsetY = 0;
-        let selectedImage = null;
-
-        function onImageMouseDown(event) {
-            selectedImage = event.target;
-            offsetX = event.clientX - selectedImage.offsetLeft;
-            offsetY = event.clientY - selectedImage.offsetTop;
-            document.addEventListener('mousemove', onImageMouseMove);
-            document.addEventListener('mouseup', onImageMouseUp);
-        }
-
-        function onImageMouseMove(event) {
-            if (selectedImage) {
-                selectedImage.style.left = (event.clientX - offsetX) + 'px';
-                selectedImage.style.top = (event.clientY - offsetY) + 'px';
-            }
-        }
-
-        function onImageMouseUp() {
-            selectedImage = null;
-            document.removeEventListener('mousemove', onImageMouseMove);
-            document.removeEventListener('mouseup', onImageMouseUp);
-        }
 
         images.forEach(image => {
-            image.addEventListener('mousedown', onImageMouseDown);
+            let selected = false;
+            image.addEventListener('mousedown', (event) => {
+                selected = !selected;
+                image.classList.toggle('selected', selected);
+                offsetX = event.clientX - image.offsetLeft;
+                offsetY = event.clientY - image.offsetTop;
+            });
+            image.addEventListener('mousemove', (event) => {
+                if (selected) {
+                    image.style.left = (event.clientX - offsetX) + 'px';
+                    image.style.top = (event.clientY - offsetY) + 'px';
+                }
+            });
+            image.addEventListener('mouseup', () => {
+                dragging = false;
+            });
         });
     </script>
 </body>
