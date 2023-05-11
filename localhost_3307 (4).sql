@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Tempo de geração: 09-Maio-2023 às 23:21
+-- Tempo de geração: 12-Maio-2023 às 01:38
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.0.25
 
@@ -22,6 +22,27 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `scaperoom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `scaperoom`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `perguntas`
+--
+
+CREATE TABLE `perguntas` (
+  `idPergunta` int(11) NOT NULL,
+  `resposta` varchar(50) NOT NULL,
+  `link` varchar(200) NOT NULL,
+  `linkErro` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `perguntas`
+--
+
+INSERT INTO `perguntas` (`idPergunta`, `resposta`, `link`, `linkErro`) VALUES
+(1, 'Q180TR4', 'https://docs.google.com/presentation/d/1CXgvLcUBjJd_9u8_dqEA9Y2Lfhvqus2AF_I8m7umDAA/edit#slide=id.g1e2814ea3b9_0_115', 'https://docs.google.com/presentation/d/1CXgvLcUBjJd_9u8_dqEA9Y2Lfhvqus2AF_I8m7umDAA/edit#slide=id.g1e282f51ef2_1_0'),
+(2, '3425', 'https://docs.google.com/presentation/d/1CXgvLcUBjJd_9u8_dqEA9Y2Lfhvqus2AF_I8m7umDAA/edit#slide=id.g1e29e9b03de_0_0', '');
 
 -- --------------------------------------------------------
 
@@ -48,6 +69,12 @@ INSERT INTO `usuario` (`idUsuario`, `nome`, `email`, `senha`) VALUES
 --
 
 --
+-- Índices para tabela `perguntas`
+--
+ALTER TABLE `perguntas`
+  ADD PRIMARY KEY (`idPergunta`);
+
+--
 -- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
@@ -57,6 +84,12 @@ ALTER TABLE `usuario`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `perguntas`
+--
+ALTER TABLE `perguntas`
+  MODIFY `idPergunta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
