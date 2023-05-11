@@ -60,15 +60,15 @@ if (mysqli_num_rows($result) === 1) {
 
 <body>
   <div class="container">
-    <div class="button" data-symbol="1">1</div>
-    <div class="button" data-symbol="2">2</div>
-    <div class="button" data-symbol="3">3</div>
-    <div class="button" data-symbol="4">4</div>
-    <div class="button" data-symbol="5">5</div>
-    <div class="button" data-symbol="6">6</div>
-    <div class="button" data-symbol="7">7</div>
-    <div class="button" data-symbol="8">8</div>
-    <div class="button" data-symbol="9">9</div>
+    <div class="button" data-symbol="1">Θ</div>
+    <div class="button" data-symbol="2">ψ</div>
+    <div class="button" data-symbol="3">Δ</div>
+    <div class="button" data-symbol="4">δ</div>
+    <div class="button" data-symbol="5">λ</div>
+    <div class="button" data-symbol="6">μ</div>
+    <div class="button" data-symbol="7">Ω</div>
+    <div class="button" data-symbol="8">Φ</div>
+    <div class="button" data-symbol="9">η</div>
   </div>
 
   <script type="text/javascript">
