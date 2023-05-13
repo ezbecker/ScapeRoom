@@ -4,7 +4,8 @@
 
 <script>
     var slides = [
-        "https://docs.google.com/presentation/d/1CXgvLcUBjJd_9u8_dqEA9Y2Lfhvqus2AF_I8m7umDAA/edit#slide=id.g24147439be2_0_0"
+        "../view/slides.php?slide=2",
+        "../view/slides.php?slide=3"
     ];
 
     // função para redirecionar para um slide aleatório

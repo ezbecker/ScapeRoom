@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 			if (password_verify($senha, $row["senha"])) {
 				session_start();
 				$_SESSION["email"] = $email;
-				header("Location: ../controller/room1.php");
+				header("Location: ../view/slides.php?slide=1");
 				exit();
 			} else {
 				header("Location: ../view/login.php?erro=credenciais");
