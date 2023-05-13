@@ -4,8 +4,7 @@
 
 <script>
     var slides = [
-        "../view/slides.php?slide=2",
-        "../view/slides.php?slide=3"
+        "../view/slides.php?slide=2"
     ];
 
     // função para redirecionar para um slide aleatório
