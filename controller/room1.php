@@ -1,3 +1,7 @@
+<?php
+require_once "../model/incluirPartida.php";
+?>
+
 <body onload="sortearSlide()">
 
 </body>
