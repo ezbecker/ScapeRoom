@@ -1,5 +1,4 @@
 
-var tempoRestante = 2400; // 30 minutos em segundos
 var cronometroElement = document.getElementById('cronometro');
 
 var intervalId = setInterval(function() {
