@@ -19,43 +19,7 @@ if (mysqli_num_rows($result) === 1) {
 
 <head>
   <title>Puzzle do Teclado</title>
-  <style type="text/css">
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      width: 300px;
-      margin: 0 auto;
-      padding: 10px;
-    }
-
-    .button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      margin: 10px;
-      font-size: 24px;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
-      background-color: #e0e0e0;
-    }
-
-    .active {
-      background-color: #b2dfdb;
-    }
-
-    .success {
-      background-color: #81c784;
-    }
-
-    .error {
-      background-color: #e57373;
-    }
-  </style>
+  <link rel="stylesheet" href="css/puzzleTeclado.css">
 </head>
 
 <body>

@@ -1,4 +1,5 @@
 <?php
+require_once "../controller/userAutenticado.php";
 require_once "../model/conexao.php";
 $query = "SELECT * FROM usuario natural join partida where terminou = 1 ORDER BY tempo ASC";
 $result = mysqli_query($conectado, $query);
@@ -14,3 +15,5 @@ while ($row = mysqli_fetch_assoc($result)) {
 echo '</ol>';
 
 mysqli_close($conectado);
+?>
+<a href="slides.php?slide=1">Voltar</a>

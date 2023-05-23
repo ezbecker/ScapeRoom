@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../model/pegarIdUsuario.php";
 
 if (mysqli_num_rows($result) === 1) {

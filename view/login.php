@@ -13,7 +13,6 @@
 </head>
 
 <body>
-  <img src="illustrations/loginSecurity.png" alt="Imagem de segurança do login">
   <p class="title">Entrar</p>
   <p class="subtitle">Digite as suas informações</p>
 

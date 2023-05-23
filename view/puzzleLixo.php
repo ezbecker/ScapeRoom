@@ -2,40 +2,8 @@
 <html>
 
 <head>
-    <title>Mover Imagens</title>
-    <style type="text/css">
-        .image {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .image:nth-child(2) {
-            top: calc(50% - 100px);
-        }
-
-        .image:nth-child(3) {
-            left: calc(50% - 100px);
-        }
-
-        .image:nth-child(4) {
-            left: calc(50% + 50px);
-            top: calc(50% - 100px);
-        }
-
-        .image:nth-child(5) {
-            left: calc(50% + 100px);
-        }
-
-        .image:nth-child(6) {
-            top: calc(50% + 100px);
-        }
-
-        .selected {
-            border: none;
-        }
-    </style>
+    <title>Lixeira</title>
+    <link rel="stylesheet" href="css/puzzleLixo.css">
 </head>
 
 <body>

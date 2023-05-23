@@ -1,0 +1,27 @@
+#areaClicavel1 {
+    position: absolute;
+    width: 5.20em;
+    height: 1.11em;
+    left: 4.84em;
+    top: 4.65em;
+    cursor: pointer;
+    /* background-color: gray;*/
+}
+
+#areaClicavel2 {
+    position: absolute;
+    width: 5.85em;
+    height: 1.11em;
+    left: 4.84em;
+    top: 10.65em;
+    cursor: pointer;
+}
+
+#areaClicavel3 {
+    position: absolute;
+    width: 2.90em;
+    height: 1.11em;
+    left: 4.84em;
+    top: 13.65em;
+    cursor: pointer;
+}
