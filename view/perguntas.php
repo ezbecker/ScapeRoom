@@ -1,7 +1,7 @@
 <?php
 include('../model/conexao.php');
 
-$idPergunta = $_GET['idPergunta'];
+$idPuzzle = $_GET['idPuzzle'];
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ $idPergunta = $_GET['idPergunta'];
             <div class="nomeTextField">
                 <input type="text" name="respUser" class="form-control" placeholder="Resposta" required>
             </div>
-            <input type="hidden" name="idPergunta" id="idPergunta" value="<?php echo $idPergunta ?>">
+            <input type="hidden" name="idPuzzle" id="idPuzzle" value="<?php echo $idPuzzle ?>">
             <button type="submit" class="enviar">enviar</button>
         </form>
     </div>

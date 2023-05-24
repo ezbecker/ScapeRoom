@@ -9,3 +9,7 @@ function redirecionar2() {
 function redirecionar3() {
     window.location.replace('http://localhost/scaperoom/controller/sair.php');
 }
+
+function redirecionarSeta() {
+    window.location.replace('http://localhost/scaperoom/view/slides.php?slide=4');
+}

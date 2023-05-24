@@ -5,23 +5,36 @@
     left: 4.84em;
     top: 4.65em;
     cursor: pointer;
-    /* background-color: gray;*/
+    background-color: rgb(179, 44, 44); 
 }
 
 #areaClicavel2 {
     position: absolute;
     width: 5.85em;
-    height: 1.11em;
+    height: 1.15em;
     left: 4.84em;
     top: 10.65em;
     cursor: pointer;
+    background-color: rgb(179, 44, 44); 
+
 }
 
 #areaClicavel3 {
     position: absolute;
     width: 2.90em;
     height: 1.11em;
-    left: 4.84em;
-    top: 13.65em;
+    left: 4.50em;
+    top: 13.30em;
     cursor: pointer;
+    background-color: rgb(179, 44, 44); 
+
+}
+#areaClicavelSeta {
+    position: absolute;
+    width: 2.90em;
+    height: 1.11em;
+    left: 4.84em;
+    top: 15.65em;
+    cursor: pointer;
+    background-color: rgb(179, 44, 44); 
 }

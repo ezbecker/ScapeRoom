@@ -2,8 +2,8 @@
 <html>
 <?php
 require_once "../model/conexao.php";
-$idPergunta = $_GET["idPergunta"];
-$query = "SELECT * FROM perguntas WHERE idPergunta =" . $idPergunta;
+$idPuzzle = $_GET["idPuzzle"];
+$query = "SELECT * FROM puzzle WHERE idPuzzle =" . $idPuzzle;
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);

@@ -2,9 +2,9 @@
 include('../model/conexao.php');
 
 $respUser = $_POST['respUser'];
-$idPergunta = $_POST['idPergunta'];
+$idPuzzle = $_POST['idPuzzle'];
 
-$query = ("SELECT * FROM perguntas WHERE idPergunta = '$idPergunta'");
+$query = ("SELECT * FROM puzzle WHERE idPuzzle = '$idPuzzle'");
 $registro = mysqli_query($conectado, $query);
 while ($registros = mysqli_fetch_array($registro)) {
     $respCorreta = $registros["resposta"];
