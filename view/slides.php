@@ -53,10 +53,14 @@
             echo '<div id="areaClicavel3" onclick="redirecionar3()"></div>';
         } else if ($slide == 3) {
             echo '<div id="areaClicavelSeta" onclick="redirecionarSeta()"></div>';
+        } else if ($slide == 4) {
+            echo '<div id="areaClicavelPerg1" onclick="redirecionarPerg1()"></div>';
         } else if ($slide == 6 ||  $slide == 7 ||  $slide == 8) {
             echo '<div class="question-overlay">';
             echo '<p class="question-text">' . $pergunta . '</p>';
             echo '</div>';
+        } else if ($slide == 9) {
+            echo '<div id="areaClicavelSetaSairRoom1" onclick="redirecionarSetaSairRoom1()"></div>';
         }
         ?>
         <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTETBQ80UEiEwQBofbB8Ue0OdJmr8Wvdj4Fu8R8BNs3h02Yn6vCZiY0bXHOlcYMy7QamO7V1Gq2qeh8/embed?start=false&loop=false&delayms=3000&&rm=minimal&slide=<?php echo $slide; ?>" frameborder="0"></iframe>
@@ -64,5 +68,8 @@
     </div>
 
 </body>
+<script>
+    var idPuzzle = <?php echo $idPuzzle; ?>;
+</script>
 <script src="../js/cronometro.js"></script>
 <script src="../js/redirecionarPags.js"></script>

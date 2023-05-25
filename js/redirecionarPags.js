@@ -1,3 +1,5 @@
+var idPuzzle = idPuzzle;
+
 function redirecionar1() {
     window.location.replace('http://localhost/scaperoom/controller/room1.php');
 }
@@ -11,5 +13,13 @@ function redirecionar3() {
 }
 
 function redirecionarSeta() {
-    window.location.replace('http://localhost/scaperoom/view/slides.php?slide=4');
+    window.location.replace('http://localhost/scaperoom/view/slides.php?slide=4&idPuzzle=' + idPuzzle);
+}
+
+function redirecionarPerg1() {
+    window.location.replace('http://localhost/scaperoom/view/puzzleRoom1.php?idPuzzle=' + idPuzzle);
+}
+
+function redirecionarSetaSairRoom1() {
+    window.location.replace('http://localhost/scaperoom/controller/cenario1.php');
 }

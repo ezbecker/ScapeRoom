@@ -38,3 +38,23 @@
     cursor: pointer;
     background-color: rgb(179, 44, 44); 
 }
+
+#areaClicavelPerg1 {
+    position: absolute;
+    width: 2.90em;
+    height: 5.11em;
+    left: 14.84em;
+    top: 10.65em;
+    cursor: pointer;
+    background-color: rgb(179, 44, 44); 
+}
+
+#areaClicavelSetaSairRoom1 {
+    position: absolute;
+    width: 1.11em;
+    height: 2.90em;
+    left: 28.84em;
+    top: 30.65em;
+    cursor: pointer;
+    background-color: rgb(179, 44, 44); 
+}
