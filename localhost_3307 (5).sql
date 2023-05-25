@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Tempo de geração: 23-Maio-2023 às 04:55
+-- Tempo de geração: 25-Maio-2023 às 02:36
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.0.25
 
@@ -64,28 +64,75 @@ INSERT INTO `partida` (`idPartida`, `idUsuario`, `tempo`, `terminou`) VALUES
 (22, 2, '00:40:00', 0),
 (23, 2, '00:40:00', 0),
 (24, 2, '00:40:00', 0),
-(25, 2, '00:40:00', 0);
+(25, 2, '00:40:00', 0),
+(26, 2, '00:40:00', 0),
+(27, 2, '00:40:00', 0),
+(28, 2, '00:40:00', 0),
+(29, 2, '00:40:00', 0),
+(30, 2, '00:40:00', 0),
+(31, 2, '00:40:00', 0),
+(32, 2, '00:40:00', 0),
+(33, 2, '00:40:00', 0),
+(34, 2, '00:40:00', 0),
+(35, 2, '00:40:00', 0),
+(36, 2, '00:40:00', 0),
+(37, 2, '00:40:00', 0),
+(38, 2, '00:40:00', 0),
+(39, 2, '00:40:00', 0),
+(40, 2, '00:40:00', 0),
+(41, 2, '00:40:00', 0),
+(42, 2, '00:40:00', 0),
+(43, 2, '00:40:00', 0),
+(44, 2, '00:40:00', 0),
+(45, 2, '00:40:00', 0),
+(46, 2, '00:40:00', 0),
+(47, 2, '00:40:00', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `perguntas`
+-- Estrutura da tabela `puzzle`
 --
 
-CREATE TABLE `perguntas` (
-  `idPergunta` int(11) NOT NULL,
+CREATE TABLE `puzzle` (
+  `idPuzzle` int(11) NOT NULL,
   `resposta` varchar(50) NOT NULL,
   `link` varchar(200) NOT NULL,
   `linkErro` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `perguntas`
+-- Extraindo dados da tabela `puzzle`
 --
 
-INSERT INTO `perguntas` (`idPergunta`, `resposta`, `link`, `linkErro`) VALUES
-(1, 'Q180TR4', 'http://localhost/scaperoom/view/slides.php?slide=8', 'https://docs.google.com/presentation/d/1CXgvLcUBjJd_9u8_dqEA9Y2Lfhvqus2AF_I8m7umDAA/edit#slide=id.g1e282f51ef2_1_0'),
+INSERT INTO `puzzle` (`idPuzzle`, `resposta`, `link`, `linkErro`) VALUES
+(1, 'Q180TR4', 'http://localhost/scaperoom/view/slides.php?slide=9&idPuzzle=0', 'https://docs.google.com/presentation/d/1CXgvLcUBjJd_9u8_dqEA9Y2Lfhvqus2AF_I8m7umDAA/edit#slide=id.g1e282f51ef2_1_0'),
 (2, '3425', 'https://docs.google.com/presentation/d/1CXgvLcUBjJd_9u8_dqEA9Y2Lfhvqus2AF_I8m7umDAA/edit#slide=id.g1e29e9b03de_0_0', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `questao`
+--
+
+CREATE TABLE `questao` (
+  `idPuzzle` int(11) NOT NULL,
+  `slide` int(11) NOT NULL,
+  `pergunta` varchar(500) NOT NULL,
+  `alternativa1` varchar(50) NOT NULL,
+  `alternativa2` varchar(50) NOT NULL,
+  `alternativa3` varchar(50) NOT NULL,
+  `alternativa4` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `questao`
+--
+
+INSERT INTO `questao` (`idPuzzle`, `slide`, `pergunta`, `alternativa1`, `alternativa2`, `alternativa3`, `alternativa4`) VALUES
+(1, 6, 'Qual é o diagnóstico mais provável para um paciente de 45 anos que apresenta um nódulo indolor na região submandibular direita, com aumento progressivo há 6 meses? O exame de ultrassonografia mostra uma massa hipoecóica, bem delimitada, com calcificações internas e fluxo vascular periférico.\r\n', 'Cisto branquial', 'Carcinoma de glândula salivar', 'Linfoma', 'Lipoma'),
+(1, 7, 'Qual é o diagnóstico mais provável para um paciente de 50 anos que apresenta tosse seca, dispneia e dor torácica há 3 semanas? O exame de radiografia de tórax mostra uma opacidade nodular no lobo superior direito, com bordas irregulares e halo de vidro fosco. O exame de tomografia computadorizada de tórax confirma a presença do nódulo e mostra também linfonodos mediastinais aumentados.\r\n', 'Tuberculose pulmonar', 'Câncer de pulmão', 'Granulomatose de Wegener', 'Aspergilose pulmonar'),
+(1, 8, 'Qual é o diagnóstico mais provável para um paciente de 40 anos que apresenta dor abdominal intensa e contínua na fossa ilíaca direita, com irradiação para a região lombar direita, associada a náuseas e vômitos? O exame de ultrassonografia de abdômen mostra uma dilatação do ureter direito, com presença de um cálculo de 5 mm no seu terço distal. O exame de urina mostra hematúria microscópica e leucocitúria.\r\n', 'Colecistite aguda', 'Apendicite aguda', 'Cólica renal', 'Diverticulite aguda');
 
 -- --------------------------------------------------------
 
@@ -105,7 +152,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nome`, `email`, `senha`) VALUES
-(2, 'larissa', 'larissapretto009w@gmail.com', '$2y$10$oDGVs9IkarqTXjamsrTe2eTTSt0lMRzKZu0dTz2xZOZmz22BHh9xa');
+(2, 'larissa', 'larissapretto009w@gmail.com', '$2y$10$oDGVs9IkarqTXjamsrTe2eTTSt0lMRzKZu0dTz2xZOZmz22BHh9xa'),
+(5, 'larissa', 'larissapretto009@gmail.com', '$2y$10$j6TE4MklQhiRISnMMs1q.udvBm.0qIa9eS6ufFA2zmultUgHW9nX.');
 
 --
 -- Índices para tabelas despejadas
@@ -119,10 +167,17 @@ ALTER TABLE `partida`
   ADD KEY `fk_user` (`idUsuario`);
 
 --
--- Índices para tabela `perguntas`
+-- Índices para tabela `puzzle`
 --
-ALTER TABLE `perguntas`
-  ADD PRIMARY KEY (`idPergunta`);
+ALTER TABLE `puzzle`
+  ADD PRIMARY KEY (`idPuzzle`);
+
+--
+-- Índices para tabela `questao`
+--
+ALTER TABLE `questao`
+  ADD PRIMARY KEY (`slide`),
+  ADD KEY `fk_puzzle` (`idPuzzle`);
 
 --
 -- Índices para tabela `usuario`
@@ -139,19 +194,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `partida`
 --
 ALTER TABLE `partida`
-  MODIFY `idPartida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idPartida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- AUTO_INCREMENT de tabela `perguntas`
+-- AUTO_INCREMENT de tabela `puzzle`
 --
-ALTER TABLE `perguntas`
-  MODIFY `idPergunta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `puzzle`
+  MODIFY `idPuzzle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas
@@ -162,6 +217,12 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `partida`
   ADD CONSTRAINT `fk_user` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
+
+--
+-- Limitadores para a tabela `questao`
+--
+ALTER TABLE `questao`
+  ADD CONSTRAINT `fk_puzzle` FOREIGN KEY (`idPuzzle`) REFERENCES `puzzle` (`idPuzzle`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
