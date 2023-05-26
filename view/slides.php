@@ -15,6 +15,7 @@
     $result = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_assoc($result);
     $tempo = $row["tempo"];
+    $idPartida = $row["idPartida"];
     $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
         return $total * 60 + $tempo;
     }, 0);
@@ -70,6 +71,7 @@
 </body>
 <script>
     var idPuzzle = <?php echo $idPuzzle; ?>;
+    var idPartida = <?php echo $idPartida; ?>;
 </script>
 <script src="../js/cronometro.js"></script>
 <script src="../js/redirecionarPags.js"></script>
