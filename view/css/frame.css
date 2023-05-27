@@ -12,7 +12,7 @@
 
   .question-text {
     position: absolute;
-    bottom: 20%; /* Ajuste a distância vertical do texto */
+    bottom: 50%; /* Ajuste a distância vertical do texto */
     left: 50%; /* Ajuste a posição horizontal do texto */
     transform: translateX(-50%);
     font-size: 24px;
@@ -22,3 +22,58 @@
     z-index: 1;
     color: white;
   }
+
+  .alternativa-text1 {
+    position: absolute;
+    bottom: 35%; /* Ajuste a distância vertical do texto */
+    left: 30%; /* Ajuste a posição horizontal do texto */
+    transform: translateX(-50%);
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    color: white;
+  }
+
+  .alternativa-text2 {
+    position: absolute;
+    bottom: 35%; /* Ajuste a distância vertical do texto */
+    left: 65%; /* Ajuste a posição horizontal do texto */
+    transform: translateX(-50%);
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    color: white;
+  }
+
+  .alternativa-text3 {
+    position: absolute;
+    bottom: 20%; /* Ajuste a distância vertical do texto */
+    left: 30%; /* Ajuste a posição horizontal do texto */
+    transform: translateX(-50%);
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    color: white;
+  }
+
+  .alternativa-text4 {
+    position: absolute;
+    bottom: 20%; /* Ajuste a distância vertical do texto */
+    left: 65%; /* Ajuste a posição horizontal do texto */
+    transform: translateX(-50%);
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    color: white;
+  }
+
+  
+  

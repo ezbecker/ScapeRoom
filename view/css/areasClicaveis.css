@@ -29,27 +29,27 @@
     background-color: rgb(179, 44, 44); 
 
 }
-#areaClicavelSeta {
+#areaClicavelSetaEsquerda{
     position: absolute;
     width: 2.90em;
     height: 1.11em;
-    left: 4.84em;
-    top: 15.65em;
+    left: 2em;
+    top: 17.65em;
     cursor: pointer;
     background-color: rgb(179, 44, 44); 
 }
 
-#areaClicavelPerg1 {
+#areaClicavelSetaDireita {
     position: absolute;
     width: 2.90em;
-    height: 5.11em;
-    left: 14.84em;
-    top: 10.65em;
+    height: 1.11em;
+    left: 57.84em;
+    top: 17.65em;
     cursor: pointer;
     background-color: rgb(179, 44, 44); 
 }
 
-#areaClicavelSetaSairRoom1 {
+#areaClicavelSetaBaixo{
     position: absolute;
     width: 1.11em;
     height: 2.90em;
@@ -58,3 +58,9 @@
     cursor: pointer;
     background-color: rgb(179, 44, 44); 
 }
+
+.area-clicavel {
+    position: absolute;
+    cursor: pointer;
+    background-color: rgb(179, 44, 44); 
+  }
