@@ -1,11 +1,11 @@
-<body onload="sortearSlide()">
+<body onload="sortearPagina()">
 
 </body>
 
 <script>
-    var slides = [
-        "../view/slides.php?slide=10&idPuzzle=2"
+    var pagina = [
+        "../view/game.php?pagina=10&idPuzzle=2"
     ];
 </script>
 
-<script src="../js/sortearSlide.js"></script>
+<script src="../js/sortearPagina.js"></script>
