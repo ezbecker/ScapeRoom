@@ -26,8 +26,8 @@ function redirecionar3() {
     window.location.replace('http://localhost/scaperoom/controller/sair.php');
 }
 
-function redirecionarSlide(slide) {
-    window.location.href = 'http://localhost/scaperoom/view/slides.php?slide='+ slide + '&idPuzzle=' + idPuzzle;
+function redirecionarPagina(pagina) {
+    window.location.href = 'http://localhost/scaperoom/view/game.php?pagina='+ pagina + '&idPuzzle=' + idPuzzle;
 }
 
 function redirecionarPerg1() {

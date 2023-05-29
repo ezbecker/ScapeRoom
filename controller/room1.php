@@ -2,14 +2,14 @@
 require_once "../model/incluirPartida.php";
 ?>
 
-<body onload="sortearSlide()">
+<body onload="sortearPagina()">
 
 </body>
 
 <script>
-    var slides = [
-        "../view/slides.php?slide=3&idPuzzle=1"
+    var pagina = [
+        "../view/game.php?pagina=3&idPuzzle=1"
     ];
 </script>
 
-<script src="../js/sortearSlide.js"></script>
+<script src="../js/sortearPagina.js"></script>

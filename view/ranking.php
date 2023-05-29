@@ -16,4 +16,4 @@ echo '</ol>';
 
 mysqli_close($conectado);
 ?>
-<a href="slides.php?slide=1&idPuzzle=0">Voltar</a>
+<a href="game.php?pagina=1&idPuzzle=0">Voltar</a>
