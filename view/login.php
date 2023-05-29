@@ -13,25 +13,31 @@
 </head>
 
 <body>
-  <p class="title">Entrar</p>
-  <p class="subtitle">Digite as suas informações</p>
+  <div class="container">
+    <div class="image">
+      <img src="illustrations/loginSecurity.png" alt="Imagem de segurança">
+    </div>
+    <div class="form">
+      <p class="title">Entrar</p>
+      <p class="subtitle">Digite as suas informações</p>
+      <div class="container-fluid">
+        <form name="frmUsuario" action="../controller/autenticar.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+          <div class="emailTextField">
+            <input name="email" type="email" class="form-control" placeholder="E-mail" required>
+          </div>
 
-  <div class="container-fluid">
-    <form action="../controller/autenticar.php" method="POST">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email" autofocus required>
+          <div class="passwordTextField">
+            <input name="senha" type="password" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Senha" required minlength="8" maxlength="15" required>
+          </div>
+
+          <button type="submit" class="entrar">Entrar</button>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Senha</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" name="senha" placeholder="Senha" required>
-      </div>
-      <button type="submit" class="entrar">Entrar</button>
-    </form>
+
+      <p class="helpText">Se você é novo aqui, crie uma conta!</p>
+      <a href="cadastroUser.php">Criar uma conta</a>
+    </div>
   </div>
-
-  <p class="helpText">Se nunca esteve aqui antes, crie uma conta!</p>
-  <a href="cadastroUser.php">Criar uma conta</a>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

@@ -10,42 +10,45 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Coloque o CSS adaptado aqui */
+  </style>
 </head>
 
 <body>
+  <div class="container">
+    <div class="image">
+      <img src="illustrations/loginSecurity.png" alt="Imagem de segurança">
+    </div>
+    <div class="form">
+      <p class="title">Registrar</p>
+      <p class="subtitle">Digite as suas informações</p>
+      <div class="container-fluid">
+        <form name="frmUsuario" action="../model/incluirUser.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+          <div class="nomeTextField">
+            <input type="text" name="nome" class="form-control" placeholder="Nome" required>
+          </div>
 
-  <img src="illustrations/loginSecurity.png">
-  <p class="title">Registrar</p>
-  <p class="subtitle">Digite as suas informações</p>
+          <div class="emailTextField">
+            <input name="email" type="email" class="form-control" placeholder="E-mail" required>
+          </div>
 
-  <div class="container-fluid">
+          <div class="passwordTextField">
+            <input name="senha" type="password" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Senha" required minlength="8" maxlength="15">
+            <small id="passwordHelpBlock" class="passwordHelp">
+              Sua senha deve conter de 8 a 15 caracteres.
+            </small>
+          </div>
 
-    <form name="frmUsuario" action="../model/incluirUser.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
-      <div class="nomeTextField">
-        <input type="text" name="nome" class="form-control" placeholder="Nome" required>
+          <button type="submit" class="entrar">Criar conta</button>
+        </form>
       </div>
 
-      <div class="emailTextField">
-        <input name="email" type="email" class="form-control" placeholder="E-mail" required>
-      </div>
-
-      <div class="passwordTextField">
-        <input name="senha" type="password" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Senha" required minlength="8" maxlength="15">
-        <small id="passwordHelpBlock" class="passwordHelp">
-          Sua senha deve conter de 8 a 15 caracteres.
-        </small>
-      </div>
+      <p class="helpText">Se já esteve aqui antes, faça o login!</p>
+      <a href="login.php">Fazer login</a>
+    </div>
   </div>
-  </div>
-  <br>
-  <button type="submit" class="entrar">Criar conta</button><br>
 
-  <p class="helpText">Se já esteve aqui antes, faça o login!</p>
-  <a href="login.php">Fazer login</a>
-  <br>
-
-  </form>
-  </fieldset>
   <script>
     (function() {
       'use strict';
