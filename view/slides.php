@@ -60,8 +60,9 @@
             echo '<div id="areaClicavelSetaEsquerda" onclick="salvarTempo(); redirecionarSlide(4)"></div>';
             echo '<div id="areaClicavelLivro" class="area-clicavel" onclick="salvarTempo(); redirecionarSlide(6)"></div>';
         } else if ($slide == 4) {
-            echo '<div id="areaClicavelPerg1" class="area-clicavel" onclick="salvarTempo(); redirecionarPerg1()"></div>';
             echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarSlide(3)"></div>';
+            echo '<div id="areaClicavelPerg1" class="area-clicavel" onclick="salvarTempo(); redirecionarPerg1()"></div>';
+            echo '<div id="areaClicavelLivro"></div>';
         } else if ($slide == 6 ||  $slide == 7 ||  $slide == 8) {
             echo '<div class="question-overlay">';
             echo '<p class="question-text">' . $pergunta . '</p>';
@@ -73,6 +74,7 @@
             echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarSlide(3)"></div>';
             if ($slide == 6)
                 echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarSlide(7)"></div>';
+
             if ($slide == 7) {
                 echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarSlide(8)"></div>';
                 echo '<div id="areaClicavelSetaEsquerda" onclick="salvarTempo(); redirecionarSlide(6)"></div>';
