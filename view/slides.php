@@ -36,16 +36,40 @@
     }
     mysqli_close($conectado);
     ?>
-
+    <link rel="stylesheet" href="css/slides.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/areasClicaveis.css">
     <link rel="stylesheet" href="css/frame.css">
 </head>
 
 <body>
-    <?php
-    if ($slide != 1)
-        echo '<p id="cronometro"></p>';
-    ?>
+    
+    <div class="data">    
+        <div class="playing">
+            <h1>Jogando</h1>
+            <?php
+            if ($slide > 1 && $slide < 8)
+                echo '<p>Larry Thompson</p>';
+            ?>
+        </div>
+
+        <div class="goal">
+            <h1>Objetivo atual</h1>
+            <?php
+            if ($slide > 1 && $slide < 8)
+                echo '<p>Saia do quarto</p>';
+            ?>
+        </div>
+
+        <div class="time">
+            <h1>Tempo total restante</h1>
+            <?php
+            if ($slide != 1)
+                echo '<p id="cronometro"></p>';
+            ?>
+        </div>
+    </div>
+
     <script>
         var tempoRestante = <?php echo $totalSegundos; ?>;
     </script>
@@ -67,7 +91,7 @@
             echo '<div class="question-overlay">';
             echo '<p class="question-text">' . $pergunta . '</p>';
             echo '</div>';
-            echo '<p class="alternativa-text1 ">' . $alternativa1 . '</p>';
+            echo '<p class="alternativa-text1">' . $alternativa1 . '</p>';
             echo '<p class="alternativa-text2">' . $alternativa2 . '</p>';
             echo '<p class="alternativa-text3">' . $alternativa3 . '</p>';
             echo '<p class="alternativa-text4">' . $alternativa4 . '</p>';
