@@ -50,3 +50,18 @@ img {
   margin-left: 100px;
   margin-top: -400px;
 }
+
+.question-text {
+  position: absolute;
+  margin-top: -460px;
+  margin-left: 240px;
+  width: 220px;
+  text-align: justify;
+}
+
+.alternativas {
+  position: absolute;
+  margin-top: -450px;
+  margin-left: 500px;
+  width: 220px;
+}

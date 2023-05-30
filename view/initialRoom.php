@@ -32,10 +32,12 @@ if (mysqli_num_rows($result) === 1) {
         echo '<div class="question-overlay">';
         echo '<p class="question-text">' . $pergunta . '</p>';
         echo '</div>';
+        echo '<div class="alternativas">';
         echo '<p class="alternativa-text1">' . $alternativa1 . '</p>';
         echo '<p class="alternativa-text2">' . $alternativa2 . '</p>';
         echo '<p class="alternativa-text3">' . $alternativa3 . '</p>';
         echo '<p class="alternativa-text4">' . $alternativa4 . '</p>';
+        echo '</div>';
         echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(3)"></div>';
         if ($pagina == 6)
             echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarPagina(7)"></div>';
