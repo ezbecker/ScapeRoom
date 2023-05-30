@@ -83,9 +83,20 @@
 <script src="../js/cronometro.js"></script>
 <script src="../js/redirecionarPags.js"></script>
 <script>
+    // inicialRoom
     aplicarEstilos("areaClicavelLivro", "2.90em", "1.11em", "34.84em", "19.65em");
     aplicarEstilos("areaClicavelQuadro", "2.90em", "5.11em", "37.84em", "10.65em");
-    aplicarEstilos("areaClicavelSetaDireitaaaaaaa", "2.92em", "5.13em", "14.84em", "10.63em");
+    aplicarEstilos("areaClicavelPuzzle1", "2.92em", "5.13em", "14.84em", "10.63em");
     aplicarEstilos("areaClicavelPrancheta1", "2.90em", "5em", "26.84em", "20.65em");
+    // corredor
     aplicarEstilos("room1", "2.90em", "5em", "26.84em", "20.65em");
+    aplicarEstilos("room2", "2.90em", "5em", "50.84em", "40.65em");
+    aplicarEstilos("room3", "2.90em", "5em", "15.84em", "10.65em");
+    aplicarEstilos("room4", "2.90em", "5em", "20.84em", "40.65em");
+    // cenario1 - room1
+    aplicarEstilos("areaClicavelPrancheta2", "2.90em", "5em", "26.84em", "20.65em");
+    aplicarEstilos("lixo", "2.90em", "5em", "20.84em", "35.65em");
+    // cenario1 - room2
+    // cenario1 - room3
+    // cenario1 - room4
 </script>

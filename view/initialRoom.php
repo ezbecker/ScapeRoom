@@ -21,7 +21,7 @@ if ($pagina == 3) {
 } else if ($pagina == 4) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom4.png">';
     echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarPagina(3)"></div>';
-    echo '<div id="areaClicavelSetaDireitaaaaaaa" onclick="salvarTempo(); redirecionarPerg1()"></div>';
+    echo '<div id="areaClicavelPuzzle1" onclick="salvarTempo(); redirecionarPerg1()"></div>';
 } else if ($pagina == 5) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom2.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(3)"></div>';
