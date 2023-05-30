@@ -52,6 +52,8 @@
     } else if ($pagina == 21) {
         echo '<img src="../scenarios/scenario1/roomFour/roomFour4.png">';
         echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(19)"></div>';
+    } else if ($pagina == 22) {
+        echo '<img src="../scenarios/scenario1/corridor/corridor2.png">';
     }
     ?>
 </head>
