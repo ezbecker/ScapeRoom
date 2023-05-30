@@ -65,12 +65,3 @@ img {
   margin-left: 500px;
   width: 220px;
 }
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
