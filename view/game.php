@@ -28,58 +28,61 @@
 </head>
 
 <body>
+    <?php
+    if ($pagina != 1) {
+    ?>
+        <div class="data">
+            <div class="playing">
+                <h1>Jogando</h1>
+                <?php
+                echo $nome;
+                ?>
+            </div>
 
-    <div class="data">
-        <div class="playing">
-            <h1>Jogando</h1>
+            <div class="goal">
+                <h1>Objetivo atual</h1>
+                <?php
+                if ($pagina > 1 && $pagina <= 9)
+                    echo '<p>Saia do quarto</p>';
+                else if ($pagina >= 10 && $pagina < 22)
+                    echo '<p>Descubra o código do elevador</p>';
+                ?>
+            </div>
+
+            <div class="time">
+                <h1>Tempo total restante</h1>
             <?php
-            if ($pagina > 1 && $pagina < 8)
-                echo '<p>Larry Thompson</p>';
-            ?>
-        </div>
-
-        <div class="goal">
-            <h1>Objetivo atual</h1>
-            <?php
-            if ($pagina > 1 && $pagina < 8)
-                echo '<p>Saia do quarto</p>';
-            ?>
-        </div>
-
-        <div class="time">
-            <h1>Tempo total restante</h1>
-            <?php
-            if ($pagina != 1)
-                echo '<p id="cronometro"></p>';
-            ?>
-        </div>
-    </div>
-
-    <script>
-        var tempoRestante = <?php echo $totalSegundos; ?>;
-    </script>
-
-    <div class="iframe-container">
-        <?php
-        if ($pagina == 1) {
-            echo '<div id="areaClicavel1" onclick="redirecionar1()"></div>';
-            echo '<div id="areaClicavel2" onclick="redirecionar2()"></div>';
-            echo '<div id="areaClicavel3" onclick="redirecionar3()"></div>';
-            echo '<img src="../scenarios/menu.gif">';
-        } else if ($pagina == 2) {
+            echo '<p id="cronometro"></p>';
         }
-        require_once "../view/initialRoom.php";
-        require_once "../view/cenario1.php";
-        ?>
-    </div>
+            ?>
+            </div>
+        </div>
 
-    <style>
-    img {
-        width: 960px;
-        height: 540px;
-        border-radius: 16px;
-    }
-    </style>
+        <script>
+            var tempoRestante = <?php echo $totalSegundos; ?>;
+        </script>
+
+        <div class="iframe-container">
+            <?php
+            if ($pagina == 1) {
+                echo '<div id="areaClicavel1" onclick="redirecionar1()"></div>';
+                echo '<div id="areaClicavel2" onclick="redirecionar2()"></div>';
+                echo '<div id="areaClicavel3" onclick="redirecionar3()"></div>';
+                echo '<img src="../scenarios/menu.gif">';
+            } else if ($pagina == 2) {
+            }
+            require_once "../view/initialRoom.php";
+            require_once "../view/cenario1.php";
+            ?>
+        </div>
+
+        <style>
+            img {
+                width: 960px;
+                height: 540px;
+                border-radius: 16px;
+            }
+        </style>
 
 </body>
 
