@@ -28,17 +28,16 @@
 </head>
 
 <body>
-    <?php
-    if ($pagina != 1) {
-    ?>
+    
         <div class="data">
             <div class="playing">
                 <h1>Jogando</h1>
-                <?php
-                echo $nome;
-                ?>
-            </div>
+                <p><?php echo $nome; ?></p>
+        </div>
 
+        <?php
+        if ($pagina != 1) {
+        ?>
             <div class="goal">
                 <h1>Objetivo atual</h1>
                 <?php
@@ -65,18 +64,24 @@
         <div class="iframe-container">
             <?php
             if ($pagina == 1) {
+                echo '<img src="../scenarios/menu.gif">';
                 echo '<div id="areaClicavel1" onclick="redirecionar1()"></div>';
                 echo '<div id="areaClicavel2" onclick="redirecionar2()"></div>';
                 echo '<div id="areaClicavel3" onclick="redirecionar3()"></div>';
-                echo '<img src="../scenarios/menu.gif">';
             } else if ($pagina == 2) {
             }
             require_once "../view/initialRoom.php";
             require_once "../view/cenario1.php";
             ?>
-        </div>
 
         <style>
+            .iframe-container {
+                width: 960px;
+                height: 540px;
+                display: block;
+                margin: 0 auto; 
+            }
+            
             img {
                 width: 960px;
                 height: 540px;
@@ -95,27 +100,26 @@
 <script src="../js/redirecionarPags.js"></script>
 <script>
     // menu
-
     // inicialRoom
-    aplicarEstilos("areaClicavelLivro", "2.90em", "1.11em", "34.84em", "19.65em");
-    aplicarEstilos("areaClicavelQuadro", "2.90em", "5.11em", "37.84em", "10.65em");
-    aplicarEstilos("areaClicavelPuzzle1", "2.92em", "5.13em", "14.84em", "10.63em");
-    aplicarEstilos("areaClicavelPrancheta1", "2.90em", "5em", "26.84em", "20.65em");
+    // aplicarEstilos("areaClicavelLivro", "2.90em", "1.11em", "50px", "19.65em");
+    // aplicarEstilos("areaClicavelQuadro", "2.90em", "5.11em", "37.84em", "10.65em");
+    // aplicarEstilos("areaClicavelPuzzle1", "2.92em", "5.13em", "14.84em", "10.63em");
+    // aplicarEstilos("areaClicavelPrancheta1", "2.90em", "5em", "26.84em", "20.65em");
     // corredor
-    aplicarEstilos("room1", "2.90em", "5em", "26.84em", "20.65em");
-    aplicarEstilos("room2", "2.90em", "5em", "20.84em", "40.65em");
-    aplicarEstilos("room3", "2.90em", "5em", "50.84em", "10.65em");
-    aplicarEstilos("room4", "2.90em", "5em", "50.84em", "40.65em");
+    // aplicarEstilos("room1", "2.90em", "5em", "26.84em", "20.65em");
+    // aplicarEstilos("room2", "2.90em", "5em", "20.84em", "40.65em");
+    // aplicarEstilos("room3", "2.90em", "5em", "50.84em", "10.65em");
+    // aplicarEstilos("room4", "2.90em", "5em", "50.84em", "40.65em");
     // cenario1 - room1
-    aplicarEstilos("areaClicavelPrancheta2", "2.90em", "5em", "26.84em", "20.65em");
-    aplicarEstilos("lixo", "2.90em", "5em", "20.84em", "35.65em");
+    // aplicarEstilos("areaClicavelPrancheta2", "2.90em", "5em", "26.84em", "20.65em");
+    // aplicarEstilos("lixo", "2.90em", "5em", "20.84em", "35.65em");
     // cenario1 - room2
-    aplicarEstilos("areaClicavelPrancheta3", "2.90em", "5em", "26.84em", "35.65em");
-    aplicarEstilos("areaClicavelPapel1", "2.90em", "5em", "26.84em", "20.65em");
+    // aplicarEstilos("areaClicavelPrancheta3", "2.90em", "5em", "26.84em", "35.65em");
+    // aplicarEstilos("areaClicavelPapel1", "2.90em", "5em", "26.84em", "20.65em");
     // cenario1 - room3
-    aplicarEstilos("areaClicavelPrancheta4", "2.90em", "5em", "26.84em", "35.65em");
+    // aplicarEstilos("areaClicavelPrancheta4", "2.90em", "5em", "26.84em", "35.65em");
     // cenario1 - room4
-    aplicarEstilos("gaveta", "2.90em", "5em", "26.84em", "35.65em");
-    aplicarEstilos("areaClicavelPrancheta5", "2.90em", "5em", "26.84em", "35.65em");
-    aplicarEstilos("areaClicavelPapel2", "2.90em", "5em", "26.84em", "20.65em");
+    // aplicarEstilos("gaveta", "2.90em", "5em", "26.84em", "35.65em");
+    // aplicarEstilos("areaClicavelPrancheta5", "2.90em", "5em", "26.84em", "35.65em");
+    // aplicarEstilos("areaClicavelPapel2", "2.90em", "5em", "26.84em", "20.65em");
 </script>
