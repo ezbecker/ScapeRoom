@@ -28,11 +28,11 @@
 </head>
 
 <body>
-    
-        <div class="data">
-            <div class="playing">
-                <h1>Jogando</h1>
-                <p><?php echo $nome; ?></p>
+
+    <div class="data">
+        <div class="playing">
+            <h1>Jogando</h1>
+            <p><?php echo $nome; ?></p>
         </div>
 
         <?php
@@ -43,7 +43,7 @@
                 <?php
                 if ($pagina > 1 && $pagina <= 9)
                     echo '<p>Saia do quarto</p>';
-                else if ($pagina >= 10 && $pagina < 22)
+                else if ($pagina >= 10 && $pagina <= 22)
                     echo '<p>Descubra o código do elevador</p>';
                 ?>
             </div>
@@ -55,33 +55,35 @@
         }
             ?>
             </div>
-        </div>
+    </div>
 
-        <script>
-            var tempoRestante = <?php echo $totalSegundos; ?>;
-        </script>
+    <script>
+        var tempoRestante = <?php echo $totalSegundos; ?>;
+    </script>
 
-        <div class="iframe-container">
-            <?php
-            if ($pagina == 1) {
-                echo '<img src="../scenarios/menu.gif">';
-                echo '<div id="areaClicavel1" onclick="redirecionar1()"></div>';
-                echo '<div id="areaClicavel2" onclick="redirecionar2()"></div>';
-                echo '<div id="areaClicavel3" onclick="redirecionar3()"></div>';
-            } else if ($pagina == 2) {
-            }
-            require_once "../view/initialRoom.php";
-            require_once "../view/cenario1.php";
-            ?>
+    <div class="iframe-container">
+        <?php
+        if ($pagina == 1) {
+            echo '<img src="../scenarios/menu.gif">';
+            echo '<div id="areaClicavel1" onclick="redirecionar1()"></div>';
+            echo '<div id="areaClicavel2" onclick="redirecionar2()"></div>';
+            echo '<div id="areaClicavel3" onclick="redirecionar3()"></div>';
+        } else if ($pagina == 2) {
+        }
+        require_once "../view/initialRoom.php";
+        require_once "../view/cenario1.php";
+        ?>
 
         <style>
             .iframe-container {
                 width: 960px;
                 height: 540px;
                 display: block;
-                margin: 0 auto; 
+                margin: 0 auto;
+                /* animation: fade-out 0.5s ease; */
+
             }
-            
+
             img {
                 width: 960px;
                 height: 540px;

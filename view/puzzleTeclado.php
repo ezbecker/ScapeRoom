@@ -14,7 +14,7 @@ $row = mysqli_fetch_assoc($result);
 $tempo = $row["tempo"];
 $idPartida = $row["idPartida"];
 $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
-    return $total * 60 + $tempo;
+  return $total * 60 + $tempo;
 }, 0);
 
 $query = "SELECT * FROM puzzle WHERE idPuzzle =" . $idPuzzle;
@@ -22,12 +22,13 @@ $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 if (mysqli_num_rows($result) === 1) {
-    $row = mysqli_fetch_assoc($result);
-    $resposta = $row["resposta"];
+  $row = mysqli_fetch_assoc($result);
+  $resposta = $row["resposta"];
+  $link = $row["link"];
 } else {
-    //colocar isso para voltar para o quarto
-    header("Location: ../view/login.php?erro=credenciais");
-    exit();
+  //colocar isso para voltar para o quarto
+  header("Location: ../view/login.php?erro=credenciais");
+  exit();
 }
 ?>
 
@@ -55,7 +56,7 @@ if (mysqli_num_rows($result) === 1) {
     <div class="time">
       <h1>Tempo total restante</h1>
       <?php
-        echo '<p id="cronometro"></p>'
+      echo '<p id="cronometro"></p>'
       ?>
     </div>
   </div>
@@ -67,7 +68,7 @@ if (mysqli_num_rows($result) === 1) {
   <div class="iframe-container">
     <img src="../scenarios/scenario1/corridor/puzzleTeclado.png">
     <?php
-      echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10)"></div>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10)"></div>';
     ?>
     <div class="container">
       <div class="button" data-symbol="1">Θ</div>
@@ -83,6 +84,7 @@ if (mysqli_num_rows($result) === 1) {
   </div>
 
   <script type="text/javascript">
+    const link = "<?php echo $link; ?>";
     const resposta = "<?php echo $resposta; ?>"; // Adiciona a resposta do PHP ao JavaScript
     const code = resposta.split(''); // Converte a resposta em um array de caracteres
     let currentInput = '';
@@ -110,6 +112,8 @@ if (mysqli_num_rows($result) === 1) {
         for (let i = 0; i < buttons.length; i++) {
           buttons[i].classList.add('success');
         }
+        salvarTempo();
+        window.location.href = 'http://localhost/scaperoom/controller/redirecionarRespCorreta.php?link=' + encodeURIComponent(link);
       } else {
         console.log('Código incorreto!');
         const buttons = document.querySelectorAll('.button');
@@ -140,8 +144,8 @@ if (mysqli_num_rows($result) === 1) {
 
 </html>
 <script>
-    var idPuzzle = <?php echo $idPuzzle; ?>;
-    var idPartida = <?php echo $idPartida; ?>;
+  var idPuzzle = <?php echo $idPuzzle; ?>;
+  var idPartida = <?php echo $idPartida; ?>;
 </script>
 <script src="../js/cronometro.js"></script>
 <script src="../js/redirecionarPags.js"></script>
