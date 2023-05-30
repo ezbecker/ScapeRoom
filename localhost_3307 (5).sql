@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Tempo de geração: 30-Maio-2023 às 02:23
+-- Tempo de geração: 30-Maio-2023 às 20:05
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.0.25
 
@@ -26,6 +26,31 @@ USE `scaperoom`;
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `cenario1`
+--
+
+CREATE TABLE `cenario1` (
+  `idPuzzle` int(11) NOT NULL,
+  `pagina` int(11) NOT NULL,
+  `nome` varchar(70) NOT NULL,
+  `idade` int(11) NOT NULL,
+  `sintomas` text NOT NULL,
+  `tomografia` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `cenario1`
+--
+
+INSERT INTO `cenario1` (`idPuzzle`, `pagina`, `nome`, `idade`, `sintomas`, `tomografia`) VALUES
+(2, 12, 'João Silva', 45, 'Dor no peito, falta de ar, tosse com sangue, perda de peso e fadiga', 'Tomografia computadorizada do tórax mostrou uma massa no lobo superior direito do pulmão, com linfonodos mediastinais aumentados e derrame pleural. Biópsia confirmou a presença de células malignas.'),
+(2, 14, ' Pedro Oliveira', 67, 'Dor abdominal, icterícia, perda de apetite e emagrecimento', 'Ultrassonografia abdominal mostrou uma massa hipoecogênica na cabeça do pâncreas, com dilatação das vias biliares e do ducto pancreático. Tomografia computadorizada confirmou a presença de um tumor pancreático com invasão vascular e metástases hepáticas'),
+(2, 17, 'Maria Santos', 32, 'Dor de cabeça, náusea, vômito, alteração da visão e convulsões', 'Ressonância magnética do crânio mostrou uma lesão expansiva no lobo temporal esquerdo, com efeito de massa e edema perilesional. Biópsia revelou um glioblastoma multiforme.'),
+(2, 20, 'Ana Souza', 28, 'Dor e inchaço no joelho direito, dificuldade para caminhar e movimentar a articulação', 'Radiografia do joelho direito mostrou erosões ósseas, estreitamento do espaço articular e deformidade em valgo. Ressonância magnética evidenciou sinovite, derrame articular e lesões de cartilagem e menisco.');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `initialroom`
 --
 
@@ -44,7 +69,7 @@ CREATE TABLE `initialroom` (
 --
 
 INSERT INTO `initialroom` (`idPuzzle`, `pagina`, `pergunta`, `alternativa1`, `alternativa2`, `alternativa3`, `alternativa4`) VALUES
-(1, 6, 'Qual é o diagnóstico mais provável para um paciente de 45 anos que apresenta um nódulo indolor na região submandibular direita, com aumento progressivo há 6 meses? O exame de ultrassonografia mostra uma massa hipoecóica, bem delimitada, com calcificações internas e fluxo vascular periférico.\r\n', 'Cisto branquial', 'Carcinoma de glândula salivar', 'Linfoma', 'Lipoma'),
+(1, 6, 'Qual é o diagnóstico mais provável para um paciente de 45 anos que apresenta um nódulo indolor na região submandibular direita, com aumento progressivo há 6 meses? O exame de ultrassonografia mostra uma massa hipoecóica, bem delimitada, com calcificações internas e fluxo vascular periférico.\n', 'Cisto branquial', 'Carcinoma de glândula salivar', 'Linfoma', 'Lipoma'),
 (1, 7, 'Qual é o diagnóstico mais provável para um paciente de 50 anos que apresenta tosse seca, dispneia e dor torácica há 3 semanas? O exame de radiografia de tórax mostra uma opacidade nodular no lobo superior direito, com bordas irregulares e halo de vidro fosco. O exame de tomografia computadorizada de tórax confirma a presença do nódulo e mostra também linfonodos mediastinais aumentados.\r\n', 'Tuberculose pulmonar', 'Câncer de pulmão', 'Granulomatose de Wegener', 'Aspergilose pulmonar'),
 (1, 8, 'Qual é o diagnóstico mais provável para um paciente de 40 anos que apresenta dor abdominal intensa e contínua na fossa ilíaca direita, com irradiação para a região lombar direita, associada a náuseas e vômitos? O exame de ultrassonografia de abdômen mostra uma dilatação do ureter direito, com presença de um cálculo de 5 mm no seu terço distal. O exame de urina mostra hematúria microscópica e leucocitúria.\r\n', 'Colecistite aguda', 'Apendicite aguda', 'Cólica renal', 'Diverticulite aguda');
 
@@ -73,8 +98,8 @@ INSERT INTO `partida` (`idPartida`, `idUsuario`, `tempo`, `terminou`) VALUES
 (6, 2, '01:51:30', 0),
 (7, 2, '01:51:30', 0),
 (8, 2, '01:51:30', 0),
-(9, 2, '01:51:30', 1),
-(10, 2, '01:51:30', 1),
+(9, 2, '01:51:30', 0),
+(10, 2, '01:51:30', 0),
 (11, 2, '01:51:30', 0),
 (12, 2, '01:51:30', 0),
 (13, 2, '01:51:30', 0),
@@ -138,7 +163,16 @@ INSERT INTO `partida` (`idPartida`, `idUsuario`, `tempo`, `terminou`) VALUES
 (71, 2, '00:40:00', 0),
 (72, 2, '00:38:07', 0),
 (73, 2, '00:39:57', 0),
-(74, 2, '00:32:44', 0);
+(74, 2, '00:32:41', 1),
+(75, 2, '00:38:19', 0),
+(76, 2, '00:37:38', 0),
+(77, 2, '00:28:56', 0),
+(78, 2, '00:37:40', 0),
+(79, 2, '00:40:00', 0),
+(80, 2, '00:35:46', 1),
+(81, 2, '00:26:44', 0),
+(82, 2, '00:36:19', 0),
+(83, 2, '00:11:25', 0);
 
 -- --------------------------------------------------------
 
@@ -159,7 +193,7 @@ CREATE TABLE `puzzle` (
 
 INSERT INTO `puzzle` (`idPuzzle`, `resposta`, `link`, `linkErro`) VALUES
 (1, 'Q180TR4', 'http://localhost/scaperoom/view/game.php?pagina=9&idPuzzle=0', ''),
-(2, '3425', 'https://docs.google.com/presentation/d/1CXgvLcUBjJd_9u8_dqEA9Y2Lfhvqus2AF_I8m7umDAA/edit#slide=id.g1e29e9b03de_0_0', '');
+(2, '3425', 'http://localhost/scaperoom/view/game.php?pagina=22&idPuzzle=2', '');
 
 -- --------------------------------------------------------
 
@@ -185,6 +219,13 @@ INSERT INTO `usuario` (`idUsuario`, `nome`, `email`, `senha`) VALUES
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `cenario1`
+--
+ALTER TABLE `cenario1`
+  ADD PRIMARY KEY (`pagina`),
+  ADD KEY `fk` (`idPuzzle`);
 
 --
 -- Índices para tabela `initialroom`
@@ -221,7 +262,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `partida`
 --
 ALTER TABLE `partida`
-  MODIFY `idPartida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `idPartida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT de tabela `puzzle`
@@ -238,6 +279,12 @@ ALTER TABLE `usuario`
 --
 -- Restrições para despejos de tabelas
 --
+
+--
+-- Limitadores para a tabela `cenario1`
+--
+ALTER TABLE `cenario1`
+  ADD CONSTRAINT `fk` FOREIGN KEY (`idPuzzle`) REFERENCES `puzzle` (`idPuzzle`);
 
 --
 -- Limitadores para a tabela `initialroom`
