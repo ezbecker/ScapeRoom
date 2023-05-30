@@ -5,6 +5,7 @@
     <?php
     if ($pagina == 10) {
         echo '<img src="../scenarios/scenario1/corridor/corridor1.png">';
+        echo '<div id="areaClicavelTeclado" onclick="salvarTempo(); redirecionarTeclado()"></div>';
         echo '<div id="room1" onclick="salvarTempo(); redirecionarPagina(11)"></div>';
         echo '<div id="room2" onclick="salvarTempo(); redirecionarPagina(13)"></div>';
         echo '<div id="room3" onclick="salvarTempo(); redirecionarPagina(16)"></div>';

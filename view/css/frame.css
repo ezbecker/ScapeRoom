@@ -45,3 +45,8 @@ img {
   letter-spacing: 0.5px;
   color: #FFFFFF;
 }
+
+.container {
+  margin-left: 100px;
+  margin-top: -400px;
+}

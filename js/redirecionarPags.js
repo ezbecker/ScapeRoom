@@ -46,3 +46,7 @@ function redirecionarSetaSairRoom1() {
 function redirecionarLixo() {
     window.location.replace('http://localhost/scaperoom/view/puzzleLixo.php');
 }
+
+function redirecionarTeclado() {
+    window.location.replace('http://localhost/scaperoom/view/puzzleTeclado.php?idPuzzle=' + idPuzzle);
+}

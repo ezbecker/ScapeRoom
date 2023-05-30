@@ -1,38 +1,85 @@
 <!DOCTYPE html>
 <html>
 <?php
+require_once "../controller/userAutenticado.php";
+require_once "../model/pegarIdUsuario.php";
 require_once "../model/conexao.php";
+
 $idPuzzle = $_GET["idPuzzle"];
+$query = "SELECT * FROM partida WHERE idUsuario = $idUsuario ORDER BY idPartida DESC LIMIT 1";
+$stmt = mysqli_prepare($conectado, $query);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+$row = mysqli_fetch_assoc($result);
+$tempo = $row["tempo"];
+$idPartida = $row["idPartida"];
+$totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
+    return $total * 60 + $tempo;
+}, 0);
+
 $query = "SELECT * FROM puzzle WHERE idPuzzle =" . $idPuzzle;
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 if (mysqli_num_rows($result) === 1) {
-  $row = mysqli_fetch_assoc($result);
-  $resposta = $row["resposta"];
+    $row = mysqli_fetch_assoc($result);
+    $resposta = $row["resposta"];
 } else {
-  //colocar isso para voltar para o quarto
-  header("Location: ../view/login.php?erro=credenciais");
-  exit();
+    //colocar isso para voltar para o quarto
+    header("Location: ../view/login.php?erro=credenciais");
+    exit();
 }
 ?>
 
 <head>
   <title>Puzzle do Teclado</title>
   <link rel="stylesheet" href="css/puzzleTeclado.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/areasClicaveis.css">
+  <link rel="stylesheet" href="css/frame.css">
 </head>
 
 <body>
-  <div class="container">
-    <div class="button" data-symbol="1">Θ</div>
-    <div class="button" data-symbol="2">ψ</div>
-    <div class="button" data-symbol="3">Δ</div>
-    <div class="button" data-symbol="4">δ</div>
-    <div class="button" data-symbol="5">λ</div>
-    <div class="button" data-symbol="6">μ</div>
-    <div class="button" data-symbol="7">Ω</div>
-    <div class="button" data-symbol="8">Φ</div>
-    <div class="button" data-symbol="9">η</div>
+  <div class="data">
+    <div class="playing">
+      <h1>Jogando</h1>
+      <p><?php echo $nome; ?></p>
+    </div>
+
+    <div class="goal">
+      <h1>Objetivo atual</h1>
+      <p>Descubra o código do elevador</p>
+    </div>
+
+    <div class="time">
+      <h1>Tempo total restante</h1>
+      <?php
+        echo '<p id="cronometro"></p>'
+      ?>
+    </div>
+  </div>
+
+  <script>
+    var tempoRestante = <?php echo $totalSegundos; ?>;
+  </script>
+
+  <div class="iframe-container">
+    <img src="../scenarios/scenario1/corridor/puzzleTeclado.png">
+    <?php
+      echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10)"></div>';
+    ?>
+    <div class="container">
+      <div class="button" data-symbol="1">Θ</div>
+      <div class="button" data-symbol="2">ψ</div>
+      <div class="button" data-symbol="3">Δ</div>
+      <div class="button" data-symbol="4">δ</div>
+      <div class="button" data-symbol="5">λ</div>
+      <div class="button" data-symbol="6">μ</div>
+      <div class="button" data-symbol="7">Ω</div>
+      <div class="button" data-symbol="8">Φ</div>
+      <div class="button" data-symbol="9">η</div>
+    </div>
   </div>
 
   <script type="text/javascript">
@@ -92,3 +139,9 @@ if (mysqli_num_rows($result) === 1) {
 </body>
 
 </html>
+<script>
+    var idPuzzle = <?php echo $idPuzzle; ?>;
+    var idPartida = <?php echo $idPartida; ?>;
+</script>
+<script src="../js/cronometro.js"></script>
+<script src="../js/redirecionarPags.js"></script>

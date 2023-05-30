@@ -210,3 +210,13 @@
     cursor: pointer;
     background-color: rgb(179, 44, 44); 
 }
+
+#areaClicavelTeclado{
+    position: absolute;
+    width: 1.5em;
+    height: 2em;
+    margin-left: 560px;
+    top: 23em;
+    cursor: pointer;
+    background-color: rgb(179, 44, 44); 
+}
