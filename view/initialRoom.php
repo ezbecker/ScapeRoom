@@ -15,14 +15,13 @@ if (mysqli_num_rows($result) === 1) {
 
 if ($pagina == 3) {
     echo '<div id="areaClicavelSetaEsquerda" onclick="salvarTempo(); redirecionarPagina(4)"></div>';
-    echo '<div id="areaClicavelLivro" class="area-clicavel" onclick="salvarTempo(); redirecionarPagina(6)"></div>';
-    echo '<div id="areaClicavelQuadro" class="area-clicavel" onclick="salvarTempo(); redirecionarPagina(5)"></div>';
+    echo '<div id="areaClicavelLivro" onclick="salvarTempo(); redirecionarPagina(6)"></div>';
+    echo '<div id="areaClicavelQuadro" onclick="salvarTempo(); redirecionarPagina(5)"></div>';
     echo '<img src="../scenarios/inicialRoom/inicialRoom1.gif">';
 } else if ($pagina == 4) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom4.png">';
     echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarPagina(3)"></div>';
-    echo '<div id="areaPuz" class="area-clicavel" onclick="salvarTempo(); redirecionarPerg1()"></div>';
-    echo '<div id="areaClicavelLivro" class="area-clicavel" onclick="salvarTempo(); redirecionarPerg1()"></div>';
+    echo '<div id="areaClicavelSetaDireitaaaaaaa" onclick="salvarTempo(); redirecionarPerg1()"></div>';
 } else if ($pagina == 5) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom2.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(3)"></div>';

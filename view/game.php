@@ -74,6 +74,8 @@
     </div>
 
 </body>
+
+</html>
 <script>
     var idPuzzle = <?php echo $idPuzzle; ?>;
     var idPartida = <?php echo $idPartida; ?>;
@@ -81,8 +83,9 @@
 <script src="../js/cronometro.js"></script>
 <script src="../js/redirecionarPags.js"></script>
 <script>
-    definirPosicao("areaClicavelLivro", "2.90em", "1.11em", "34.84em", "19.65em");
-    definirPosicao("areaClicavelQuadro", "2.90em", "5.11em", "37.84em", "10.65em");
-    definirPosicao("areaPuz", "2.92em", "5.13em", "14.84em", "10.63em");
-    definirPosicao("areaClicavelPrancheta1", "2.90em", "5em", "26.84em", "20.65em");
+    aplicarEstilos("areaClicavelLivro", "2.90em", "1.11em", "34.84em", "19.65em");
+    aplicarEstilos("areaClicavelQuadro", "2.90em", "5.11em", "37.84em", "10.65em");
+    aplicarEstilos("areaClicavelSetaDireitaaaaaaa", "2.92em", "5.13em", "14.84em", "10.63em");
+    aplicarEstilos("areaClicavelPrancheta1", "2.90em", "5em", "26.84em", "20.65em");
+    aplicarEstilos("room1", "2.90em", "5em", "26.84em", "20.65em");
 </script>

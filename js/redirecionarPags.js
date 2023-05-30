@@ -6,14 +6,19 @@ function salvarTempo() {
     fetch('../model/salvarTempo.php?tempo=' + formatarTempo(tempoAtual)+'&idPartida='+idPartida);
 }
 
-function definirPosicao(areaId, largura, altura, esquerda, topo) {
+function aplicarEstilos(areaId, width, height, left, top) {
     var area = document.getElementById(areaId);
-    area.style.width = largura;
-    area.style.height = altura;
-    area.style.left = esquerda;
-    area.style.top = topo;
+    if (area) {
+      area.style.position = 'absolute';
+      area.style.width = width;
+      area.style.height = height;
+      area.style.left = left;
+      area.style.top = top;
+      area.style.cursor = 'pointer';
+      area.style.backgroundColor = 'rgb(179, 44, 44)';
+    }
   }
-
+  
 function redirecionar1() {
     window.location.replace('http://localhost/scaperoom/controller/room1.php');
 }
