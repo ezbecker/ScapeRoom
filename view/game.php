@@ -73,6 +73,14 @@
         ?>
     </div>
 
+    <style>
+    img {
+        width: 960px;
+        height: 540px;
+        border-radius: 16px;
+    }
+    </style>
+
 </body>
 
 </html>
