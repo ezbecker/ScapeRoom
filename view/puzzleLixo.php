@@ -4,9 +4,53 @@
 <head>
     <title>Lixeira</title>
     <link rel="stylesheet" href="css/puzzleLixo.css">
+
+    <?php
+    require_once "../controller/userAutenticado.php";
+
+    require_once "../model/pegarIdUsuario.php";
+
+    $query = "SELECT * FROM partida WHERE idUsuario = $idUsuario ORDER BY idPartida DESC LIMIT 1";
+    $stmt = mysqli_prepare($conectado, $query);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $row = mysqli_fetch_assoc($result);
+    $tempo = $row["tempo"];
+    $idPartida = $row["idPartida"];
+    $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
+        return $total * 60 + $tempo;
+    }, 0);
+    ?>
+
+    <link rel="stylesheet" href="css/game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/areasClicaveis.css">
 </head>
 
 <body>
+    <div class="data">
+            <div class="playing">
+                <h1>Jogando</h1>
+                <p><?php echo $nome; ?></p>
+        </div>
+
+        <div class="goal">
+            <h1>Objetivo atual</h1>
+                <p>Saia do quarto</p>
+        </div>
+
+        <div class="time">
+            <h1>Tempo total restante</h1>
+        <?php
+            echo '<p id="cronometro"></p>'
+        ?>
+            </div>
+        </div>
+
+        <script>
+            var tempoRestante = <?php echo $totalSegundos; ?>;
+        </script>
+
     <img class="image" src="../assets/bilhete.png" width="305" height="104" />
     <img class="image" src="../assets/papel1.png" width="150" height="150" />
     <img class="image" src="../assets/papel3.png" width="150" height="150" />
@@ -42,3 +86,9 @@
 </body>
 
 </html>
+<script>
+    var idPuzzle = <?php echo $idPuzzle; ?>;
+    var idPartida = <?php echo $idPartida; ?>;
+</script>
+<script src="../js/cronometro.js"></script>
+<script src="../js/redirecionarPags.js"></script>
