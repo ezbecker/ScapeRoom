@@ -27,7 +27,6 @@ if ($pagina == 10) {
     echo '<div id="lixo" onclick="salvarTempo(); redirecionarLixo()"></div>';
 } else if ($pagina == 12) { // Prancheta
     echo '<img src="../scenarios/scenario1/roomOne/roomOne2.png">';
-    echo $nome;
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(11)"></div>';
 } else if ($pagina == 13) { // room2
     echo '<img src="../scenarios/scenario1/roomTwo/roomTwo1.png">';
