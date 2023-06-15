@@ -21,7 +21,11 @@
         return $total * 60 + $tempo;
     }, 0);
     ?>
-
+    <script>
+        window.onbeforeunload = function() {
+            salvarTempo();
+        };
+    </script>
     <link rel="stylesheet" href="css/game.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/areasClicaveis.css">
@@ -29,27 +33,27 @@
 
 <body>
     <div class="data">
-            <div class="playing">
-                <h1>Jogando</h1>
-                <p><?php echo $nome; ?></p>
+        <div class="playing">
+            <h1>Jogando</h1>
+            <p><?php echo $nome; ?></p>
         </div>
 
         <div class="goal">
             <h1>Objetivo atual</h1>
-                <p>Saia do quarto</p>
+            <p>Saia do quarto</p>
         </div>
 
         <div class="time">
             <h1>Tempo total restante</h1>
-        <?php
+            <?php
             echo '<p id="cronometro"></p>'
-        ?>
-            </div>
+            ?>
         </div>
+    </div>
 
-        <script>
-            var tempoRestante = <?php echo $totalSegundos; ?>;
-        </script>
+    <script>
+        var tempoRestante = <?php echo $totalSegundos; ?>;
+    </script>
 
     <img class="image" src="../assets/bilhete.png" width="305" height="104" />
     <img class="image" src="../assets/papel1.png" width="150" height="150" />
@@ -90,5 +94,6 @@
     var idPuzzle = <?php echo $idPuzzle; ?>;
     var idPartida = <?php echo $idPartida; ?>;
 </script>
+<script src="../js/atualizarConteudo.js"></script>
 <script src="../js/cronometro.js"></script>
 <script src="../js/redirecionarPags.js"></script>

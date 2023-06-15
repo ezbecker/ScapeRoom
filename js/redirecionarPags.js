@@ -1,11 +1,6 @@
 var idPuzzle = idPuzzle;
 var idPartida = idPartida;
 
-function salvarTempo() {
-    var tempoAtual = tempoRestante; 
-    fetch('../model/salvarTempo.php?tempo=' + formatarTempo(tempoAtual)+'&idPartida='+idPartida);
-}
-
 function aplicarEstilos(areaId, width, height, left, top) {
     var area = document.getElementById(areaId);
     if (area) {
@@ -31,10 +26,6 @@ function redirecionar3() {
     window.location.replace('http://localhost/scaperoom/controller/sair.php');
 }
 
-function redirecionarPagina(pagina) {
-    window.location.href = 'http://localhost/scaperoom/view/game.php?pagina='+ pagina + '&idPuzzle=' + idPuzzle;
-}
-
 function redirecionarPerg1() {
     window.location.replace('http://localhost/scaperoom/view/puzzleRoom1.php?idPuzzle=' + idPuzzle);
 }
@@ -49,4 +40,18 @@ function redirecionarLixo() {
 
 function redirecionarTeclado() {
     window.location.replace('http://localhost/scaperoom/view/puzzleTeclado.php?idPuzzle=' + idPuzzle);
+}
+
+function redirecionarPagina(pagina) {
+    var url = 'http://localhost/scaperoom/view/game.php?pagina=' + pagina + '&idPuzzle=' + idPuzzle;
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            document.documentElement.innerHTML = data;
+            var scriptElements = document.getElementsByTagName('script');
+            for (var i = 0; i < scriptElements.length; i++) {
+                eval(scriptElements[i].innerHTML);
+            }
+        })
+        .catch(error => console.log(error));
 }

@@ -34,6 +34,11 @@ if (mysqli_num_rows($result) === 1) {
 
 <head>
   <title>Puzzle do Teclado</title>
+  <script>
+    window.onbeforeunload = function() {
+      salvarTempo();
+    };
+  </script>
   <link rel="stylesheet" href="css/puzzleTeclado.css">
   <link rel="stylesheet" href="css/game.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -147,5 +152,6 @@ if (mysqli_num_rows($result) === 1) {
   var idPuzzle = <?php echo $idPuzzle; ?>;
   var idPartida = <?php echo $idPartida; ?>;
 </script>
+<script src="../js/atualizarConteudo.js"></script>
 <script src="../js/cronometro.js"></script>
 <script src="../js/redirecionarPags.js"></script>

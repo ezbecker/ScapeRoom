@@ -1,15 +1,16 @@
+var intervalId;
 
-var cronometroElement = document.getElementById('cronometro');
-
-var intervalId = setInterval(function() {
-    if (tempoRestante <= 0) {
-        clearInterval(intervalId);
-        alert('Fim do tempo!');
-        return;
-    }
-    tempoRestante--;
-    cronometroElement.innerHTML = formatarTempo(tempoRestante);
-}, 1000);
+function iniciarCronometro() {
+    intervalId = setInterval(function() {
+        if (tempoRestante <= 0) {
+            clearInterval(intervalId);
+            alert('Fim do tempo!');
+            return;
+        }
+        tempoRestante--;
+        document.getElementById('cronometro').innerHTML = formatarTempo(tempoRestante);
+    }, 1000);
+}
 
 function formatarTempo(tempo) {
     var horas = Math.floor(tempo / 3600);
@@ -17,3 +18,4 @@ function formatarTempo(tempo) {
     var segundos = tempo % 60;
     return horas.toString().padStart(2, '0') + ':' + minutos.toString().padStart(2, '0') + ':' + segundos.toString().padStart(2, '0');
 }
+iniciarCronometro();
