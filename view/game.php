@@ -46,9 +46,9 @@
             <div class="goal">
                 <h1>Objetivo atual</h1>
                 <?php
-                if ($pagina > 1 && $pagina <= 9)
+                if ($pagina > 1 && $pagina <= 9 or $pagina == 0)
                     echo '<p>Saia do quarto</p>';
-                else if ($pagina >= 10 && $pagina <= 22)
+                else if ($pagina >= 10 && $pagina <= 24)
                     echo '<p>Descubra o código do elevador</p>';
                 ?>
             </div>

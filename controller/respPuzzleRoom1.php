@@ -11,7 +11,6 @@ while ($registros = mysqli_fetch_array($registro)) {
     $link = $registros["link"];
     $linkErro = $registros["linkErro"];
 }
-echo $link;
 if ($respUser == $respCorreta)
     header('Location: ' . $link);
 else

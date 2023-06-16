@@ -21,7 +21,7 @@ if ($pagina == 3) {
     echo '<div id="areaClicavelQuadro" onclick="salvarTempo(); redirecionarPagina(5);"></div>';
 } else if ($pagina == 4) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom4.png">';
-    echo '<div id="areaClicavelPuzzle1" onclick="salvarTempo(); redirecionarPerg1()"></div>';
+    echo '<div id="areaClicavelPuzzle1" onclick="salvarTempo(); redirecionarPagina(0)"></div>';
     echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarPagina(3);"></div>';
 } else if ($pagina == 5) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom2.png">';
@@ -49,4 +49,18 @@ if ($pagina == 3) {
 } else if ($pagina == 9) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom5.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarSetaSairRoom1()"></div>';
+} else if ($pagina == 0) {
+?>
+    <img src="../scenarios/inicialRoom/input.png">
+    <div class="container-fluid">
+        <form action="../controller/respPuzzleRoom1.php" method="POST">
+            <div class="nomeTextField">
+                <input type="text" name="respUser" class="form-control" placeholder="Resposta" required>
+            </div>
+            <input type="hidden" name="idPuzzle" id="idPuzzle" value="<?php echo $idPuzzle ?>">
+            <button type="submit" class="enviar">Enviar</button>
+        </form>
+    </div>
+<?php
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(4);"></div>';
 }
