@@ -11,19 +11,9 @@ if (mysqli_num_rows($result) === 1) {
     $tomografia = $row['tomografia'];
 }
 
-$query = "SELECT * FROM puzzle WHERE idPuzzle =" . $idPuzzle;
-$stmt = mysqli_prepare($conectado, $query);
-mysqli_stmt_execute($stmt);
-$result = mysqli_stmt_get_result($stmt);
-if (mysqli_num_rows($result) === 1) {
-    $row = mysqli_fetch_assoc($result);
-    $resposta = $row["resposta"];
-    $link = $row["link"];
-}
-
 if ($pagina == 10) {
     echo '<img src="../scenarios/scenario1/corridor/corridor1.png">';
-    echo '<div id="areaClicavelTeclado" onclick="salvarTempo(); redirecionarPagina(24)"></div>';
+    echo '<div id="areaClicavelTeclado" onclick="salvarTempo(); redirecionarTeclado()"></div>';
     echo '<div id="room1" onclick="salvarTempo(); redirecionarPagina(11)"></div>';
     echo '<div id="room2" onclick="salvarTempo(); redirecionarPagina(13)"></div>';
     echo '<div id="room3" onclick="salvarTempo(); redirecionarPagina(16)"></div>';
@@ -75,6 +65,4 @@ if ($pagina == 10) {
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(23)"></div>';
 } else if ($pagina == 23) {
     require_once "puzzleLixo.php";
-} else if ($pagina == 24) {
-    require_once "puzzleTeclado.php";
 }

@@ -77,21 +77,6 @@
         require_once "../view/initialRoom.php";
         require_once "../view/cenario1.php";
         ?>
-
-        <style>
-            .iframe-container {
-                width: 960px;
-                height: 540px;
-                display: block;
-                margin: 0 auto;
-            }
-
-            img {
-                width: 960px;
-                height: 540px;
-                border-radius: 16px;
-            }
-        </style>
         <script>
             var idPuzzle = <?php echo $idPuzzle; ?>;
             var idPartida = <?php echo $idPartida; ?>;
@@ -99,7 +84,6 @@
         <script src="../js/atualizarConteudo.js"></script>
         <script src="../js/redirecionarPags.js"></script>
         <script src="../js/cronometro.js"></script>
-
 </body>
 
 </html>
