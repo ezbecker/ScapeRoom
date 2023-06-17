@@ -51,6 +51,8 @@
                     echo '<p>Saia do quarto</p>';
                 else if ($pagina >= 10 && $pagina <= 23)
                     echo '<p>Descubra o código do elevador</p>';
+                else if ($pagina >= 24 && $pagina <= 40)
+                    echo '<p>Consiga acesso às escadas</p>';
                 ?>
             </div>
 

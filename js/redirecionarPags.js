@@ -34,6 +34,10 @@ function redirecionarSetaSairRoom1() {
     window.location.replace('http://localhost/scaperoom/controller/cenario1.php');
 }
 
+function redirecionarSetaSairCenario1() {
+    window.location.replace('http://localhost/scaperoom/controller/cenario2.php');
+}
+
 function redirecionarLixo() {
     window.location.replace('http://localhost/scaperoom/view/puzzleLixo.php');
 }
