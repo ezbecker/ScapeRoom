@@ -198,3 +198,92 @@
     top: 23em;
     cursor: pointer;
 }
+
+#areaClicavelPostit{
+    position: absolute;
+    width: 1.5em;
+    height: 2em;
+    margin-left: 560px;
+    top: 23em;
+    cursor: pointer;
+    background-color: red;
+}
+
+#areaClicavelLab1{
+    position: absolute;
+    width: 5em;
+    height: 2em;
+    margin-left: 720px;
+    top: 26em;
+    cursor: pointer;
+    background-color: red;
+}
+
+#areaClicavellab1-pc{
+    position: absolute;
+    width: 5em;
+    height: 2em;
+    margin-left: 720px;
+    top: 26em;
+    cursor: pointer;
+    background-color: red;
+} 
+#areaClicavelExame{
+    position: absolute;
+    width: 5em;
+    height: 2em;
+    margin-left: 720px;
+    top: 26em;
+    cursor: pointer;
+    background-color: red;
+}
+
+#areaClicavelSala{
+    position: absolute;
+    width: 5em;
+    height: 2em;
+    margin-left: 520px;
+    top: 26em;
+    cursor: pointer;
+    background-color: red;
+}
+
+#areaClicavelSala-pc{
+    position: absolute;
+    width: 5em;
+    height: 2em;
+    margin-left: 520px;
+    top: 26em;
+    cursor: pointer;
+    background-color: red;
+} 
+
+#areaClicavelPaciente{
+    position: absolute;
+    width: 5em;
+    height: 2em;
+    margin-left: 520px;
+    top: 26em;
+    cursor: pointer;
+    background-color: red;
+} 
+
+#areaClicavelLab2{
+    position: absolute;
+    width: 5em;
+    height: 2em;
+    margin-left: 320px;
+    top: 26em;
+    cursor: pointer;
+    background-color: red;
+}
+
+#areaClicavelCaderno{
+    position: absolute;
+    width: 5em;
+    height: 2em;
+    margin-left: 520px;
+    top: 26em;
+    cursor: pointer;
+    background-color: red;
+}
