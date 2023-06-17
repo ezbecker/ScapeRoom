@@ -5,6 +5,7 @@
     <?php
     require_once "../controller/userAutenticado.php";
 
+    $inventario = 0;
     $pagina = $_GET['pagina'];
     $idPuzzle = $_GET['idPuzzle'];
     require_once "../model/pegarIdUsuario.php";
@@ -46,9 +47,9 @@
             <div class="goal">
                 <h1>Objetivo atual</h1>
                 <?php
-                if ($pagina > 1 && $pagina <= 9 or $pagina == 0)
+                if ($pagina >= 0 && $pagina <= 9)
                     echo '<p>Saia do quarto</p>';
-                else if ($pagina >= 10 && $pagina <= 24)
+                else if ($pagina >= 10 && $pagina <= 23)
                     echo '<p>Descubra o código do elevador</p>';
                 ?>
             </div>
@@ -76,6 +77,7 @@
         }
         require_once "../view/initialRoom.php";
         require_once "../view/cenario1.php";
+        require_once "../view/cenario2.php";
         ?>
         <script>
             var idPuzzle = <?php echo $idPuzzle; ?>;

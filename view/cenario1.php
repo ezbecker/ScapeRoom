@@ -62,7 +62,7 @@ if ($pagina == 10) {
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(19)"></div>';
 } else if ($pagina == 22) {
     echo '<img src="../scenarios/scenario1/corridor/corridor2.png">';
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(23)"></div>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24)"></div>';
 } else if ($pagina == 23) {
     require_once "puzzleLixo.php";
 }
