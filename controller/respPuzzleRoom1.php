@@ -8,10 +8,19 @@ $query = ("SELECT * FROM puzzle WHERE idPuzzle = '$idPuzzle'");
 $registro = mysqli_query($conectado, $query);
 while ($registros = mysqli_fetch_array($registro)) {
     $respCorreta = $registros["resposta"];
-    $link = $registros["link"];
-    $linkErro = $registros["linkErro"];
 }
 if ($respUser == $respCorreta)
-    header('Location: ' . $link);
+    $pagina = 9;
 else
-    header('Location: ' . $linkErro);
+    $pagina = 4;
+?>
+<script>
+    var pagina = <?php echo $pagina; ?>;
+    var idPuzzle = <?php echo $idPuzzle; ?>;
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "../controller/sessao.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("pagina=" + pagina + "&idPuzzle=" + idPuzzle);
+
+    window.location.href = "../view/game.php";
+</script>

@@ -5,9 +5,13 @@
     <?php
     require_once "../controller/userAutenticado.php";
 
-    $inventario = 0;
-    $pagina = $_GET['pagina'];
-    $idPuzzle = $_GET['idPuzzle'];
+    if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
+        $pagina = $_SESSION['pagina'];
+        $idPuzzle = $_SESSION['idPuzzle'];
+    } else {
+        header("Location: login.php");
+        exit();
+    }
     require_once "../model/pegarIdUsuario.php";
 
     $query = "SELECT * FROM partida WHERE idUsuario = $idUsuario ORDER BY idPartida DESC LIMIT 1";
@@ -51,7 +55,7 @@
                     echo '<p>Saia do quarto</p>';
                 else if ($pagina >= 10 && $pagina <= 23)
                     echo '<p>Descubra o código do elevador</p>';
-                else if ($pagina >= 24 && $pagina <= 40)
+                else if ($pagina >= 24 && $pagina <= 50)
                     echo '<p>Consiga acesso às escadas</p>';
                 ?>
             </div>
@@ -85,8 +89,8 @@
             var idPuzzle = <?php echo $idPuzzle; ?>;
             var idPartida = <?php echo $idPartida; ?>;
         </script>
-        <script src="../js/atualizarConteudo.js"></script>
         <script src="../js/redirecionarPags.js"></script>
+        <script src="../js/atualizarConteudo.js"></script>
         <script src="../js/cronometro.js"></script>
 </body>
 

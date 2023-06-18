@@ -1,6 +1,3 @@
-var idPuzzle = idPuzzle;
-var idPartida = idPartida;
-
 function aplicarEstilos(areaId, width, height, left, top) {
     var area = document.getElementById(areaId);
     if (area) {
@@ -46,16 +43,10 @@ function redirecionarTeclado() {
     window.location.replace('http://localhost/scaperoom/view/puzzleTeclado.php?idPuzzle=' + idPuzzle);
 }
 
-function redirecionarPagina(pagina) {
-    var url = 'http://localhost/scaperoom/view/game.php?pagina=' + pagina + '&idPuzzle=' + idPuzzle;
-    fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            document.documentElement.innerHTML = data;
-            var scriptElements = document.getElementsByTagName('script');
-            for (var i = 0; i < scriptElements.length; i++) {
-                eval(scriptElements[i].innerHTML);
-            }
-        })
-        .catch(error => console.log(error));
+function redirecionarPagina(pagina, puzzle) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "../controller/sessao.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("pagina=" + pagina + "&idPuzzle=" + puzzle);
+    window.location.href = "../view/game.php";
 }

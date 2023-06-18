@@ -69,7 +69,7 @@ if (mysqli_num_rows($result) === 1) {
   <div class="iframe-container">
     <img src="../scenarios/scenario1/corridor/puzzleTeclado.png">
     <?php
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10)"></div>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10,' . $idPuzzle . ')"></div>';
     ?>
     <div class="container">
       <div class="button" data-symbol="1">Θ</div>
@@ -114,7 +114,8 @@ if (mysqli_num_rows($result) === 1) {
           buttons[i].classList.add('success');
         }
         salvarTempo();
-        window.location.href = 'http://localhost/scaperoom/controller/redirecionarRespCorreta.php?link=' + encodeURIComponent(link);
+        window.location.href = "../controller/sessao.php?pagina=22&idPuzzle='<?php echo $idPuzzle; ?>'";
+        window.location.href = "../view/game.php";
       } else {
         console.log('Código incorreto!');
         const buttons = document.querySelectorAll('.button');
