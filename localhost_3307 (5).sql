@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Tempo de geração: 30-Maio-2023 às 20:05
+-- Tempo de geração: 18-Jun-2023 às 02:42
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.0.25
 
@@ -47,6 +47,32 @@ INSERT INTO `cenario1` (`idPuzzle`, `pagina`, `nome`, `idade`, `sintomas`, `tomo
 (2, 14, ' Pedro Oliveira', 67, 'Dor abdominal, icterícia, perda de apetite e emagrecimento', 'Ultrassonografia abdominal mostrou uma massa hipoecogênica na cabeça do pâncreas, com dilatação das vias biliares e do ducto pancreático. Tomografia computadorizada confirmou a presença de um tumor pancreático com invasão vascular e metástases hepáticas'),
 (2, 17, 'Maria Santos', 32, 'Dor de cabeça, náusea, vômito, alteração da visão e convulsões', 'Ressonância magnética do crânio mostrou uma lesão expansiva no lobo temporal esquerdo, com efeito de massa e edema perilesional. Biópsia revelou um glioblastoma multiforme.'),
 (2, 20, 'Ana Souza', 28, 'Dor e inchaço no joelho direito, dificuldade para caminhar e movimentar a articulação', 'Radiografia do joelho direito mostrou erosões ósseas, estreitamento do espaço articular e deformidade em valgo. Ressonância magnética evidenciou sinovite, derrame articular e lesões de cartilagem e menisco.');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cenario2`
+--
+
+CREATE TABLE `cenario2` (
+  `idPuzzle` int(11) NOT NULL,
+  `paginaExame` int(11) NOT NULL,
+  `paginaPac` int(11) NOT NULL,
+  `pacienteNome` varchar(100) NOT NULL,
+  `pacienteCodigo` int(11) NOT NULL,
+  `exame` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `cenario2`
+--
+
+INSERT INTO `cenario2` (`idPuzzle`, `paginaExame`, `paginaPac`, `pacienteNome`, `pacienteCodigo`, `exame`) VALUES
+(3, 28, 38, 'maria', 1234, 'awww'),
+(3, 29, 35, 'carlos', 2342, 'er'),
+(3, 30, 39, 'ana', 2324, 'htf'),
+(3, 31, 37, 'enzo', 4444, 'dgrg'),
+(3, 32, 36, 'jose', 4534, 'trty');
 
 -- --------------------------------------------------------
 
@@ -172,7 +198,36 @@ INSERT INTO `partida` (`idPartida`, `idUsuario`, `tempo`, `terminou`) VALUES
 (80, 2, '00:35:46', 1),
 (81, 2, '00:26:44', 0),
 (82, 2, '00:36:19', 0),
-(83, 2, '00:11:25', 0);
+(83, 2, '00:08:33', 0),
+(84, 2, '00:39:46', 0),
+(85, 2, '00:39:49', 0),
+(86, 2, '00:38:40', 0),
+(87, 2, '00:37:03', 0),
+(88, 2, '00:34:48', 0),
+(89, 2, '00:39:54', 0),
+(90, 2, '00:40:00', 0),
+(91, 2, '00:39:23', 0),
+(92, 2, '00:39:48', 0),
+(93, 2, '00:38:56', 0),
+(94, 2, '00:39:09', 0),
+(95, 2, '00:36:59', 0),
+(96, 2, '00:39:59', 0),
+(97, 2, '00:38:51', 0),
+(98, 2, '00:25:38', 0),
+(99, 2, '00:37:01', 0),
+(100, 2, '00:36:35', 0),
+(101, 2, '00:00:00', 0),
+(102, 2, '00:16:47', 0),
+(103, 2, '00:00:00', 0),
+(104, 2, '00:25:29', 0),
+(105, 2, '00:00:00', 0),
+(106, 2, '00:35:58', 0),
+(107, 2, '00:00:00', 0),
+(108, 2, '00:18:30', 0),
+(109, 2, '00:26:54', 0),
+(110, 2, '00:35:12', 0),
+(111, 2, '00:00:00', 0),
+(112, 2, '00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -183,6 +238,7 @@ INSERT INTO `partida` (`idPartida`, `idUsuario`, `tempo`, `terminou`) VALUES
 CREATE TABLE `puzzle` (
   `idPuzzle` int(11) NOT NULL,
   `resposta` varchar(50) NOT NULL,
+  `resposta2` varchar(50) NOT NULL,
   `link` varchar(200) NOT NULL,
   `linkErro` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -191,9 +247,10 @@ CREATE TABLE `puzzle` (
 -- Extraindo dados da tabela `puzzle`
 --
 
-INSERT INTO `puzzle` (`idPuzzle`, `resposta`, `link`, `linkErro`) VALUES
-(1, 'Q180TR4', 'http://localhost/scaperoom/view/game.php?pagina=9&idPuzzle=0', ''),
-(2, '3425', 'http://localhost/scaperoom/view/game.php?pagina=22&idPuzzle=2', '');
+INSERT INTO `puzzle` (`idPuzzle`, `resposta`, `resposta2`, `link`, `linkErro`) VALUES
+(1, 'Q180TR4', '0', 'http://localhost/scaperoom/view/game.php?pagina=9&idPuzzle=0', 'http://localhost/scaperoom/view/game.php?pagina=4&idPuzzle=1'),
+(2, '3425', '0', 'http://localhost/scaperoom/view/game.php?pagina=22&idPuzzle=2', ''),
+(3, '1234', '4321', '', '');
 
 -- --------------------------------------------------------
 
@@ -224,14 +281,18 @@ INSERT INTO `usuario` (`idUsuario`, `nome`, `email`, `senha`) VALUES
 -- Índices para tabela `cenario1`
 --
 ALTER TABLE `cenario1`
-  ADD PRIMARY KEY (`pagina`),
   ADD KEY `fk` (`idPuzzle`);
+
+--
+-- Índices para tabela `cenario2`
+--
+ALTER TABLE `cenario2`
+  ADD KEY `fk_cenario2` (`idPuzzle`);
 
 --
 -- Índices para tabela `initialroom`
 --
 ALTER TABLE `initialroom`
-  ADD PRIMARY KEY (`pagina`),
   ADD KEY `fk_puzzle` (`idPuzzle`);
 
 --
@@ -262,13 +323,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `partida`
 --
 ALTER TABLE `partida`
-  MODIFY `idPartida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `idPartida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT de tabela `puzzle`
 --
 ALTER TABLE `puzzle`
-  MODIFY `idPuzzle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idPuzzle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
@@ -285,6 +346,12 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `cenario1`
   ADD CONSTRAINT `fk` FOREIGN KEY (`idPuzzle`) REFERENCES `puzzle` (`idPuzzle`);
+
+--
+-- Limitadores para a tabela `cenario2`
+--
+ALTER TABLE `cenario2`
+  ADD CONSTRAINT `fk_cenario2` FOREIGN KEY (`idPuzzle`) REFERENCES `puzzle` (`idPuzzle`);
 
 --
 -- Limitadores para a tabela `initialroom`
