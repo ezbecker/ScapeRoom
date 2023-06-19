@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <?php
+<?php
     require_once "../controller/userAutenticado.php";
 
     if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
@@ -45,11 +45,11 @@
             <p><?php echo $nome;?></p>
         </div>
 
-        <?php
+<?php
         if ($pagina != 1) {?>
             <div class="goal">
                 <h1>Objetivo atual</h1>
-                <?php
+<?php
                 if ($pagina >= 0 && $pagina <= 9)
                     echo '<p>Saia do quarto</p>';
                 else if ($pagina >= 10 && $pagina <= 23)
@@ -60,17 +60,17 @@
 
             <div class="time">
                 <h1>Tempo total restante</h1>
-            <?php
+<?php
             echo '<p id="cronometro"></p>';
         }?>
             </div>
             <script>
-                var tempoRestante = <?php echo $totalSegundos; ?>;
+                var tempoRestante =<?php echo $totalSegundos; ?>;
             </script>
     </div>
 
     <div class="iframe-container" id="content">
-        <?php
+<?php
         if ($pagina == 1) {
             echo '<img src="../scenarios/menu.gif">';
             echo '<div id="areaClicavel1" onclick="redirecionar1()"></div>';
@@ -82,8 +82,8 @@
         require_once "../view/cenario1.php";
         require_once "../view/cenario2.php";?>
         <script>
-            var idPuzzle = <?php echo $idPuzzle; ?>;
-            var idPartida = <?php echo $idPartida; ?>;
+            var idPuzzle =<?php echo $idPuzzle; ?>;
+            var idPartida =<?php echo $idPartida; ?>;
         </script>
     </div>
     <div id="mensagem"></div>
