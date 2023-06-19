@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION["email"])) {
+    exit();
+}
 if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
     $pagina = $_SESSION['pagina'];
     $idPuzzle = $_SESSION['idPuzzle'];
