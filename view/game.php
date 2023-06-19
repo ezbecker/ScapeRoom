@@ -3,9 +3,9 @@ require_once "../model/conexao.php";
 session_start();
 
 if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
-    $pagina = 1;
-    $idPuzzle = 1;
 }
+$pagina = 1;
+$idPuzzle = 1;
 $email = 'larissapretto009w@gmail.com';
 $query = "SELECT * FROM usuario WHERE email = '$email'";
 $stmt = mysqli_prepare($conectado, $query);
