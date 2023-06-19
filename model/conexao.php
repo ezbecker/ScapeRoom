@@ -1,11 +1,8 @@
 <?php
-$DB_SERVER = $_ENV['DB_SERVER'] . ':7777';
-$DB_USERNAME = $_ENV['DB_USERNAME'];
-$DB_PASSWORD = $_ENV['DB_PASSWORD'];
-$DB_NAME = $_ENV['DB_NAME'];
+$mysql_url = $_ENV['MYSQL_URL'];
 
 try {
-	$conectado = new mysqli($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
-} catch (Exception $e) {
+	$conectado = new PDO($mysql_url);
+} catch (PDOException $e) {
 	echo "Erro ao conectar: " . $e->getMessage();
 }
