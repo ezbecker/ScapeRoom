@@ -4,9 +4,28 @@ if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
     $pagina = $_SESSION['pagina'];
     $idPuzzle = $_SESSION['idPuzzle'];
 }
+
+require_once "../model/pegarIdUsuario.php";
+
+$query = "SELECT * FROM partida WHERE idUsuario = $idUsuario ORDER BY idPartida DESC LIMIT 1";
+$stmt = mysqli_prepare($conectado, $query);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+$row = mysqli_fetch_assoc($result);
+$tempo = $row["tempo"];
+$idPartida = $row["idPartida"];
+$inventario = $row["inventario"];
+$totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
+    return $total * 60 + $tempo;
+}, 0);
 ?>
 
 <head>
+    <script>
+        window.onbeforeunload = function() {
+            salvarTempo();
+        };
+    </script>
     <link rel="stylesheet" href="css/game.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/areasClicaveis.css">
