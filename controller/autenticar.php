@@ -1,5 +1,5 @@
 <?php
-ob_start()
+ob_start();
 require_once "../model/conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
