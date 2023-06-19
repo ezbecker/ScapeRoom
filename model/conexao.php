@@ -13,5 +13,3 @@ $conectado = new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_DATABASE, $DB_PORT
 if ($conectado->connect_error) {
 	die("Erro ao conectar: " . $conectado->connect_error);
 }
-
-echo "Conexão bem-sucedida!";
