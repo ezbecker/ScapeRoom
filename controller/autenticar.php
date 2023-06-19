@@ -20,21 +20,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 				$_SESSION["email"] = $email;
 				$_SESSION["pagina"] = 1;
 				$_SESSION["idPuzzle"] = 0;
-				header("Location: ../view/game.php");
+
 				exit();
 			} else {
-				header("Location: ../view/login.php?erro=credenciais");
+
 				exit();
 			}
 		} else {
-			header("Location: ../view/login.php?erro=credenciais");
+
 			exit();
 		}
 	} else {
-		header("Location: ../view/login.php?erro=campos");
+
 		exit();
 	}
 } else {
-	header("Location: ../view/login.php");
+
 	exit();
 }

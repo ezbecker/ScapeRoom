@@ -20,7 +20,7 @@ $stmt->bind_param("sss", $nome, $email, $senhaHash);
 
 try {
 	$stmt->execute();
-	header('location: ../view/login.php');
+
 } catch (Exception $e) {
 	die('Erro ao inserir dados: ' . $e->getMessage());
 }
