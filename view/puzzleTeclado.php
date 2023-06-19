@@ -113,9 +113,8 @@ if (mysqli_num_rows($result) === 1) {
           buttons[i].classList.add('success');
         }
         salvarTempo();
-        redirecionarPagina(22, idPuzzle)
+        redirecionarPagina(22, idPuzzle);
       } else {
-        console.log('Código incorreto!');
         const buttons = document.querySelectorAll('.button');
         for (let i = 0; i < buttons.length; i++) {
           buttons[i].classList.add('error');
