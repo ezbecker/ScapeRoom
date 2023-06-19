@@ -1,7 +1,6 @@
 <html>
 <head>
     <?php
-    session_start();
 
     if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
         $pagina = $_SESSION['pagina'];
