@@ -4,6 +4,7 @@
 <head>
     <?php
     require_once "../controller/userAutenticado.php";
+    require_once "../model/pegarIdUsuario.php";
 
     if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
         $pagina = $_SESSION['pagina'];
@@ -12,7 +13,7 @@
         header("Location: login.php");
         exit();
     }
-    require_once "../model/pegarIdUsuario.php";
+    
 
     $query = "SELECT * FROM partida WHERE idUsuario = $idUsuario ORDER BY idPartida DESC LIMIT 1";
     $stmt = mysqli_prepare($conectado, $query);
