@@ -21,18 +21,6 @@ if (mysqli_num_rows($result) === 1) {
     echo "Usuário não encontrado.";
 }
 
-
-$query = "SELECT * FROM partida WHERE idUsuario = $idUsuario ORDER BY idPartida DESC LIMIT 1";
-$stmt = mysqli_prepare($conectado, $query);
-mysqli_stmt_execute($stmt);
-$result = mysqli_stmt_get_result($stmt);
-$row = mysqli_fetch_assoc($result);
-$tempo = $row["tempo"];
-$idPartida = $row["idPartida"];
-$inventario = $row["inventario"];
-$totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
-    return $total * 60 + $tempo;
-}, 0);
 ?>
 
 <head>
