@@ -38,3 +38,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	header("Location: ../view/login.php");
 	exit();
 }
+ob_end_flush();
