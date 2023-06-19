@@ -1,6 +1,6 @@
 <head>
     <?php
-    session_start();
+    @session_start();
     include('../model/conexao.php');
 
     $respUser = $_POST['respUser'];
