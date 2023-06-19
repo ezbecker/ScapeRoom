@@ -44,9 +44,28 @@ function redirecionarTeclado() {
 }
 
 function redirecionarPagina(pagina, puzzle) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "../controller/sessao.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("pagina=" + pagina + "&idPuzzle=" + puzzle);
-    window.location.href = "../view/game.php";
+  const formData = new FormData();
+  formData.append('pagina', pagina);
+  formData.append('idPuzzle', puzzle);
+
+  fetch('../controller/sessao.php', {
+    method: 'POST',
+    body: formData
+  })
+    .then(response => {
+      if (response.ok) {
+        atualizarConteudo('../view/game.php');
+      } else {
+        console.log('Erro ao redirecionar a página.');
+      }
+    })
+    .catch(error => console.log(error));
 }
+
+
+
+  
+  
+  
+  
+  

@@ -24,7 +24,6 @@ $result = mysqli_stmt_get_result($stmt);
 if (mysqli_num_rows($result) === 1) {
   $row = mysqli_fetch_assoc($result);
   $resposta = $row["resposta"];
-  $link = $row["link"];
 }
 ?>
 
@@ -66,7 +65,7 @@ if (mysqli_num_rows($result) === 1) {
     var tempoRestante = <?php echo $totalSegundos; ?>;
   </script>
 
-  <div class="iframe-container">
+  <div class="iframe-container" id="content">
     <img src="../scenarios/scenario1/corridor/puzzleTeclado.png">
     <?php
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10,' . $idPuzzle . ')"></div>';
@@ -85,7 +84,7 @@ if (mysqli_num_rows($result) === 1) {
   </div>
 
   <script type="text/javascript">
-    const link = "<?php echo $link; ?>";
+    const idPuzzle = "<?php echo $idPuzzle; ?>";
     const resposta = "<?php echo $resposta; ?>";
     const code = resposta.split('');
     let currentInput = '';
@@ -114,8 +113,7 @@ if (mysqli_num_rows($result) === 1) {
           buttons[i].classList.add('success');
         }
         salvarTempo();
-        window.location.href = "../controller/sessao.php?pagina=22&idPuzzle='<?php echo $idPuzzle; ?>'";
-        window.location.href = "../view/game.php";
+        redirecionarPagina(22, idPuzzle)
       } else {
         console.log('Código incorreto!');
         const buttons = document.querySelectorAll('.button');
@@ -146,7 +144,6 @@ if (mysqli_num_rows($result) === 1) {
 
 </html>
 <script>
-  var idPuzzle = <?php echo $idPuzzle; ?>;
   var idPartida = <?php echo $idPartida; ?>;
 </script>
 <script src="../js/atualizarConteudo.js"></script>
