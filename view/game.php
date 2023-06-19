@@ -1,11 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
+    $pagina = $_SESSION['pagina'];
+    $idPuzzle = $_SESSION['idPuzzle'];
+}
+?>
+
 <head>
-    <?php
-    session_start();
-    if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
-        $pagina = $_SESSION['pagina'];
-        $idPuzzle = $_SESSION['idPuzzle'];
-    }
-    ?>
     <link rel="stylesheet" href="css/game.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/areasClicaveis.css">
