@@ -47,3 +47,13 @@ function salvarTempo() {
       .catch(error => console.log(error));
   }
   
+  function exibirMensagem(texto, tempo) {
+    var mensagemDiv = document.getElementById('mensagem');
+    mensagemDiv.innerText = texto;
+    mensagemDiv.style.display = 'block';
+
+    setTimeout(function() {
+        mensagemDiv.innerText = '';
+        mensagemDiv.style.display = 'none';
+    }, tempo);
+}
