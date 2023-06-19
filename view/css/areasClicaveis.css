@@ -297,3 +297,23 @@
     cursor: pointer;
     background-color: red;
 }
+
+#areaClicavelCorredor2{
+    position: absolute;
+    width: 5em;
+    height: 2em;
+    margin-left: 320px;
+    top: 36em;
+    cursor: pointer;
+    background-color: red;
+}
+
+#areaClicavelArmarioFechado{
+    position: absolute;
+    width: 5em;
+    height: 2em;
+    margin-left: 320px;
+    top: 36em;
+    cursor: pointer;
+    background-color: red;
+}

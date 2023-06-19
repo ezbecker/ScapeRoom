@@ -32,6 +32,7 @@ if ($pagina == 24) {
     echo '<div id="areaClicavelLab1" onclick="salvarTempo(); redirecionarPagina(26,' . $idPuzzle . ');"></div>';
     echo '<div id="areaClicavelSala" onclick="salvarTempo(); redirecionarPagina(33,' . $idPuzzle . ');"></div>';
     echo '<div id="areaClicavelPorta" onclick="salvarTempo(); redirecionarPagina(42,' . $idPuzzle . ');"></div>';
+    echo '<div id="areaClicavelCorredor2" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
     if ($inventario > 0)
         echo '<div id="areaClicavelLab2" onclick="salvarTempo(); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
     else {
@@ -101,7 +102,17 @@ if ($pagina == 24) {
 } else if ($pagina == 41) { //lab2-caderno
     echo '<img src="../scenarios/scenario2/lab2-caderno.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
-} else if ($pagina == 42) { //lab2-caderno
-    echo '<img src="../scenarios/scenario2/lab2-caderno.png">';
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
+} else if ($pagina == 42) { //porta
+    echo '<img src="../scenarios/scenario2/corredor.png">';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
+} else if ($pagina == 43) { //corredor2
+    echo '<img src="../scenarios/scenario2/corredor2.png">';
+    echo '<div id="areaClicavelArmarioFechado" onclick="salvarTempo(); redirecionarPagina(44,' . $idPuzzle . ');"></div>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
+} else if ($pagina == 44) { //armarioFechado
+    echo '<img src="../scenarios/scenario2/armarioFechado.png">';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
+} else if ($pagina == 45) { //armarioAberto
+    echo '<img src="../scenarios/scenario2/armarioAberto.png">';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
 }

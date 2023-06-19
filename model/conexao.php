@@ -1,8 +1,11 @@
 <?php
-$MYSQL_URL = $_ENV['MYSQL_URL'];
+define('DB_SERVER', 'localhost:3307');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'scaperoom');
 
 try {
-	$conectado = new PDO($MYSQL_URL);
-} catch (PDOException $e) {
+	$conectado = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+} catch (Exception $e) {
 	echo "Erro ao conectar: " . $e->getMessage();
 }
