@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../model/conexao.php";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
