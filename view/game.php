@@ -1,10 +1,15 @@
+<?php
+session_start();
+if (!isset($_SESSION["email"])) {
+    header("Location: ../view/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <?php
-    require_once "../controller/userAutenticado.php";
-
+<?php
     if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
         $pagina = $_SESSION['pagina'];
         $idPuzzle = $_SESSION['idPuzzle'];
