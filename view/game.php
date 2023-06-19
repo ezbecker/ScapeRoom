@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-<?php
+    <?php
     require_once "../controller/userAutenticado.php";
 
     if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
@@ -24,7 +24,8 @@
     $inventario = $row["inventario"];
     $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
         return $total * 60 + $tempo;
-    }, 0);?>
+    }, 0);
+    ?>
 
     <script>
         window.onbeforeunload = function() {
@@ -42,35 +43,38 @@
     <div class="data">
         <div class="playing">
             <h1>Jogando</h1>
-            <p><?php echo $nome;?></p>
+            <p><?php echo $nome; ?></p>
         </div>
 
-<?php
-        if ($pagina != 1) {?>
+        <?php
+        if ($pagina != 1) {
+        ?>
             <div class="goal">
                 <h1>Objetivo atual</h1>
-<?php
+                <?php
                 if ($pagina >= 0 && $pagina <= 9)
                     echo '<p>Saia do quarto</p>';
                 else if ($pagina >= 10 && $pagina <= 23)
                     echo '<p>Descubra o código do elevador</p>';
                 else if ($pagina >= 24 && $pagina <= 50)
-                    echo '<p>Consiga acesso às escadas</p>';?>
+                    echo '<p>Consiga acesso às escadas</p>';
+                ?>
             </div>
 
             <div class="time">
                 <h1>Tempo total restante</h1>
-<?php
+            <?php
             echo '<p id="cronometro"></p>';
-        }?>
+        }
+            ?>
             </div>
             <script>
-                var tempoRestante =<?php echo $totalSegundos; ?>;
+                var tempoRestante = <?php echo $totalSegundos; ?>;
             </script>
     </div>
 
     <div class="iframe-container" id="content">
-<?php
+        <?php
         if ($pagina == 1) {
             echo '<img src="../scenarios/menu.gif">';
             echo '<div id="areaClicavel1" onclick="redirecionar1()"></div>';
@@ -80,10 +84,11 @@
         }
         require_once "../view/initialRoom.php";
         require_once "../view/cenario1.php";
-        require_once "../view/cenario2.php";?>
+        require_once "../view/cenario2.php";
+        ?>
         <script>
-            var idPuzzle =<?php echo $idPuzzle; ?>;
-            var idPartida =<?php echo $idPartida; ?>;
+            var idPuzzle = <?php echo $idPuzzle; ?>;
+            var idPartida = <?php echo $idPartida; ?>;
         </script>
     </div>
     <div id="mensagem"></div>

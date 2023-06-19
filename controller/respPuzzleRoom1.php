@@ -15,8 +15,8 @@ else
     $pagina = 4;
 ?>
 <script>
-    var pagina =<?php echo $pagina; ?>;
-    var idPuzzle =<?php echo $idPuzzle; ?>;
+    var pagina = <?php echo $pagina; ?>;
+    var idPuzzle = <?php echo $idPuzzle; ?>;
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "../controller/sessao.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
