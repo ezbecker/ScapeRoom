@@ -72,7 +72,7 @@
             </script>
     </div>
 
-    <div class="iframe-container">
+    <div class="iframe-container" id="content">
         <?php
         if ($pagina == 1) {
             echo '<img src="../scenarios/menu.gif">';
@@ -89,9 +89,10 @@
             var idPuzzle = <?php echo $idPuzzle; ?>;
             var idPartida = <?php echo $idPartida; ?>;
         </script>
-        <script src="../js/redirecionarPags.js"></script>
-        <script src="../js/atualizarConteudo.js"></script>
-        <script src="../js/cronometro.js"></script>
+    </div>
+    <script src="../js/redirecionarPags.js"></script>
+    <script src="../js/atualizarConteudo.js"></script>
+    <script src="../js/cronometro.js"></script>
 </body>
 
 </html>
