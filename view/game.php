@@ -1,5 +1,5 @@
 <?php
-require_once "conexao.php";
+require_once "../model/conexao.php";
 session_start();
 
 if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
