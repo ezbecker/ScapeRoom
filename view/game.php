@@ -60,10 +60,28 @@ if (mysqli_num_rows($result) === 1) {
         }
             ?>
             </div>
+            <script>
+                var tempoRestante = <?php echo $totalSegundos; ?>;
+            </script>
     </div>
 
     <div class="iframe-container" id="content">
-
+        <?php
+        if ($pagina == 1) {
+            echo '<img src="../scenarios/menu.gif">';
+            echo '<div id="areaClicavel1" onclick="redirecionar1()"></div>';
+            echo '<div id="areaClicavel2" onclick="redirecionar2()"></div>';
+            echo '<div id="areaClicavel3" onclick="redirecionar3()"></div>';
+        } else if ($pagina == 2) {
+        }
+        require_once "../view/initialRoom.php";
+        require_once "../view/cenario1.php";
+        require_once "../view/cenario2.php";
+        ?>
+        <script>
+            var idPuzzle = <?php echo $idPuzzle; ?>;
+            var idPartida = <?php echo $idPartida; ?>;
+        </script>
     </div>
     <div id="mensagem"></div>
 
