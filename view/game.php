@@ -7,7 +7,7 @@ if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
     $idPuzzle = $_SESSION['idPuzzle'];
 }
 $email = $_SESSION['email'];
-$query = "SELECT * FROM usuario WHERE email = $email";
+$query = "SELECT * FROM usuario WHERE email = '$email'";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
