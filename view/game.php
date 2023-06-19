@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <?php
     session_start();
@@ -8,7 +7,7 @@
         $pagina = $_SESSION['pagina'];
         $idPuzzle = $_SESSION['idPuzzle'];
     } else {
-        header("Location: login.php");
+        
         exit();
     }
     require_once "../model/pegarIdUsuario.php";
