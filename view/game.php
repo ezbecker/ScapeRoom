@@ -41,4 +41,8 @@
 
     </div>
     <div id="mensagem"></div>
+
+    <script src="../js/redirecionarPags.js"></script>
+    <script src="../js/atualizarConteudo.js"></script>
+    <script src="../js/cronometro.js"></script>
 </body>
