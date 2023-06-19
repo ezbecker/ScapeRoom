@@ -56,8 +56,7 @@ if (mysqli_num_rows($result) === 1) {
     <div class="time">
       <h1>Tempo total restante</h1>
       <?php
-      echo '<p id="cronometro"></p>'
-      ?>
+      echo '<p id="cronometro"></p>'?>
     </div>
   </div>
 
@@ -68,8 +67,7 @@ if (mysqli_num_rows($result) === 1) {
   <div class="iframe-container" id="content">
     <img src="../scenarios/scenario1/corridor/puzzleTeclado.png">
     <?php
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10,' . $idPuzzle . ')"></div>';
-    ?>
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10,' . $idPuzzle . ')"></div>';?>
     <div class="container">
       <div class="button" data-symbol="1">Θ</div>
       <div class="button" data-symbol="2">ψ</div>
