@@ -1,12 +1,12 @@
 <?php
+require_once "conexao.php";
 session_start();
 
 if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
     $pagina = $_SESSION['pagina'];
     $idPuzzle = $_SESSION['idPuzzle'];
-    $email = $_SESSION["email"];
 }
-
+$email = $_SESSION["email"];
 $query = "SELECT * FROM usuario WHERE email = '$email'";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
