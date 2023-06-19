@@ -11,6 +11,4 @@ if (mysqli_num_rows($result) === 1) {
     $row = mysqli_fetch_assoc($result);
     $idUsuario = $row["idUsuario"];
     $nome = $row["nome"];
-} else {
-    echo "Usuário não encontrado.";
 }
