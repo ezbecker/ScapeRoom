@@ -1,6 +1,6 @@
 <head>
     <?php
-    require_once "../controller/userAutenticado.php";
+    session_start();
 
     if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
         $pagina = $_SESSION['pagina'];
