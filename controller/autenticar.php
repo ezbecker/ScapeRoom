@@ -1,4 +1,5 @@
 <?php
+ob_start()
 require_once "../model/conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -38,3 +39,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	header("Location: ../view/login.php");
 	exit();
 }
+ob_end_flush()
