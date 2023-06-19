@@ -1,34 +1,4 @@
-<html>
 <head>
-    <?php
-
-    if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
-        $pagina = $_SESSION['pagina'];
-        $idPuzzle = $_SESSION['idPuzzle'];
-    } else {
-        
-        exit();
-    }
-    require_once "../model/pegarIdUsuario.php";
-
-    $query = "SELECT * FROM partida WHERE idUsuario = $idUsuario ORDER BY idPartida DESC LIMIT 1";
-    $stmt = mysqli_prepare($conectado, $query);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    $row = mysqli_fetch_assoc($result);
-    $tempo = $row["tempo"];
-    $idPartida = $row["idPartida"];
-    $inventario = $row["inventario"];
-    $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
-        return $total * 60 + $tempo;
-    }, 0);
-    ?>
-
-    <script>
-        window.onbeforeunload = function() {
-            salvarTempo();
-        };
-    </script>
     <link rel="stylesheet" href="css/game.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/areasClicaveis.css">
@@ -65,35 +35,10 @@
         }
             ?>
             </div>
-            <script>
-                var tempoRestante = <?php echo $totalSegundos; ?>;
-            </script>
     </div>
 
     <div class="iframe-container" id="content">
-        <?php
-        if ($pagina == 1) {
-            echo '<img src="../scenarios/menu.gif">';
-            echo '<div id="areaClicavel1" onclick="redirecionar1()"></div>';
-            echo '<div id="areaClicavel2" onclick="redirecionar2()"></div>';
-            echo '<div id="areaClicavel3" onclick="redirecionar3()"></div>';
-        } else if ($pagina == 2) {
-        }
-        require_once "../view/initialRoom.php";
-        require_once "../view/cenario1.php";
-        require_once "../view/cenario2.php";
-        ?>
-        <script>
-            var idPuzzle = <?php echo $idPuzzle; ?>;
-            var idPartida = <?php echo $idPartida; ?>;
-            var inventario = <?php echo $inventario; ?>;
-        </script>
+
     </div>
     <div id="mensagem"></div>
-
-    <script src="../js/redirecionarPags.js"></script>
-    <script src="../js/atualizarConteudo.js"></script>
-    <script src="../js/cronometro.js"></script>
 </body>
-
-</html>
