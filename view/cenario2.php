@@ -153,7 +153,13 @@ if ($pagina == 24) {
 } else if ($pagina == 49) { //armarioAberto
     echo '<img src="../scenarios/scenario2/armarioAberto.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
+    if ($inventario == 1)
+        echo '<img onclick="salvarTempo(); atualizarInventario();" class="itemInventario" src="../assets/cartao.png">';
 } else if ($pagina == 50) { //armarioAberto
     echo '<img src="../scenarios/scenario2/armarioAberto.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
+    if ($inventario == 0)
+        echo '<img onclick="salvarTempo(); atualizarInventario();" class="itemInventario" src="../assets/chave.png">';
 }
+
+?>

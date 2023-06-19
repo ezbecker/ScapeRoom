@@ -57,3 +57,27 @@ function salvarTempo() {
         mensagemDiv.style.display = 'none';
     }, tempo);
 }
+
+function atualizarInventario() {
+
+  // Criar um objeto FormData para enviar os dados para o PHP
+  let formData = new FormData();
+  formData.append('idPartida', idPartida);
+  formData.append('inventario', inventario);
+  
+  // Enviar uma solicitação fetch para atualizar o inventário no banco de dados
+  fetch('../model/atualizar_inventario.php', {
+    method: 'POST',
+    body: formData
+  })
+    .then(response => {
+      if (response.ok) {
+        // Atualização bem-sucedida, recarregue a página ou faça outra ação necessária
+        location.reload();
+      } else {
+        // Tratar possíveis erros ou exibir uma mensagem de erro ao usuário
+        throw new Error('Erro ao atualizar o inventário.');
+      }
+    })
+    .catch(error => console.log(error));
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Tempo de geração: 19-Jun-2023 às 04:25
+-- Tempo de geração: 19-Jun-2023 às 20:53
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.0.25
 
@@ -355,7 +355,16 @@ INSERT INTO `partida` (`idPartida`, `idUsuario`, `tempo`, `inventario`, `termino
 (236, 2, '00:16:21', 1, 0),
 (237, 2, '00:33:53', 0, 0),
 (238, 2, '00:34:19', 2, 0),
-(239, 2, '00:36:20', 0, 0);
+(239, 2, '00:36:19', 0, 0),
+(240, 2, '00:00:00', 0, 0),
+(241, 2, '00:36:39', 0, 0),
+(242, 2, '00:35:38', 0, 0),
+(243, 2, '00:37:32', 0, 0),
+(244, 2, '00:39:56', 0, 0),
+(245, 2, '00:38:22', 0, 0),
+(246, 2, '00:14:22', 0, 0),
+(247, 2, '00:37:37', 0, 0),
+(248, 2, '00:35:57', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -378,7 +387,7 @@ CREATE TABLE `puzzle` (
 INSERT INTO `puzzle` (`idPuzzle`, `resposta`, `resposta2`, `link`, `linkErro`) VALUES
 (1, 'Q180TR4', '0', 'http://localhost/scaperoom/view/game.php?pagina=9&idPuzzle=0', 'http://localhost/scaperoom/view/game.php?pagina=4&idPuzzle=1'),
 (2, '3425', '0', 'http://localhost/scaperoom/view/game.php?pagina=22&idPuzzle=2', ''),
-(3, '1234', '4321', '', '');
+(3, '1234', '4444', '', '');
 
 -- --------------------------------------------------------
 
@@ -451,7 +460,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `partida`
 --
 ALTER TABLE `partida`
-  MODIFY `idPartida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
+  MODIFY `idPartida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=249;
 
 --
 -- AUTO_INCREMENT de tabela `puzzle`

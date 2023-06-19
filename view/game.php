@@ -89,6 +89,7 @@
         <script>
             var idPuzzle = <?php echo $idPuzzle; ?>;
             var idPartida = <?php echo $idPartida; ?>;
+            var inventario = <?php echo $inventario; ?>;
         </script>
     </div>
     <div id="mensagem"></div>
