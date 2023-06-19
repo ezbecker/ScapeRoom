@@ -24,8 +24,7 @@
     $inventario = $row["inventario"];
     $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
         return $total * 60 + $tempo;
-    }, 0);
-    ?>
+    }, 0);?>
 
     <script>
         window.onbeforeunload = function() {
@@ -43,12 +42,11 @@
     <div class="data">
         <div class="playing">
             <h1>Jogando</h1>
-            <p><?php echo $nome; ?></p>
+            <p><?php echo $nome;?></p>
         </div>
 
         <?php
-        if ($pagina != 1) {
-        ?>
+        if ($pagina != 1) {?>
             <div class="goal">
                 <h1>Objetivo atual</h1>
                 <?php
@@ -57,16 +55,14 @@
                 else if ($pagina >= 10 && $pagina <= 23)
                     echo '<p>Descubra o código do elevador</p>';
                 else if ($pagina >= 24 && $pagina <= 50)
-                    echo '<p>Consiga acesso às escadas</p>';
-                ?>
+                    echo '<p>Consiga acesso às escadas</p>';?>
             </div>
 
             <div class="time">
                 <h1>Tempo total restante</h1>
             <?php
             echo '<p id="cronometro"></p>';
-        }
-            ?>
+        }?>
             </div>
             <script>
                 var tempoRestante = <?php echo $totalSegundos; ?>;
@@ -84,8 +80,7 @@
         }
         require_once "../view/initialRoom.php";
         require_once "../view/cenario1.php";
-        require_once "../view/cenario2.php";
-        ?>
+        require_once "../view/cenario2.php";?>
         <script>
             var idPuzzle = <?php echo $idPuzzle; ?>;
             var idPartida = <?php echo $idPartida; ?>;
