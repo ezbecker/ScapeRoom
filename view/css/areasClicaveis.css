@@ -230,19 +230,20 @@
 
 #areaClicavellab1-pc{
     position: absolute;
-    width: 3em;
-    height: 2.5em;
-    margin-left: 270px;
-    top: 37.3em;
+    width: 21em;
+    height: 14em;
+    margin-left: 600px;
+    top: 16em;
     cursor: pointer;
     background-color: red;
 } 
+
 #areaClicavelExame{
     position: absolute;
     width: 5em;
-    height: 2em;
-    margin-left: 720px;
-    top: 26em;
+    height: 6em;
+    margin-left: 155px;
+    top: 11em;
     cursor: pointer;
     background-color: red;
 }
@@ -259,10 +260,10 @@
 
 #areaClicavelSala-pc{
     position: absolute;
-    width: 2em;
-    height: 2em;
-    margin-left: 360px;
-    top: 27.5em;
+    width: 9.8em;
+    height: 7.8em;
+    margin-left: 600px;
+    top: 22.5em;
     cursor: pointer;
     background-color: red;
 } 
@@ -270,9 +271,9 @@
 #areaClicavelPaciente{
     position: absolute;
     width: 5em;
-    height: 2em;
-    margin-left: 520px;
-    top: 26em;
+    height: 6em;
+    margin-left: 155px;
+    top: 11em;
     cursor: pointer;
     background-color: red;
 } 
@@ -319,10 +320,9 @@
 
 #areaClicavelArmarioFechado{
     position: absolute;
-    width: 5em;
-    height: 2em;
-    margin-left: 320px;
-    top: 36em;
+    width: 15em;
+    height: 25em;
+    top: 14em;
     cursor: pointer;
     background-color: red;
 }
