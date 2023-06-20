@@ -1,8 +1,15 @@
+body {
+  background-color: 110D24;
+}
+
 .iframe-container {
   width: 960px;
   height: 540px;
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
+  border: 2px solid #696969; 
+  border-radius: 16px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .itemInventario {
