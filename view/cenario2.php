@@ -83,9 +83,6 @@ if ($pagina == 24) {
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(26,' . $idPuzzle . ');"></div>';
 } else if ($pagina == 28 || $pagina == 29 || $pagina == 30 || $pagina == 31 || $pagina == 32) { //exame
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(26,' . $idPuzzle . ');"></div>';
-    echo '<div class="question-overlay">';
-    echo '<p class="question-text">' . $exame . " --- " . $pacienteCodigo . '</p>';
-    echo '</div>';
     if ($pagina == 28) {
         echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarPagina(29,' . $idPuzzle . ');"></div>';
         echo '<img src="../scenarios/scenario2/lab1-pc-w-1.png">';
@@ -105,6 +102,9 @@ if ($pagina == 24) {
         echo '<div id="areaClicavelSetaEsquerda" onclick="salvarTempo(); redirecionarPagina(31,' . $idPuzzle . ');"></div>';
         echo '<img src="../scenarios/scenario2/lab1-pc-w-3.png">';
     }
+    echo '<div class="question-overlay">';
+    echo '<p class="question-text">' . $exame . " --- " . $pacienteCodigo . '</p>';
+    echo '</div>';
 } else if ($pagina == 33) { //sala
     echo '<img src="../scenarios/scenario2/sala.png">';
     echo '<div id="areaClicavelSala-pc" onclick="salvarTempo(); redirecionarPagina(34,' . $idPuzzle . ');"></div>';
@@ -115,9 +115,6 @@ if ($pagina == 24) {
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(33,' . $idPuzzle . ');"></div>';
 } else if ($pagina == 35 || $pagina == 36 || $pagina == 37 || $pagina == 38 || $pagina == 39) { //paciente
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(33,' . $idPuzzle . ');"></div>';
-    echo '<div class="question-overlay">';
-    echo '<p class="question-text">' . $pacienteNome . " --- " . $pacienteCodigo . '</p>';
-    echo '</div>';
     if ($pagina == 35) {
         echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarPagina(36,' . $idPuzzle . ');"></div>';
         echo '<img src="../scenarios/scenario2/sala-pc-w-1.png">';
@@ -137,6 +134,9 @@ if ($pagina == 24) {
         echo '<div id="areaClicavelSetaEsquerda" onclick="salvarTempo(); redirecionarPagina(38,' . $idPuzzle . ');"></div>';
         echo '<img src="../scenarios/scenario2/sala-pc-w-3.png">';
     }
+    echo '<div class="question-overlay">';
+    echo '<p class="question-text">' . $pacienteNome . " --- " . $pacienteCodigo . '</p>';
+    echo '</div>';
 } else if ($pagina == 40) { //lab2
     echo '<img src="../scenarios/scenario2/lab2.gif">';
     echo '<div id="areaClicavelCaderno" onclick="salvarTempo(); redirecionarPagina(41,' . $idPuzzle . ');"></div>';
@@ -156,21 +156,6 @@ if ($pagina == 24) {
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
 } else if ($pagina == 44 || $pagina == 45 || $pagina == 46 || $pagina == 47 || $pagina == 48) { //armarioFechado
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
-    echo '<div class="question-overlay">';
-    echo '<p class="question-text-paciente">' . $pacienteNome . '</p>';
-    echo '</div>';
-?>
-    <div class="container-fluid-cenario2">
-        <form action="../controller/respPuzzleArmario.php" method="POST">
-            <div class="nomeTextField">
-                <input type="text" name="respUser" class="form-control" placeholder="Resposta" required>
-            </div>
-            <input type="hidden" name="idPuzzle" id="idPuzzle" value="<?php echo $idPuzzle ?>">
-            <input type="hidden" name="paginaArmario" id="idPuzzle" value="<?php echo $paginaArmario ?>">
-            <button type="submit" class="enviar">Enviar</button>
-        </form>
-    </div>
-<?php
     if ($pagina == 44) {
         echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarPagina(45,' . $idPuzzle . ');"></div>';
         echo '<img src="../scenarios/scenario2/armarioFechado-1.png">';
@@ -190,6 +175,21 @@ if ($pagina == 24) {
         echo '<div id="areaClicavelSetaEsquerda" onclick="salvarTempo(); redirecionarPagina(47,' . $idPuzzle . ');"></div>';
         echo '<img src="../scenarios/scenario2/armarioFechado-3.png">';
     }
+    echo '<div class="question-overlay">';
+    echo '<p class="question-text-paciente">' . $pacienteNome . '</p>';
+    echo '</div>';
+?>
+    <div class="container-fluid-cenario2">
+        <form action="../controller/respPuzzleArmario.php" method="POST">
+            <div class="nomeTextField">
+                <input type="text" name="respUser" class="form-control" placeholder="Resposta" required>
+            </div>
+            <input type="hidden" name="idPuzzle" id="idPuzzle" value="<?php echo $idPuzzle ?>">
+            <input type="hidden" name="paginaArmario" id="idPuzzle" value="<?php echo $paginaArmario ?>">
+            <button type="submit" class="enviar">Enviar</button>
+        </form>
+    </div>
+<?php
 } else if ($pagina == 49) { //armarioAberto
     echo '<img src="../scenarios/scenario2/armarioAberto.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
