@@ -1,7 +1,7 @@
 <head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
 </head>
 
 <?php
@@ -48,9 +48,9 @@ if (mysqli_num_rows($result2) === 1) {
     $exame = $row['exame'];
     $pacienteCodigo = $row['pacienteCodigo'];
 }
-if ($inventario == 1)
+if ($inventario == 1 && $_SESSION['vazio'] == 1)
     echo '<img class="itemInventario" src="../assets/chave.png">';
-else if ($inventario == 2)
+else if ($inventario == 2 && $_SESSION['vazio'] == 1)
     echo '<img class="itemInventario" src="../assets/cartao.png">';
 
 if ($pagina == 24) {
@@ -60,9 +60,11 @@ if ($pagina == 24) {
     echo '<div id="areaClicavelSala" onclick="salvarTempo(); redirecionarPagina(33,' . $idPuzzle . ');"></div>';
     echo '<div id="areaClicavelPorta" onclick="salvarTempo(); redirecionarPagina(42,' . $idPuzzle . ');"></div>';
     echo '<div id="areaClicavelCorredor2" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
-    if ($inventario > 0)
+    if ($inventario == 1) {
+        echo '<div id="areaClicavelLab2" onclick="salvarTempo(); atualizarVariavel(0); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
+    } else if ($inventario > 0) {
         echo '<div id="areaClicavelLab2" onclick="salvarTempo(); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
-    else {
+    } else {
         echo '<div id="areaClicavelLab2" onclick="exibirMensagem(\'A porta esta trancada\', 3000);"></div>';
     }
 } else if ($pagina == 25) {
@@ -177,12 +179,12 @@ if ($pagina == 24) {
     echo '<img src="../scenarios/scenario2/armarioAberto.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
     if ($inventario == 1)
-        echo '<img onclick="salvarTempo(); atualizarInventario();" class="itemInventarioPego" src="../assets/cartao.png">';
+        echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="itemInventarioPego" src="../assets/cartao.png">';
 } else if ($pagina == 50) { //armarioAberto
     echo '<img src="../scenarios/scenario2/armarioAberto.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
     if ($inventario == 0)
-        echo '<img onclick="salvarTempo(); atualizarInventario();" class="itemInventarioPego" src="../assets/chave.png">';
+        echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="itemInventarioPego" src="../assets/chave.png">';
 }
 
 ?>

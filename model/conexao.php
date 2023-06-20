@@ -1,14 +1,14 @@
 <?php
 $envFile = fopen(__DIR__ . '/.env', 'r');
 if ($envFile) {
-    while (($line = fgets($envFile)) !== false) {
- 		$line = trim($line);
- 		if (strpos($line, '=') !== false) {
- 			list($name, $value) = explode('=', $line, 2);
- 			$_ENV[$name] = $value;
- 		}
- 	}
- 	fclose($envFile);
+	while (($line = fgets($envFile)) !== false) {
+		$line = trim($line);
+		if (strpos($line, '=') !== false) {
+			list($name, $value) = explode('=', $line, 2);
+			$_ENV[$name] = $value;
+		}
+	}
+	fclose($envFile);
 }
 
 $DB_HOST = $_ENV['DB_HOST'];
