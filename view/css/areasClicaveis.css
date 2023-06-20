@@ -215,7 +215,6 @@
     margin-left: 810px;
     top: 21.5em;
     cursor: pointer;
-    background-color: red;
 }
 
 #areaClicavelLab1{
@@ -225,7 +224,6 @@
     margin-left: 590px;
     top: 35.3em;
     cursor: pointer;
-    background-color: red;
 }
 
 #areaClicavellab1-pc{
@@ -235,7 +233,6 @@
     margin-left: 600px;
     top: 16em;
     cursor: pointer;
-    background-color: red;
 } 
 
 #areaClicavelExame{
@@ -245,7 +242,6 @@
     margin-left: 155px;
     top: 11em;
     cursor: pointer;
-    background-color: red;
 }
 
 #areaClicavelSala{
@@ -255,7 +251,6 @@
     margin-left: 540px;
     top: 31.5em;
     cursor: pointer;
-    background-color: red;
 }
 
 #areaClicavelSala-pc{
@@ -265,7 +260,6 @@
     margin-left: 600px;
     top: 22.5em;
     cursor: pointer;
-    background-color: red;
 } 
 
 #areaClicavelPaciente{
@@ -275,7 +269,6 @@
     margin-left: 155px;
     top: 11em;
     cursor: pointer;
-    background-color: red;
 } 
 
 #areaClicavelLab2{
@@ -285,7 +278,6 @@
     margin-left: 360px;
     top: 27.5em;
     cursor: pointer;
-    background-color: red;
 }
 
 #areaClicavelCaderno{
@@ -295,7 +287,6 @@
     margin-left: 520px;
     top: 26em;
     cursor: pointer;
-    background-color: red;
 }
 
 #areaClicavelPorta{
@@ -305,7 +296,6 @@
     margin-left: 450px;
     top: 27.5em;
     cursor: pointer;
-    background-color: red;
 }
 
 #areaClicavelCorredor2{
@@ -315,7 +305,6 @@
     margin-left: 250px;
     top: 33em;
     cursor: pointer;
-    background-color: red;
 }
 
 #areaClicavelArmarioFechado{
@@ -324,5 +313,4 @@
     height: 25em;
     top: 14em;
     cursor: pointer;
-    background-color: red;
 }
