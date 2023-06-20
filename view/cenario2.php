@@ -11,6 +11,17 @@ else if ($pagina == 47)
 else if ($pagina == 48)
     $paginaArmario = 39;
 
+$query = "SELECT * FROM puzzle WHERE idPuzzle = $idPuzzle";
+$stmt = mysqli_prepare($conectado, $query);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+if (mysqli_num_rows($result) === 1) {
+    $row = mysqli_fetch_assoc($result);
+    $doenca1 = $row['doenca1'];
+    $doenca2 = $row['doenca2'];
+}
+
+
 $query = "SELECT * FROM puzzle natural join cenario2 WHERE idPuzzle = $idPuzzle and paginaPac = $pagina or paginaPac = $paginaArmario";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
@@ -51,6 +62,9 @@ if ($pagina == 24) {
 } else if ($pagina == 25) {
     echo '<img src="../scenarios/scenario2/postit.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
+    echo '<div class="question-overlay">';
+    echo '<p class="question-text">' . $doenca1 . '</p>';
+    echo '</div>';
 } else if ($pagina == 26) { //lab1
     echo '<img src="../scenarios/scenario2/lab1.png">';
     echo '<div id="areaClicavellab1-pc" onclick="salvarTempo(); redirecionarPagina(27,' . $idPuzzle . ');"></div>';
@@ -112,6 +126,9 @@ if ($pagina == 24) {
 } else if ($pagina == 41) { //lab2-caderno
     echo '<img src="../scenarios/scenario2/lab2-caderno.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
+    echo '<div class="question-overlay">';
+    echo '<p class="question-text">' . $doenca2 . '</p>';
+    echo '</div>';
 } else if ($pagina == 42) { //porta
     echo '<img src="../scenarios/scenario2/corredor.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
