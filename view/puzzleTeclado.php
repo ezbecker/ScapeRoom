@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <?php
 session_start();
 
@@ -147,13 +145,10 @@ if (mysqli_num_rows($result) === 1) {
       }
     });
   </script>
-
+  <script>
+    var idPartida = <?php echo $idPartida; ?>;
+  </script>
+  <script src="../js/atualizarConteudo.js"></script>
+  <script src="../js/cronometro.js"></script>
+  <script src="../js/redirecionarPags.js"></script>
 </body>
-
-</html>
-<script>
-  var idPartida = <?php echo $idPartida; ?>;
-</script>
-<script src="../js/atualizarConteudo.js"></script>
-<script src="../js/cronometro.js"></script>
-<script src="../js/redirecionarPags.js"></script>
