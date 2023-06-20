@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../model/conexao.php";
 
 if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle']) && isset($_SESSION['email'])) {
