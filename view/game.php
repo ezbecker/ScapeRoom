@@ -7,7 +7,6 @@ if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle']) && isset($_SESSIO
     $idPuzzle = $_SESSION['idPuzzle'];
     $email = $_SESSION['email'];
 }
-
 $query = "SELECT * FROM usuario WHERE email = '$email'";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
@@ -28,7 +27,6 @@ $inventario = $row["inventario"];
 $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
     return $total * 60 + $tempo;
 }, 0);
-$_SESSION['vazio'] = 0;
 ?>
 
 <head>
