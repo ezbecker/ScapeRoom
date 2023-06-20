@@ -1,4 +1,5 @@
 <?php
+require_once "../model/conexao.php";
 //session_start();
 $email = 'larissapretto009w@gmail.com';
 $query = "SELECT * FROM usuario WHERE email = '$email'";
