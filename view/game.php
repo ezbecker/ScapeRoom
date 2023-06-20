@@ -1,12 +1,13 @@
 <?php
 require_once "../model/conexao.php";
-session_start();
 
 if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle']) && isset($_SESSION['email'])) {
     $pagina = $_SESSION['pagina'];
     $idPuzzle = $_SESSION['idPuzzle'];
     $email = $_SESSION['email'];
-} else echo 'sf';
+} else
+    exit();
+
 $query = "SELECT * FROM usuario WHERE email = '$email'";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
