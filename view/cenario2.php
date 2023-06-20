@@ -1,3 +1,9 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+</head>
+
 <?php
 $paginaArmario = 0;
 if ($pagina == 44)
@@ -65,7 +71,7 @@ if ($pagina == 24) {
     echo '<img src="../scenarios/scenario2/postit.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
     echo '<div class="question-overlay">';
-    echo '<p class="question-text">' . $doenca1 . '</p>';
+    echo '<p class="question-text-doenca1">' . $doenca1 . '</p>';
     echo '</div>';
 } else if ($pagina == 26) { //lab1
     echo '<img src="../scenarios/scenario2/lab1.png">';
@@ -142,10 +148,10 @@ if ($pagina == 24) {
     echo '<img src="../scenarios/scenario2/armarioFechado.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
     echo '<div class="question-overlay">';
-    echo '<p class="question-text">' . $pacienteNome . '</p>';
+    echo '<p class="question-text-paciente">' . $pacienteNome . '</p>';
     echo '</div>';
 ?>
-    <div class="container-fluid">
+    <div class="container-fluid-cenario2">
         <form action="../controller/respPuzzleArmario.php" method="POST">
             <div class="nomeTextField">
                 <input type="text" name="respUser" class="form-control" placeholder="Resposta" required>
@@ -173,12 +179,12 @@ if ($pagina == 24) {
     echo '<img src="../scenarios/scenario2/armarioAberto.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
     if ($inventario == 1)
-        echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="itemInventario" src="../assets/cartao.png">';
+        echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="itemInventarioPego" src="../assets/cartao.png">';
 } else if ($pagina == 50) { //armarioAberto
     echo '<img src="../scenarios/scenario2/armarioAberto.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
     if ($inventario == 0)
-        echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="itemInventario" src="../assets/chave.png">';
+        echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="itemInventarioPego" src="../assets/chave.png">';
 }
 
 ?>
