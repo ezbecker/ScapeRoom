@@ -2,11 +2,11 @@
 require_once "../model/conexao.php";
 session_start();
 
-if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle'])) {
+if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle']) && isset($_SESSION['email'])) {
     $pagina = $_SESSION['pagina'];
     $idPuzzle = $_SESSION['idPuzzle'];
     $email = $_SESSION['email'];
-}
+} else echo 'sf';
 $query = "SELECT * FROM usuario WHERE email = '$email'";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
@@ -16,7 +16,7 @@ if (mysqli_num_rows($result) === 1) {
     $idUsuario = $row["idUsuario"];
     $nome = $row["nome"];
 }
-$query = "SELECT * FROM partida WHERE idUsuario = $idUsuario ORDER BY idPartida DESC LIMIT 1";
+$query = "SELECT * FROM partida WHERE idUsuario = '$idUsuario' ORDER BY idPartida DESC LIMIT 1";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
