@@ -28,8 +28,8 @@ $inventario = $row["inventario"];
 $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
     return $total * 60 + $tempo;
 }, 0);
+$_SESSION['vazio'] = 0;
 ?>
-$semItem = 0;
 
 <head>
     <script>
