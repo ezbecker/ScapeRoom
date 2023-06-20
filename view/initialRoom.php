@@ -27,7 +27,20 @@ if ($pagina == 3) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom2.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(3,' . $idPuzzle . ');"></div>';
 } else if ($pagina == 6 ||  $pagina == 7 ||  $pagina == 8) {
-    echo '<img src="../scenarios/inicialRoom/inicialRoom3.png">';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(3,' . $idPuzzle . ');"></div>';
+    if ($pagina == 6) {
+        echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarPagina(7,' . $idPuzzle . ');"></div>';
+        echo '<img src="../scenarios/inicialRoom/inicialRoom-book-1.png">';
+    }
+    if ($pagina == 7) {
+        echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarPagina(8,' . $idPuzzle . ');"></div>';
+        echo '<div id="areaClicavelSetaEsquerda" onclick="salvarTempo(); redirecionarPagina(6,' . $idPuzzle . ');"></div>';
+        echo '<img src="../scenarios/inicialRoom/inicialRoom-book-2.png">';
+    }
+    if ($pagina == 8) {
+        echo '<div id="areaClicavelSetaEsquerda" onclick="salvarTempo(); redirecionarPagina(7,' . $idPuzzle . ');"></div>';
+        echo '<img src="../scenarios/inicialRoom/inicialRoom-book-3.png">';
+    }
     echo '<div class="question-overlay">';
     echo '<p class="question-text">' . $pergunta . '</p>';
     echo '</div>';
@@ -37,15 +50,6 @@ if ($pagina == 3) {
     echo '<p class="alternativa-text3">' . $alternativa3 . '</p>';
     echo '<p class="alternativa-text4">' . $alternativa4 . '</p>';
     echo '</div>';
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(3,' . $idPuzzle . ');"></div>';
-    if ($pagina == 6)
-        echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarPagina(7,' . $idPuzzle . ');"></div>';
-    if ($pagina == 7) {
-        echo '<div id="areaClicavelSetaDireita" onclick="salvarTempo(); redirecionarPagina(8,' . $idPuzzle . ');"></div>';
-        echo '<div id="areaClicavelSetaEsquerda" onclick="salvarTempo(); redirecionarPagina(6,' . $idPuzzle . ');"></div>';
-    }
-    if ($pagina == 8)
-        echo '<div id="areaClicavelSetaEsquerda" onclick="salvarTempo(); redirecionarPagina(7,' . $idPuzzle . ');"></div>';
 } else if ($pagina == 9) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom5.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarSetaSairRoom1()"></div>';
