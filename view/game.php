@@ -29,6 +29,7 @@ $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
     return $total * 60 + $tempo;
 }, 0);
 ?>
+$semItem = 0;
 
 <head>
     <script>
