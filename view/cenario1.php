@@ -62,7 +62,7 @@ if ($pagina == 10) {
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(19,' . $idPuzzle . ')"></div>';
 } else if ($pagina == 22) {
     echo '<img src="../scenarios/scenario1/corridor/corridor2.png">';
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarSetaSairCenario1();"></div>';
+    echo '<div id="areaClicavelSairCenario1" onclick="salvarTempo(); redirecionarSetaSairCenario1();"></div>';
 } else if ($pagina == 23) {
     require_once "puzzleLixo.php";
 }

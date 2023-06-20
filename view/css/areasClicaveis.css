@@ -199,32 +199,41 @@
     cursor: pointer;
 }
 
+#areaClicavelSairCenario1 {
+    position: absolute;
+    width: 4em;
+    height: 3.2em;
+    margin-left: 440px;
+    top: 32em;
+    cursor: pointer;
+}
+
 #areaClicavelPostit{
     position: absolute;
-    width: 1.5em;
+    width: 2em;
     height: 2em;
-    margin-left: 560px;
-    top: 23em;
+    margin-left: 810px;
+    top: 21.5em;
     cursor: pointer;
     background-color: red;
 }
 
 #areaClicavelLab1{
     position: absolute;
-    width: 5em;
-    height: 2em;
-    margin-left: 720px;
-    top: 26em;
+    width: 3em;
+    height: 2.5em;
+    margin-left: 590px;
+    top: 35.3em;
     cursor: pointer;
     background-color: red;
 }
 
 #areaClicavellab1-pc{
     position: absolute;
-    width: 5em;
-    height: 2em;
-    margin-left: 720px;
-    top: 26em;
+    width: 3em;
+    height: 2.5em;
+    margin-left: 270px;
+    top: 37.3em;
     cursor: pointer;
     background-color: red;
 } 
@@ -240,20 +249,20 @@
 
 #areaClicavelSala{
     position: absolute;
-    width: 5em;
+    width: 2em;
     height: 2em;
-    margin-left: 520px;
-    top: 26em;
+    margin-left: 540px;
+    top: 31.5em;
     cursor: pointer;
     background-color: red;
 }
 
 #areaClicavelSala-pc{
     position: absolute;
-    width: 5em;
+    width: 2em;
     height: 2em;
-    margin-left: 520px;
-    top: 26em;
+    margin-left: 360px;
+    top: 27.5em;
     cursor: pointer;
     background-color: red;
 } 
@@ -270,10 +279,10 @@
 
 #areaClicavelLab2{
     position: absolute;
-    width: 5em;
+    width: 2em;
     height: 2em;
-    margin-left: 320px;
-    top: 26em;
+    margin-left: 360px;
+    top: 27.5em;
     cursor: pointer;
     background-color: red;
 }
@@ -290,20 +299,20 @@
 
 #areaClicavelPorta{
     position: absolute;
-    width: 5em;
+    width: 2em;
     height: 2em;
-    margin-left: 320px;
-    top: 15em;
+    margin-left: 450px;
+    top: 27.5em;
     cursor: pointer;
     background-color: red;
 }
 
 #areaClicavelCorredor2{
     position: absolute;
-    width: 5em;
-    height: 2em;
-    margin-left: 320px;
-    top: 36em;
+    width: 3em;
+    height: 2.5em;
+    margin-left: 250px;
+    top: 33em;
     cursor: pointer;
     background-color: red;
 }
