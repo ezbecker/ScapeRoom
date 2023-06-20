@@ -148,8 +148,13 @@ if ($pagina == 24) {
     echo '<p class="question-text">' . $doenca2 . '</p>';
     echo '</div>';
 } else if ($pagina == 42) { //porta
-    echo '<img src="../scenarios/scenario2/corredor.png">';
+    echo '<img src="../scenarios/scenario2/terminalCartao.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
+    if ($inventario == 2) {
+        echo '<div id="areaClicavelLab1" onclick="salvarTempo(); atualizarVariavel(0); redirecionarPagina(51,' . $idPuzzle . ');"></div>';
+    } else {
+        echo '<div id="areaClicavelLab1" onclick="exibirMensagem(\'Cartão necessário\', 3000);"></div>';
+    }
 } else if ($pagina == 43) { //corredor2
     echo '<img src="../scenarios/scenario2/corredor2.png">';
     echo '<div id="areaClicavelArmarioFechado" onclick="salvarTempo(); redirecionarPagina(44,' . $idPuzzle . ');"></div>';
