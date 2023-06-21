@@ -1,7 +1,8 @@
 <?php
+session_start();
 require_once "../model/conexao.php";
-//session_start();
-$email = 'larissapretto009w@gmail.com';
+$email = $_SESSION['email'];
+
 $query = "SELECT * FROM usuario WHERE email = '$email'";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
