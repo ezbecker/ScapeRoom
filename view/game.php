@@ -31,9 +31,12 @@ $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
 
 <head>
     <script>
-        window.onbeforeunload = function() {
-            salvarTempo();
-        };
+        var pagina = <?php echo $Pagina; ?>;
+        if (pagina != 1 && pagina != 51 && pagina != 333 && $pagina != 2) {
+            window.onbeforeunload = function() {
+                salvarTempo();
+            };
+        }
     </script>
     <link rel="stylesheet" href="css/game.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -50,7 +53,7 @@ $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
         </div>
 
         <?php
-        if ($pagina != 1) {
+        if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2) {
         ?>
             <div class="goal">
                 <h1>Objetivo atual</h1>
@@ -85,7 +88,7 @@ $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
             echo '<div id="areaClicavel3" onclick="redirecionarSair()"></div>';
         } else if ($pagina == 2) {
         } else if ($pagina == 333) {
-            $query = "SELECT * FROM usuario natural join partida where terminou = 1 ORDER BY tempo ASC";
+            $query = "SELECT * FROM usuario natural join partida where terminou = 1 ORDER BY tempo DESC";
             $result = mysqli_query($conectado, $query);
 
             echo '<h2>Ranking dos Usuários</h2>';

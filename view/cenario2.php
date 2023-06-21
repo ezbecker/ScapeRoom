@@ -207,6 +207,9 @@ if ($pagina == 24) {
     if ($inventario == 0)
         echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="itemInventarioPego" src="../assets/chave.png">';
 } else if ($pagina == 51) {
+    echo '<p>Parabéns você terminou em</p>';
+    echo '<p id="cronometro"></p>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(1,0);"></div>';
 }
 
 ?>
