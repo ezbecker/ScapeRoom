@@ -2,11 +2,7 @@ function redirecionar1() {
     window.location.replace('../controller/room1.php');
 }
 
-function redirecionar2() {
-    window.location.replace('../view/ranking.php');
-}
-
-function redirecionar3() {
+function redirecionarSair() {
     window.location.replace('../controller/sair.php');
 }
 

@@ -81,9 +81,23 @@ $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
         if ($pagina == 1) {
             echo '<img src="../scenarios/menu.gif">';
             echo '<div id="areaClicavel1" onclick="redirecionar1()"></div>';
-            echo '<div id="areaClicavel2" onclick="redirecionar2()"></div>';
-            echo '<div id="areaClicavel3" onclick="redirecionar3()"></div>';
+            echo '<div id="areaClicavel2" onclick="redirecionarPagina(333,0);"></div>';
+            echo '<div id="areaClicavel3" onclick="redirecionarSair()"></div>';
         } else if ($pagina == 2) {
+        } else if ($pagina == 333) {
+            $query = "SELECT * FROM usuario natural join partida where terminou = 1 ORDER BY tempo ASC";
+            $result = mysqli_query($conectado, $query);
+
+            echo '<h2>Ranking dos Usuários</h2>';
+            echo '<ol id="ranking-list">';
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<li>';
+                echo '<span class="name">' . $row['nome'] . "  " . '</span>';
+                echo '<span class="time">' . $row['tempo'] . '</span>';
+                echo '</li>';
+            }
+            echo '</ol>';
+            echo '<div id="areaClicavelSetaBaixo" onclick="redirecionarPagina(1,0);"></div>';
         }
         require_once "../view/initialRoom.php";
         require_once "../view/cenario1.php";

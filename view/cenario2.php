@@ -148,11 +148,11 @@ if ($pagina == 24) {
     echo '<div class="question-overlay">';
     echo '<p class="question-text">' . $doenca2 . '</p>';
     echo '</div>';
-} else if ($pagina == 42) { //porta
+} else if ($pagina == 42) { //cartao
     echo '<img src="../scenarios/scenario2/terminalCartao.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
     if ($inventario == 2) {
-        echo '<div id="areaClicavelLab1" onclick="salvarTempo(); atualizarVariavel(0); redirecionarPagina(51,' . $idPuzzle . ');"></div>';
+        echo '<div id="areaClicavelLab1" onclick="salvarTempo(); atualizarVariavel(0); fimGame(' . $idPartida . '); redirecionarPagina(51,' . $idPuzzle . ');"></div>';
     } else {
         echo '<div id="areaClicavelLab1" onclick="exibirMensagem(\'Cartão necessário\', 3000);"></div>';
     }
@@ -206,6 +206,7 @@ if ($pagina == 24) {
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
     if ($inventario == 0)
         echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="itemInventarioPego" src="../assets/chave.png">';
+} else if ($pagina == 51) {
 }
 
 ?>

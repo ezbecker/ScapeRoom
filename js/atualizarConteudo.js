@@ -24,13 +24,11 @@ function salvarTempo() {
   
           const newScripts = contentElement.getElementsByTagName('script');
   
-          // Remove os scripts existentes
           const existingScripts = document.getElementsByTagName('script');
           for (let i = 0; i < existingScripts.length; i++) {
             existingScripts[i].parentNode.removeChild(existingScripts[i]);
           }
   
-          // Adiciona os novos scripts
           for (let i = 0; i < newScripts.length; i++) {
             const script = document.createElement('script');
             if (newScripts[i].src) {
@@ -83,6 +81,24 @@ function atualizarVariavel(vazio) {
   formData.append('vazio', vazio);
   
   fetch('../controller/atualizar_inventarioVazio.php', {
+    method: 'POST',
+    body: formData
+  })
+    .then(response => {
+      if (response.ok) {
+        location.reload();
+      } else {
+        throw new Error('Erro ao atualizar o inventário.');
+      }
+    })
+    .catch(error => console.log(error));
+}
+
+function fimGame(idPartida) {
+  let formData = new FormData();
+  formData.append('idPartida', idPartida);
+  
+  fetch('../model/fimGame.php', {
     method: 'POST',
     body: formData
   })
