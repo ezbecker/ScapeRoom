@@ -105,7 +105,7 @@ if ($pagina == 24) {
     echo '<div class="question-overlay">';
     echo '<p class="question-text">' . $pacienteCodigo . '</p>';
     echo '</div>';
-    echo '  <img src="../assets/exames/' . $exame . '">';
+    echo '  <img class="exame" src="../assets/exames/' . $exame . '">';
 } else if ($pagina == 33) { //sala
     echo '<img src="../scenarios/scenario2/sala.png">';
     echo '<div id="areaClicavelSala-pc" onclick="salvarTempo(); redirecionarPagina(34,' . $idPuzzle . ');"></div>';
@@ -136,7 +136,8 @@ if ($pagina == 24) {
         echo '<img src="../scenarios/scenario2/sala-pc-w-3.png">';
     }
     echo '<div class="question-overlay">';
-    echo '<p class="question-text">' . $pacienteNome . " --- " . $pacienteCodigo . '</p>';
+    echo '<p class="paciente-nome">' . $pacienteNome . '</p>';
+    echo '<p class="paciente-codigo">' . $pacienteCodigo . '</p>';
     echo '</div>';
 } else if ($pagina == 40) { //lab2
     echo '<img src="../scenarios/scenario2/lab2.gif">';

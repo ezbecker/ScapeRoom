@@ -24,18 +24,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 				header("Location: ../view/game.php");
 				exit();
 			} else {
-				header("Location: ../view/login.php?erro=credenciais");
+				header("Location: ../index.php?erro=credenciais");
 				exit();
 			}
 		} else {
-			header("Location: ../view/login.php?erro=credenciais");
+			header("Location: ../index.php?erro=credenciais");
 			exit();
 		}
 	} else {
-		header("Location: ../view/login.php?erro=campos");
+		header("Location: ../index.php?erro=campos");
 		exit();
 	}
 } else {
-	header("Location: ../view/login.php");
+	header("Location: ../index.php");
 	exit();
 }

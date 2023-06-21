@@ -131,8 +131,8 @@ img {
 
 .question-text {
   position: absolute;
-  margin-top: -460px;
-  margin-left: 240px;
+  margin-top: -430px;
+  margin-left: 148px;
   width: 220px;
   text-align: justify;
 }
@@ -141,5 +141,26 @@ img {
   position: absolute;
   margin-top: -450px;
   margin-left: 500px;
+  width: 220px;
+}
+
+.exame {
+  max-width:35%; 
+  height: auto;
+  margin-left: 310px;
+  margin-top: -460px;
+}
+
+.paciente-nome {
+  position: absolute;
+  margin-top: -360px;
+  margin-left: 307px;
+  width: 220px;
+}
+
+.paciente-codigo {
+  position: absolute;
+  margin-top: -215px;
+  margin-left: 308px;
   width: 220px;
 }

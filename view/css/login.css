@@ -3,6 +3,7 @@ body {
   align-items: center;
   text-align: center;
   width: 100%;
+  background-color: #110D24;
 }
 
 .container {
@@ -21,6 +22,7 @@ body {
   width: 100%;
   max-width: 400px;
   height: auto;
+  right: 0px;;
 }
 
 .form {
@@ -34,6 +36,7 @@ body {
   font-size: 26px;
   line-height: 33px;
   padding: 0 15px;
+  color: white;
 }
 
 .subtitle {
@@ -41,7 +44,7 @@ body {
   font-size: 13px;
   line-height: 24px;
   letter-spacing: 0.5px;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
   padding: 8px 15px;
 }
 
@@ -53,7 +56,7 @@ body {
 .container-fluid input {
   box-sizing: border-box;
   margin-top: 16px;
-  background: #FFFFFF;
+  background: #110D24;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   height: 64px;
@@ -63,6 +66,8 @@ body {
   line-height: 24px;
   letter-spacing: 0.5px;
   width: 100%;
+  border: 2px solid #696969;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .passwordHelp {
@@ -73,7 +78,7 @@ body {
   width: 100%;
   height: 52px;
   margin-top: 48px;
-  background: #1F64B4;
+  background: #029598;
   border-radius: 999px;
   border: none;
   font-weight: 400;
@@ -91,23 +96,23 @@ body {
   line-height: 24px;
   text-align: center;
   letter-spacing: 0.5px;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
-a {
+.criar {
   box-sizing: border-box;
   display: block;
   width: 100%;
   margin: auto;
   max-width: 250px;
-  border: 2px solid #1F64B4;
+  border: 2px solid #029598;
   border-radius: 999px;
   padding: 16px 0;
   font-weight: 400;
   font-size: 14px;
   text-align: center;
   letter-spacing: 0.5px;
-  color: #1F64B4;
+  color: #029598;
 }
 
 .invalid-feedback {
