@@ -32,18 +32,12 @@ if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
 ?>
 
 <head>
-    <script>
-        var pagina = <?php echo $Pagina; ?>;
-        if (pagina != 1 && pagina != 51 && pagina != 333 && $pagina != 2) {
-            window.onbeforeunload = function() {
-                salvarTempo();
-            };
-        }
-    </script>
     <link rel="stylesheet" href="css/game.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/areasClicaveis.css">
     <link rel="stylesheet" href="css/frame.css">
+    <audio id="chuvaJogo" src="../assets/audios/chuvaJogo.mp3"></audio>
+    <audio id="chuvaInicio" src="../assets/audios/chuvaInicio.mp3"></audio>
 </head>
 
 <body>
@@ -57,6 +51,15 @@ if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
         <?php
         if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2) {
         ?>
+            <script>
+                var pagina = <?php echo $pagina; ?>;
+                window.onbeforeunload = function() {
+                    salvarTempo();
+                };
+                window.onload = function() {
+                    reproduzirAudio('chuvaJogo');
+                };
+            </script>
             <div class="goal">
                 <h1>Objetivo atual</h1>
                 <?php
@@ -88,6 +91,13 @@ if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
             echo '<div id="areaClicavel1" onclick="redirecionar1()"></div>';
             echo '<div id="areaClicavel2" onclick="redirecionarPagina(333,0);"></div>';
             echo '<div id="areaClicavel3" onclick="redirecionarSair()"></div>';
+        ?>
+            <script>
+                window.onload = function() {
+                    reproduzirAudio('chuvaInicio');
+                };
+            </script>
+        <?php
         } else if ($pagina == 2) {
         } else if ($pagina == 333) {
             $query = "SELECT * FROM usuario natural join partida where terminou = 1 ORDER BY tempo DESC";

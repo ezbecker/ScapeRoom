@@ -119,8 +119,11 @@ function reproduzirAudio(idAudio) {
 
   if (audioAtualmenteReproduzindo) {
     audioAtualmenteReproduzindo.pause();
+    audioAtualmenteReproduzindo.currentTime = 0;
+    audioAtualmenteReproduzindo.loop = false;
   }
 
   audio.play();
   audioAtualmenteReproduzindo = audio;
+  audioAtualmenteReproduzindo.loop = true;
 }

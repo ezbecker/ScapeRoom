@@ -37,16 +37,20 @@ if (mysqli_num_rows($result) === 1) {
 
 <head>
   <title>Puzzle do Teclado</title>
-  <script>
-    window.onbeforeunload = function() {
-      salvarTempo();
-    };
-  </script>
   <link rel="stylesheet" href="css/puzzleTeclado.css">
   <link rel="stylesheet" href="css/game.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/areasClicaveis.css">
   <link rel="stylesheet" href="css/frame.css">
+  <audio id="chuvaJogo" src="../assets/audios/chuvaJogo.mp3"></audio>
+  <script>
+    window.onbeforeunload = function() {
+      salvarTempo();
+    };
+    window.onload = function() {
+      reproduzirAudio('chuvaJogo');
+    };
+  </script>
 </head>
 
 <body>
