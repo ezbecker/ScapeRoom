@@ -35,7 +35,9 @@ $result = mysqli_stmt_get_result($stmt);
 if (mysqli_num_rows($result) === 1) {
     $row = mysqli_fetch_assoc($result);
     $pacienteNome = $row['pacienteNome'];
-    $pacienteCodigo = $row['pacienteCodigo'];
+    $idade = $row['idade'];
+    $genero = $row['genero'];
+    $sintoma = $row['sintoma'];
 }
 
 $query = "SELECT * FROM puzzle natural join cenario2 WHERE idPuzzle = $idPuzzle and paginaExame = $pagina";
@@ -137,7 +139,9 @@ if ($pagina == 24) {
     }
     echo '<div class="question-overlay">';
     echo '<p class="paciente-nome">' . $pacienteNome . '</p>';
-    echo '<p class="paciente-codigo">' . $pacienteCodigo . '</p>';
+    echo '<p class="paciente-nome">' . $idade . '</p>';
+    echo '<p class="paciente-nome">' . $genero . '</p>';
+    echo '<p class="paciente-codigo">' . $sintoma . '</p>';
     echo '</div>';
 } else if ($pagina == 40) { //lab2
     echo '<img src="../scenarios/scenario2/lab2.gif">';
