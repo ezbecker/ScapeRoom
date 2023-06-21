@@ -48,9 +48,9 @@ if (mysqli_num_rows($result2) === 1) {
     $exame = $row['exame'];
     $pacienteCodigo = $row['pacienteCodigo'];
 }
-if ($inventario == 1 && $_SESSION['vazio'] == 1)
+if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $inventario == 1 && $_SESSION['vazio'] == 1)
     echo '<img class="itemInventario" src="../assets/chave.png">';
-else if ($inventario == 2 && $_SESSION['vazio'] == 1)
+else if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $inventario == 2 && $_SESSION['vazio'] == 1)
     echo '<img class="itemInventario" src="../assets/cartao.png">';
 
 if ($pagina == 24) {
