@@ -111,3 +111,16 @@ function fimGame(idPartida) {
     })
     .catch(error => console.log(error));
 }
+
+var audioAtualmenteReproduzindo;
+
+function reproduzirAudio(idAudio) {
+  var audio = document.getElementById(idAudio);
+
+  if (audioAtualmenteReproduzindo) {
+    audioAtualmenteReproduzindo.pause();
+  }
+
+  audio.play();
+  audioAtualmenteReproduzindo = audio;
+}
