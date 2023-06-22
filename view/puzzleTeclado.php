@@ -48,7 +48,7 @@ if (mysqli_num_rows($result) === 1) {
       salvarTempo();
     };
     window.onload = function() {
-      reproduzirAudio('chuvaJogo');
+      reproduzirAudio('chuvaJogo', true);
     };
   </script>
 </head>

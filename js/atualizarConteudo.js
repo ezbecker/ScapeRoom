@@ -112,18 +112,22 @@ function fimGame(idPartida) {
     .catch(error => console.log(error));
 }
 
-var audioAtualmenteReproduzindo;
+var audioFundoAtual;
 
-function reproduzirAudio(idAudio) {
+function reproduzirAudio(idAudio, fundo = false) {
   var audio = document.getElementById(idAudio);
 
-  if (audioAtualmenteReproduzindo) {
-    audioAtualmenteReproduzindo.pause();
-    audioAtualmenteReproduzindo.currentTime = 0;
-    audioAtualmenteReproduzindo.loop = false;
+  if (fundo) {
+    if (audioFundoAtual) {
+      audioFundoAtual.pause();
+      audioFundoAtual.currentTime = 0;
+    }
+    audio.loop = true;
+    audioFundoAtual = audio;
+  } else {
+    audio.currentTime = 0;
+    audio.loop = false;
   }
 
   audio.play();
-  audioAtualmenteReproduzindo = audio;
-  audioAtualmenteReproduzindo.loop = true;
 }

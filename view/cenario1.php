@@ -14,14 +14,14 @@ if (mysqli_num_rows($result) === 1) {
 if ($pagina == 10) {
     echo '<img src="../scenarios/scenario1/corridor/corridor1.png">';
     echo '<div id="areaClicavelTeclado" onclick="salvarTempo(); redirecionarTeclado()"></div>';
-    echo '<div id="room1" onclick="salvarTempo(); redirecionarPagina(11,' . $idPuzzle . ')"></div>';
+    echo '<div id="room1" onclick="salvarTempo(); reproduzirAudio(\'portaAbre\', false); redirecionarPagina(11,' . $idPuzzle . ')"></div>';
     echo '<div id="room2" onclick="salvarTempo(); redirecionarPagina(13,' . $idPuzzle . ')"></div>';
     echo '<div id="room3" onclick="salvarTempo(); redirecionarPagina(16,' . $idPuzzle . ')"></div>';
     echo '<div id="room4" onclick="salvarTempo(); redirecionarPagina(18,' . $idPuzzle . ')"></div>';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(9,' . $idPuzzle . ')"></div>';
 } else if ($pagina == 11) { // room1
     echo '<img src="../scenarios/scenario1/roomOne/roomOne1.gif">';
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10,' . $idPuzzle . ')"></div>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); reproduzirAudio(\'portaFecha\', false); redirecionarPagina(10,' . $idPuzzle . ')"></div>';
     echo '<div id="areaClicavelPrancheta2" onclick="salvarTempo(); redirecionarPagina(12,' . $idPuzzle . ')"></div>';
     echo '<div id="lixo" onclick="salvarTempo(); redirecionarPagina(23,' . $idPuzzle . ')"></div>';
 } else if ($pagina == 12) { // Prancheta

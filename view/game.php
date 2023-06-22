@@ -38,6 +38,9 @@ if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
     <link rel="stylesheet" href="css/frame.css">
     <audio id="chuvaJogo" src="../assets/audios/chuvaJogo.mp3"></audio>
     <audio id="chuvaInicio" src="../assets/audios/chuvaInicio.mp3"></audio>
+    <audio id="portaAbre" src="../assets/audios/portaAbre.mp3"></audio>
+    <audio id="portaFecha" src="../assets/audios/portaFecha.mp3"></audio>
+    <audio id="portaAbreFecha" src="../assets/audios/portaAbreFecha.mp3"></audio>
 </head>
 
 <body>
@@ -57,7 +60,7 @@ if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
                     salvarTempo();
                 };
                 window.onload = function() {
-                    reproduzirAudio('chuvaJogo');
+                    reproduzirAudio('chuvaJogo', true);
                 };
             </script>
             <div class="goal">
@@ -94,7 +97,7 @@ if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
         ?>
             <script>
                 window.onload = function() {
-                    reproduzirAudio('chuvaInicio');
+                    reproduzirAudio('chuvaInicio', true);
                 };
             </script>
         <?php
