@@ -23,8 +23,8 @@ mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 if (mysqli_num_rows($result) === 1) {
     $row = mysqli_fetch_assoc($result);
-    $doenca1 = $row['doenca1'];
-    $doenca2 = $row['doenca2'];
+    $postit = $row['postit'];
+    $caderno = $row['caderno'];
 }
 
 
@@ -73,7 +73,7 @@ if ($pagina == 24) {
     echo '<img src="../scenarios/scenario2/postit.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
     echo '<div class="question-overlay">';
-    echo '<p class="question-text-doenca1">' . $doenca1 . '</p>';
+    echo '<p class="question-text-doenca1">' . $postit . '</p>';
     echo '</div>';
 } else if ($pagina == 26) { //lab1
     echo '<img src="../scenarios/scenario2/lab1.png">';
@@ -151,7 +151,7 @@ if ($pagina == 24) {
     echo '<img src="../scenarios/scenario2/lab2-caderno.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
     echo '<div class="question-overlay">';
-    echo '<p class="question-text">' . $doenca2 . '</p>';
+    echo '<p class="question-text">' . $caderno . '</p>';
     echo '</div>';
 } else if ($pagina == 42) { //cartao
     echo '<img src="../scenarios/scenario2/terminalCartao.png">';
