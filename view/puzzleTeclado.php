@@ -2,7 +2,7 @@
 session_start();
 require_once "../model/conexao.php";
 $email = $_SESSION['email'];
-
+$pagina = $_SESSION['pagina'];
 $query = "SELECT * FROM usuario WHERE email = '$email'";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
@@ -43,6 +43,11 @@ if (mysqli_num_rows($result) === 1) {
   <link rel="stylesheet" href="css/areasClicaveis.css">
   <link rel="stylesheet" href="css/frame.css">
   <audio id="chuvaJogo" src="../assets/audios/chuvaJogo.mp3"></audio>
+  <audio id="portaAbre" src="../assets/audios/portaAbre.mp3"></audio>
+  <audio id="portaFecha" src="../assets/audios/portaFecha.mp3"></audio>
+  <audio id="teclado" src="../assets/audios/teclado.mp3"></audio>
+  <audio id="tecladoCorreto" src="../assets/audios/tecladoCorreto.mp3"></audio>
+  <audio id="tecladoErrado" src="../assets/audios/tecladoErrado.mp3"></audio>
   <script>
     window.onbeforeunload = function() {
       salvarTempo();
@@ -80,7 +85,7 @@ if (mysqli_num_rows($result) === 1) {
   <div class="iframe-container" id="content">
     <img src="../scenarios/scenario1/corridor/puzzleTeclado.png">
     <?php
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10,' . $idPuzzle . ')"></div>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10,' . $idPuzzle . ');"></div>';
     ?>
     <div class="container">
       <div class="button" data-symbol="1">Θ</div>
@@ -125,8 +130,10 @@ if (mysqli_num_rows($result) === 1) {
           buttons[i].classList.add('success');
         }
         salvarTempo();
+        reproduzirAudio('tecladoCorreto', false);
         redirecionarPagina(22, idPuzzle);
       } else {
+        reproduzirAudio('tecladoErrado', false);
         const buttons = document.querySelectorAll('.button');
         for (let i = 0; i < buttons.length; i++) {
           buttons[i].classList.add('error');
@@ -145,12 +152,14 @@ if (mysqli_num_rows($result) === 1) {
           if (reseting) return;
           this.classList.add('active');
           currentInput += symbol;
+          reproduzirAudio('teclado', false);
           checkInput();
         });
       }
     });
   </script>
   <script>
+    var pagina = <?php echo $pagina; ?>;
     var idPartida = <?php echo $idPartida; ?>;
   </script>
   <script src="../js/atualizarConteudo.js"></script>

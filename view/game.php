@@ -40,7 +40,8 @@ if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
     <audio id="chuvaInicio" src="../assets/audios/chuvaInicio.mp3"></audio>
     <audio id="portaAbre" src="../assets/audios/portaAbre.mp3"></audio>
     <audio id="portaFecha" src="../assets/audios/portaFecha.mp3"></audio>
-    <audio id="portaAbreFecha" src="../assets/audios/portaAbreFecha.mp3"></audio>
+    <audio id="pcLigando" src="../assets/audios/pcLigando.mp3"></audio>
+    <audio id="armarioAberto" src="../assets/audios/armarioAberto.mp3"></audio>
 </head>
 
 <body>
@@ -55,13 +56,15 @@ if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
         if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2) {
         ?>
             <script>
-                var pagina = <?php echo $pagina; ?>;
                 window.onbeforeunload = function() {
                     salvarTempo();
                 };
                 window.onload = function() {
                     reproduzirAudio('chuvaJogo', true);
                 };
+                var tempoRestante = <?php echo $totalSegundos; ?>;
+                var idPartida = <?php echo $idPartida; ?>;
+                var inventario = <?php echo $inventario; ?>;
             </script>
             <div class="goal">
                 <h1>Objetivo atual</h1>
@@ -82,9 +85,6 @@ if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
         }
             ?>
             </div>
-            <script>
-                var tempoRestante = <?php echo $totalSegundos; ?>;
-            </script>
     </div>
 
     <div class="iframe-container" id="content">
@@ -122,9 +122,8 @@ if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
         require_once "../view/cenario2.php";
         ?>
         <script>
+            var pagina = <?php echo $pagina; ?>;
             var idPuzzle = <?php echo $idPuzzle; ?>;
-            var idPartida = <?php echo $idPartida; ?>;
-            var inventario = <?php echo $inventario; ?>;
         </script>
     </div>
     <div id="mensagem"></div>

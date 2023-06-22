@@ -58,14 +58,14 @@ else if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $inv
 if ($pagina == 24) {
     echo '<img src="../scenarios/scenario2/corredor.png">';
     echo '<div id="areaClicavelPostit" onclick="salvarTempo(); redirecionarPagina(25,' . $idPuzzle . ');"></div>';
-    echo '<div id="areaClicavelLab1" onclick="salvarTempo(); redirecionarPagina(26,' . $idPuzzle . ');"></div>';
-    echo '<div id="areaClicavelSala" onclick="salvarTempo(); redirecionarPagina(33,' . $idPuzzle . ');"></div>';
+    echo '<div id="areaClicavelLab1" onclick="salvarTempo(); reproduzirAudio(\'portaAbre\', false); redirecionarPagina(26,' . $idPuzzle . ');"></div>';
+    echo '<div id="areaClicavelSala" onclick="salvarTempo(); reproduzirAudio(\'portaAbre\', false); redirecionarPagina(33,' . $idPuzzle . ');"></div>';
     echo '<div id="areaClicavelPorta" onclick="salvarTempo(); redirecionarPagina(42,' . $idPuzzle . ');"></div>';
     echo '<div id="areaClicavelCorredor2" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
     if ($inventario == 1) {
-        echo '<div id="areaClicavelLab2" onclick="salvarTempo(); atualizarVariavel(0); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
+        echo '<div id="areaClicavelLab2" onclick="salvarTempo(); reproduzirAudio(\'portaAbre\', false); atualizarVariavel(0); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
     } else if ($inventario > 0) {
-        echo '<div id="areaClicavelLab2" onclick="salvarTempo(); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
+        echo '<div id="areaClicavelLab2" onclick="salvarTempo(); reproduzirAudio(\'portaAbre\', false); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
     } else {
         echo '<div id="areaClicavelLab2" onclick="exibirMensagem(\'A porta esta trancada\', 3000);"></div>';
     }
@@ -77,8 +77,8 @@ if ($pagina == 24) {
     echo '</div>';
 } else if ($pagina == 26) { //lab1
     echo '<img src="../scenarios/scenario2/lab1.png">';
-    echo '<div id="areaClicavellab1-pc" onclick="salvarTempo(); redirecionarPagina(27,' . $idPuzzle . ');"></div>';
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
+    echo '<div id="areaClicavellab1-pc" onclick="salvarTempo(); reproduzirAudio(\'pcLigando\', false); redirecionarPagina(27,' . $idPuzzle . ');"></div>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); reproduzirAudio(\'portaFecha\', false); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
 } else if ($pagina == 27) { //lab1-pc
     echo '<img src="../scenarios/scenario2/lab1-pc.png">';
     echo '<div id="areaClicavelExame" onclick="salvarTempo(); redirecionarPagina(28,' . $idPuzzle . ');"></div>';
@@ -110,8 +110,8 @@ if ($pagina == 24) {
     echo '  <img class="exame" src="../assets/exames/' . $exame . '">';
 } else if ($pagina == 33) { //sala
     echo '<img src="../scenarios/scenario2/sala.png">';
-    echo '<div id="areaClicavelSala-pc" onclick="salvarTempo(); redirecionarPagina(34,' . $idPuzzle . ');"></div>';
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
+    echo '<div id="areaClicavelSala-pc" onclick="salvarTempo(); reproduzirAudio(\'pcLigando\', false); redirecionarPagina(34,' . $idPuzzle . ');"></div>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); reproduzirAudio(\'portaFecha\', false); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
 } else if ($pagina == 34) { //sala-pc
     echo '<img src="../scenarios/scenario2/sala-pc.png">';
     echo '<div id="areaClicavelPaciente" onclick="salvarTempo(); redirecionarPagina(35,' . $idPuzzle . ');"></div>';
@@ -146,7 +146,7 @@ if ($pagina == 24) {
 } else if ($pagina == 40) { //lab2
     echo '<img src="../scenarios/scenario2/lab2.gif">';
     echo '<div id="areaClicavelCaderno" onclick="salvarTempo(); redirecionarPagina(41,' . $idPuzzle . ');"></div>';
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); reproduzirAudio(\'portaFecha\', false); redirecionarPagina(24,' . $idPuzzle . ');"></div>';
 } else if ($pagina == 41) { //lab2-caderno
     echo '<img src="../scenarios/scenario2/lab2-caderno.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(40,' . $idPuzzle . ');"></div>';
@@ -203,11 +203,29 @@ if ($pagina == 24) {
 <?php
 } else if ($pagina == 49) { //armarioAberto
     echo '<img src="../scenarios/scenario2/armarioAberto.png">';
+?>
+    <script>
+        window.onload = function() {
+            reproduzirAudio('chuvaJogo', true);
+            if (inventario < 2)
+                reproduzirAudio('armarioAberto', false);
+        };
+    </script>
+<?php
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
     if ($inventario == 1)
         echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="itemInventarioPego" src="../assets/cartao.png">';
 } else if ($pagina == 50) { //armarioAberto
     echo '<img src="../scenarios/scenario2/armarioAberto.png">';
+?>
+    <script>
+        window.onload = function() {
+            reproduzirAudio('chuvaJogo', true);
+            if (inventario < 1)
+                reproduzirAudio('armarioAberto', false);
+        };
+    </script>
+<?php
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(43,' . $idPuzzle . ');"></div>';
     if ($inventario == 0)
         echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="itemInventarioPego" src="../assets/chave.png">';

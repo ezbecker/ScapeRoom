@@ -52,7 +52,7 @@ if ($pagina == 3) {
     echo '</div>';
 } else if ($pagina == 9) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom5.png">';
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarSetaSairRoom1()"></div>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarSetaSairRoom1();"></div>';
 } else if ($pagina == 0) {
 ?>
     <img src="../scenarios/inicialRoom/input.png">
