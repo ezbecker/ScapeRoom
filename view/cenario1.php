@@ -28,7 +28,10 @@ if ($pagina == 10) {
     echo '<img src="../scenarios/scenario1/roomOne/roomOne2.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(11,' . $idPuzzle . ')"></div>';
     echo '<div class="question-overlay">';
-    echo '<p class="question-text">' . $nome . $idade . $sintomas . $tomografia . '</p>';
+    echo '<p class="prancheta-nome">' . $nome . '</p>';
+    echo '<p class="prancheta-idade">' . $idade . '</p>';
+    echo '<p class="prancheta-sintomas">' . $sintomas .'</p>';
+    echo '<p class="prancheta-diagnostico">' . $tomografia . '</p>';
     echo '</div>';
 } else if ($pagina == 13) { // room2
     echo '<img src="../scenarios/scenario1/roomTwo/roomTwo1.png">';
@@ -39,7 +42,10 @@ if ($pagina == 10) {
     echo '<img src="../scenarios/scenario1/roomTwo/roomTwo2.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(13,' . $idPuzzle . ')"></div>';
     echo '<div class="question-overlay">';
-    echo '<p class="question-text">' . $nome . $idade . $sintomas . $tomografia . '</p>';
+    echo '<p class="prancheta-nome">' . $nome . '</p>';
+    echo '<p class="prancheta-idade">' . $idade . '</p>';
+    echo '<p class="prancheta-sintomas">' . $sintomas .'</p>';
+    echo '<p class="prancheta-diagnostico">' . $tomografia . '</p>';
     echo '</div>';
 } else if ($pagina == 15) {
     echo '<img src="../scenarios/scenario1/roomTwo/roomTwo3.png">';
@@ -52,7 +58,10 @@ if ($pagina == 10) {
     echo '<img src="../scenarios/scenario1/roomThree/roomThree2.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(16,' . $idPuzzle . ')"></div>';
     echo '<div class="question-overlay">';
-    echo '<p class="question-text">' . $nome . $idade . $sintomas . $tomografia . '</p>';
+    echo '<p class="prancheta-nome">' . $nome . '</p>';
+    echo '<p class="prancheta-idade">' . $idade . '</p>';
+    echo '<p class="prancheta-sintomas">' . $sintomas .'</p>';
+    echo '<p class="prancheta-diagnostico">' . $tomografia . '</p>';
     echo '</div>';
 } else if ($pagina == 18) { // room4
     echo '<img src="../scenarios/scenario1/roomFour/roomFour1.gif">';
@@ -67,7 +76,10 @@ if ($pagina == 10) {
     echo '<img src="../scenarios/scenario1/roomFour/roomFour3.png">';
     echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(19,' . $idPuzzle . ')"></div>';
     echo '<div class="question-overlay">';
-    echo '<p class="question-text">' . $nome . $idade . $sintomas . $tomografia . '</p>';
+    echo '<p class="prancheta-nome">' . $nome . '</p>';
+    echo '<p class="prancheta-idade">' . $idade . '</p>';
+    echo '<p class="prancheta-sintomas">' . $sintomas .'</p>';
+    echo '<p class="prancheta-diagnostico">' . $tomografia . '</p>';
     echo '</div>';
 } else if ($pagina == 21) {
     echo '<img src="../scenarios/scenario1/roomFour/roomFour4.png">';
