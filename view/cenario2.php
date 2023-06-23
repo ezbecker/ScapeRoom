@@ -27,8 +27,7 @@ if (mysqli_num_rows($result) === 1) {
     $caderno = $row['caderno'];
 }
 
-
-$query = "SELECT * FROM puzzle natural join cenario2 WHERE idPuzzle = $idPuzzle and paginaPac = $pagina or paginaPac = $paginaArmario";
+$query = "SELECT * FROM puzzle natural join cenario2 natural join `cenario2-pacientes`  WHERE idPuzzle = $idPuzzle and paginaPac = $pagina or paginaPac = $paginaArmario";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
@@ -37,7 +36,7 @@ if (mysqli_num_rows($result) === 1) {
     $pacienteNome = $row['pacienteNome'];
     $idade = $row['idade'];
     $genero = $row['genero'];
-    $sintoma = $row['sintoma'];
+    $caso = $row['caso'];
 }
 
 $query = "SELECT * FROM puzzle natural join cenario2 WHERE idPuzzle = $idPuzzle and paginaExame = $pagina";
@@ -107,7 +106,7 @@ if ($pagina == 24) {
     echo '<div class="question-overlay">';
     echo '<p class="question-text">' . $pacienteCodigo . '</p>';
     echo '</div>';
-    echo '  <img class="exame" src="../assets/exames/' . $exame . '">';
+    echo '  <img class="exame" src="../assets/exames/fraturas/' . $exame . '">';
 } else if ($pagina == 33) { //sala
     echo '<img src="../scenarios/scenario2/sala.png">';
     echo '<div id="areaClicavelSala-pc" onclick="salvarTempo(); reproduzirAudio(\'pcLigando\', false); redirecionarPagina(34,' . $idPuzzle . ');"></div>';
@@ -141,7 +140,7 @@ if ($pagina == 24) {
     echo '<p class="paciente-nome">' . $pacienteNome . '</p>';
     echo '<p class="paciente-nome">' . $idade . '</p>';
     echo '<p class="paciente-nome">' . $genero . '</p>';
-    echo '<p class="paciente-codigo">' . $sintoma . '</p>';
+    echo '<p class="paciente-codigo">' . $caso . '</p>';
     echo '</div>';
 } else if ($pagina == 40) { //lab2
     echo '<img src="../scenarios/scenario2/lab2.gif">';
