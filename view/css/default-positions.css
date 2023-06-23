@@ -1,0 +1,60 @@
+button {
+    cursor: pointer;
+    position: absolute;
+    border: none;
+    background-color: red;
+    opacity: 50%;
+    color: transparent;
+}
+
+/* Menu buttons positions */
+.start-menu-button {
+    width: 100px;
+    height: 25px;
+    top: 85px;
+    left: 80px;
+}
+
+.instructions-menu-button {
+    width: 150px;
+    height: 25px;
+    top: 135px;
+    left: 80px;
+}
+
+.ranking-menu-button {
+    width: 120px;
+    height: 25px;
+    top: 185px;
+    left: 80px;
+}
+
+.exit-menu-button {
+    width: 150px;
+    height: 25px;
+    top: 135px;
+    left: 80px;
+}
+
+/* Arrows buttons positions */
+.down-arrow-position {
+    width: 80px;
+    height: 70px;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.right-arrow-position {
+    width: 70px;
+    height: 80px;
+    top: 230px;
+    right: 0px;
+}
+
+.left-arrow-position {
+    width: 70px;
+    height: 80px;
+    top: 230px;
+    left: 0px;
+}

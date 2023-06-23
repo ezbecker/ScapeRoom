@@ -36,12 +36,18 @@ if (mysqli_num_rows($result) === 1) {
 ?>
 
 <head>
-  <title>Puzzle do Teclado</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Execução do jogo RadioEscape">
+  <meta name="keywords" content="scaperoom, radiologia, saúde, jogo, radioescape, radio escape,">
+  <link rel="icon" href="../assets/icon.png">
+  <title>RadioEscape | Jogando</title>  
   <link rel="stylesheet" href="css/puzzleTeclado.css">
   <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/default-positions.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/areasClicaveis.css">
-  <link rel="stylesheet" href="css/frame.css">
+  <link rel="stylesheet" href="css/first-scenario.css">
   <audio id="chuvaJogo" src="../assets/audios/chuvaJogo.mp3"></audio>
   <audio id="portaAbre" src="../assets/audios/portaAbre.mp3"></audio>
   <audio id="portaFecha" src="../assets/audios/portaFecha.mp3"></audio>
@@ -59,18 +65,18 @@ if (mysqli_num_rows($result) === 1) {
 </head>
 
 <body>
-  <div class="data">
-    <div class="playing">
+  <div class="current-game-data">
+    <div class="now-playing">
       <h1>Jogando</h1>
       <p><?php echo $nome; ?></p>
     </div>
 
-    <div class="goal">
+    <div class="actual-goal">
       <h1>Objetivo atual</h1>
       <p>Descubra o código do elevador</p>
     </div>
 
-    <div class="time">
+    <div class="remaining-time">
       <h1>Tempo total restante</h1>
       <?php
       echo '<p id="cronometro"></p>'
@@ -82,10 +88,10 @@ if (mysqli_num_rows($result) === 1) {
     var tempoRestante = <?php echo $totalSegundos; ?>;
   </script>
 
-  <div class="iframe-container" id="content">
+  <div class="game-area" id="content">
     <img src="../scenarios/scenario1/corridor/puzzleTeclado.png">
     <?php
-    echo '<div id="areaClicavelSetaBaixo" onclick="salvarTempo(); redirecionarPagina(10,' . $idPuzzle . ');"></div>';
+    echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(10,' . $idPuzzle . ');"></button>';
     ?>
     <div class="container">
       <div class="button" data-symbol="1">Θ</div>

@@ -1,0 +1,129 @@
+.room1 {
+    width: 80px;
+    height: 70px;
+    bottom: 0px;
+    left: 250px;
+}
+
+.room2 {
+    width: 80px;
+    height: 70px;
+    bottom: 0px;
+    right: 250px;
+}
+
+.room3 {
+    width: 60px;
+    height: 50px;
+    bottom: 100px;
+    left: 330px;
+}
+
+.room4 {
+    width: 60px;
+    height: 50px;
+    bottom: 100px;
+    right: 330px;
+}
+
+.keyboard-position {
+    width: 60px;
+    height: 50px;
+    bottom: 240px;
+    right: 350px;
+}
+
+.container {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+}
+
+.room1-clipboard {
+    width: 70px;
+    height: 120px;
+    bottom: 110px;
+    right: 480px;
+}
+
+.room1-trash {
+    width: 70px;
+    height: 120px;
+    bottom: 90px;
+    right: 340px;
+}
+
+.room2-clipboard {
+    width: 110px;
+    height: 70px;
+    bottom: 130px;
+    left: 200px;
+}
+
+.room2-paper {
+    width: 70px;
+    height: 70px;
+    top: 110px;
+    left: 305px;
+}
+
+.room3-clipboard {
+    width: 110px;
+    height: 70px;
+    bottom: 0px;
+    left: 150px;
+}
+
+.room4-drawer {
+    width: 150px;
+    height: 150px;
+    bottom: 110px;
+    right: 150px;
+}
+
+.room4-clipboard {
+    width: 300px;
+    height: 280px;
+    top: 100px;
+    left: 240px;
+}
+
+.room4-paper {
+    width: 240px;
+    height: 210px;
+    top: 130px;
+    right: 170px;
+}
+
+.question-overlay {
+    position: absolute;
+    top: 120px;
+    left: 378px;
+    width: 223px;
+}
+
+.question-overlay p {
+    position: absolute;
+    font-size: 12px; 
+}
+
+.clipboard-age {
+    top: 0px;
+    right: 36px;
+}
+
+.clipboard-symptoms {
+    top: 60px;
+}
+
+.clipboard-diagnosis {
+    top: 145px;
+}
+
+.scenario1-exit {
+    width: 80px;
+    height: 70px;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+}
