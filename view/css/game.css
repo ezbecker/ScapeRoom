@@ -1,40 +1,65 @@
-.data {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    max-width: 800px;
-    margin: 12px auto;
-    padding: 0 16px;
-    padding-top: 8px;
-    border: 1px solid black;
-    background-color: #121212;
-    color: white;
-    border-radius: 16px;
-    border: 2px solid #696969;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
-  }
+body {
+  background-color: #110D24;
+}
+
+.current-game-data {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  max-width: 800px;
+  margin: 12px auto;
+  padding: 8px 16px 0;
+  border: 2px solid #696969;
+  background-color: #121212;
+  color: white;
+  border-radius: 16px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
   
-  .playing,
-  .goal,
-  .time {
+.now-playing,
+.current-goal,
+.remaining-time {
     margin: 0 10px;
     text-align: left;
-  }
+}
   
-  h1 {
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
-  }
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
 
-  p {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-  }
-  
-  
+p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+ 
+.game-area {
+  width: 960px;
+  height: 540px;
+  position: relative;
+  margin: 0 auto;
+  border: 2px solid #696969; 
+  border-radius: 16px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.game-area img {
+  max-width: 100%;
+  border-radius: 16px;
+}
+
+.item {
+  width: 42px;
+  height: 42px;
+}
+
+.inventory-item {
+  width: 42px;
+  height: 42px;
+}
