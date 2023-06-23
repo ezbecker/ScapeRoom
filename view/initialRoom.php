@@ -26,6 +26,23 @@ if ($pagina == 3) {
 } else if ($pagina == 5) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom2.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(3,' . $idPuzzle . ');"></button>';
+    $query = "SELECT * FROM puzzle natural join initialroom WHERE idPuzzle = $idPuzzle";
+    $result = mysqli_query($conectado, $query);
+    $cont = 0;
+    while ($row = mysqli_fetch_assoc($result)) {
+        if ($cont < 6) {
+            echo '<p class="option-1">' . $row['alternativa1'] . $row['cid1'] . '</p>';
+            echo '<p class="option-2">' . $row['alternativa2'] . $row['cid2'] . '</p>';
+            echo '<p class="option-3">' . $row['alternativa3'] . $row['cid3'] . '</p>';
+            echo '<p class="option-4">' . $row['alternativa4'] . $row['cid4'] . '</p>';
+        } else {
+            echo '<p class="option-1">' . $row['alternativa1'] . $row['cid1'] . '</p>';
+            echo '<p class="option-2">' . $row['alternativa2'] . $row['cid2'] . '</p>';
+            echo '<p class="option-3">' . $row['alternativa3'] . $row['cid3'] . '</p>';
+            echo '<p class="option-4">' . $row['alternativa4'] . $row['cid4'] . '</p>';
+        }
+        $cont++;
+    }
 } else if ($pagina == 6 ||  $pagina == 7 ||  $pagina == 8) {
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(3,' . $idPuzzle . ');"></button>';
     if ($pagina == 6) {
