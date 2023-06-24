@@ -3,8 +3,9 @@ var intervalId;
 function iniciarCronometro() {
     intervalId = setInterval(function() {
         if (tempoRestante <= 0) {
+            salvarTempo();
             clearInterval(intervalId);
-            alert('Fim do tempo!');
+            redirecionarPagina(53,0);
             return;
         }
         tempoRestante--;
