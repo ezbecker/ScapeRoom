@@ -231,7 +231,7 @@ if ($pagina == 24) {
 } else if ($pagina == 51) {
     echo '<p>Parabéns ' . $nome . ' você terminou em ' . $tempo . '</p>';
     echo '<div id="areaClicavelSetaBaixo" onclick="redirecionarPagina(1,0);"></div>';
-} else if ($pagina == 53) {
+} else if ($pagina == 52) {
     echo '<p>Acabou o tempo</p>';
     echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
 }

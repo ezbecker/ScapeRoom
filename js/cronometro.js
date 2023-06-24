@@ -5,7 +5,7 @@ function iniciarCronometro() {
         if (tempoRestante <= 0) {
             salvarTempo();
             clearInterval(intervalId);
-            redirecionarPagina(53,0);
+            redirecionarPagina(52,0);
             return;
         }
         tempoRestante--;
