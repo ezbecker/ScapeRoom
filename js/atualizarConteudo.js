@@ -11,6 +11,34 @@ function salvarTempo() {
       .catch(error => console.log(error));
   }
 
+  function attachDragEvents() {
+    const images = document.querySelectorAll('.image');
+    let zIndexCounter = 1;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    images.forEach(image => {
+        let selected = false;
+        image.addEventListener('mousedown', (event) => {
+            selected = !selected;
+            image.classList.toggle('selected', selected);
+            offsetX = event.clientX - image.offsetLeft;
+            offsetY = event.clientY - image.offsetTop;
+            image.style.zIndex = zIndexCounter++;
+        });
+        image.addEventListener('mousemove', (event) => {
+            if (selected) {
+                image.style.left = (event.clientX - offsetX) + 'px';
+                image.style.top = (event.clientY - offsetY) + 'px';
+            }
+        });
+        image.addEventListener('mouseup', () => {
+            dragging = false;
+        });
+    });
+}
+
+
   function atualizarConteudo(url) {
     fetch(url)
       .then(response => response.text())
@@ -38,6 +66,7 @@ function salvarTempo() {
             }
             document.body.appendChild(script);
           }
+          attachDragEvents();
         } else {
           console.log('Elemento de conteúdo não encontrado na resposta.');
         }
