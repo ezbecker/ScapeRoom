@@ -19,5 +19,5 @@ function formatarTempo(tempo) {
     var segundos = tempo % 60;
     return horas.toString().padStart(2, '0') + ':' + minutos.toString().padStart(2, '0') + ':' + segundos.toString().padStart(2, '0');
 }
-if (pagina != 1 && pagina != 51 && pagina != 333 && pagina != 2) 
+if (pagina != 1 && pagina != 51 && pagina != 333 && pagina != 2 && $pagina != 52) 
     iniciarCronometro();

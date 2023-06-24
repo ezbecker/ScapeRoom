@@ -63,7 +63,7 @@
         </div>
 
         <?php
-        if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2) {
+        if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $pagina != 52) {
         ?>
             <script>
                 window.onbeforeunload = function() {
