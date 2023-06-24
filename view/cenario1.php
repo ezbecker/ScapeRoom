@@ -28,6 +28,15 @@
         $tomografia = $row['tomografia'];
     }
 
+    $query = "SELECT * FROM puzzle WHERE idPuzzle = $idPuzzle";
+    $stmt = mysqli_prepare($conectado, $query);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    if (mysqli_num_rows($result) === 1) {
+        $row = mysqli_fetch_assoc($result);
+        $bilheteLixo = $row['caderno'];
+    }
+
     if ($pagina == 10) {
         echo '<img src="../scenarios/scenario1/corridor/corridor1.png">';
         echo '<button class="keyboard-position" onclick="salvarTempo(); redirecionarTeclado();"></button>';
