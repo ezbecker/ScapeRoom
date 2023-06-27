@@ -16,10 +16,7 @@ button {
 }
 
 .instructions-menu-button {
-    width: 150px;
-    height: 25px;
-    top: 135px;
-    left: 80px;
+    
 }
 
 .ranking-menu-button {
@@ -30,9 +27,9 @@ button {
 }
 
 .exit-menu-button {
-    width: 150px;
+    width: 65px;
     height: 25px;
-    top: 135px;
+    top: 235px;
     left: 80px;
 }
 

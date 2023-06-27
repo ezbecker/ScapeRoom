@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/default-positions.css">
     <link rel="stylesheet" href="css/tutorial-scenario.css">
     <link rel="stylesheet" href="css/first-scenario.css">
+    <link rel="stylesheet" href="css/ranking.css">
 </head>
 
 <body>
@@ -106,8 +107,8 @@
             <div class="menu-buttons">
                 <?php
                 echo '<button class="start-menu-button" onclick="redirecionar1()">INICIAR</button>';
-                echo '<button class="instructions-menu-button" onclick="redirecionarPagina(333,0);">INSTRUÇÕES</button>';
-                echo '<button class="ranking-menu-button" onclick="redirecionarSair()">RANKING</button>';
+                echo '<button class="ranking-menu-button" onclick="redirecionarPagina(333,0);">INSTRUÇÕES</button>';
+                echo '<button class="exit-menu-button" onclick="redirecionarSair()">RANKING</button>';
                 ?>
             </div>
             <script>
@@ -120,17 +121,30 @@
         } else if ($pagina == 333) {
             $query = "SELECT * FROM usuario natural join partida where terminou = 1 ORDER BY tempo DESC";
             $result = mysqli_query($conectado, $query);
-
-            echo '<h2>Ranking dos Usuários</h2>';
-            echo '<ol id="ranking-list">';
+            echo '<img src="../scenarios/ranking.png">';
+            //echo '<h2>Ranking dos Usuários</h2>';
+            echo '<div class="ranking-text">';
+            echo '<ol start="4" id="ranking-list">';
+            $count = 0;
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<li>';
-                echo '<span class="name">' . $row['nome'] . "  " . '</span>';
-                echo '<span class="time">' . $row['tempo'] . '</span>';
-                echo '</li>';
+                if ($count < 10) {
+                    $count++;
+                    if ($count <= 3) {
+                        echo '<div class="podium-' . $count . '">';
+                        echo '<span class="name">' . $row['nome'] . "  " . '</span>';
+                        echo '<span class="time">' . $row['tempo'] . '</span>';
+                        echo '</div>';
+                    } else {
+                        echo '<li class="text-' . $count . '">';
+                        echo '<span class="name">' . $row['nome'] . "  " . '</span>';
+                        echo '<span class="time">' . $row['tempo'] . '</span>';
+                        echo '</li>';
+                    }
+                }
             }
             echo '</ol>';
-            echo '<div id="areaClicavelSetaBaixo" onclick="redirecionarPagina(1,0);"></div>';
+            echo '</div>';
+            echo '<div id="down-arrow-position" onclick="redirecionarPagina(1,0);"></div>';
         }
         require_once "../view/initialRoom.php";
         require_once "../view/cenario1.php";

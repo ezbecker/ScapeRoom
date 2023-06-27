@@ -1,0 +1,44 @@
+.ranking-text {
+    color: white;
+    position: absolute;
+    max-width: 960px;
+    top: 300px;
+    font-family: Inter;
+    text-align: center;
+    left: 32px;
+}
+
+.podium-1 span, .podium-2 span, .podium-3 span {
+    display: block;
+}
+
+.podium-1 .name, .podium-2 .name, .podium-3 .name {
+    font-size: 32px;
+}
+
+
+.podium-1 {
+    position: absolute;
+    width: 150px;
+    top: -50px;
+    left: 373px;
+}
+
+.podium-2 {
+    position: absolute;
+    width: 150px;
+    top: -50px;
+    left: 678px;
+
+}
+
+.podium-3 {
+    position:absolute;
+    width: 150px;
+    top: -50px;
+    left: 73px;
+}
+
+.text-4 {
+    margin-top: 64px;
+}
