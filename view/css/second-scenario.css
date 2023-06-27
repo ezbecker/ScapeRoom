@@ -1,0 +1,189 @@
+.postit-position {
+    width: 80px;
+    height: 70px;
+    top: 210px;
+    right: 100px;
+}
+
+.lab1 {
+    width: 80px;
+    height: 70px;
+    bottom: 20px;
+    right: 305px;
+}
+
+.room {
+    width: 80px;
+    height: 70px;
+    bottom: 100px;
+    right: 360px;
+}
+
+.door {
+    width: 80px;
+    height: 70px;
+    bottom: 150px;
+    right: 450px;
+}
+
+.corridor2 {
+    width: 80px;
+    height: 70px;
+    bottom: 70px;
+    left: 230px;
+}
+
+.lab2 {
+    width: 80px;
+    height: 70px;
+    bottom: 150px;
+    right: 550px;
+}
+
+.lab1-pc {
+    width: 400px;
+    height: 270px;
+    bottom: 150px;
+    left: 550px;
+}
+
+.room-pc {
+    width: 170px;
+    height: 120px;
+    bottom: 160px;
+    right: 190px;
+
+}
+
+.pc-folder {
+    width: 90px;
+    height: 90px;
+    top: 70px;
+    left: 150px;
+}
+
+.closed-locker {
+    width: 300px;
+    height: 430px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.terminal-position {
+    width: 100px;
+    height: 110px;
+    top: 170px;
+    left: 205px;
+}
+
+.terminal-input {
+    position: absolute;
+    width: 200px;
+    top: 200px;
+    left: 150px;
+}
+
+.terminal-input input {
+    box-sizing: border-box;
+    height: 64px;
+    background: #FFFFFF;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+}  
+  
+.terminal-input button {
+    position: relative;
+    width: 100%;
+    height: 64px;
+    margin-top: 32px;
+    background: #1F64B4;
+    border-radius: 999px;
+    border: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    opacity: 100%;
+}
+
+.locker-name {
+    position: absolute;
+    width: 150px;
+    right: 150px;
+    font-size: 24px;
+    border-radius: 16px;
+    top: 200px;
+    background: white;
+    padding: 8px 36px;
+    text-align: center;
+}
+
+.item-scenario {
+    position: absolute;
+    width: 200px;
+    top: 200px;
+    left: 150px;
+}
+
+.item-inventory {
+    position: absolute;
+    width: 200px;
+    top: 200px;
+    left: 150px;
+}
+
+.code-exam {
+    position: absolute;
+    top: 90px;
+    left: 148px;
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.exam {
+    position: absolute;
+    max-width: 500px;
+    max-height: 350px;
+    right: 150px;
+    top: 80px;
+}
+
+.patient-data {
+    position: absolute;
+    top: 140px;
+    left: 294px;
+    max-width: 380px;
+}
+
+.patient-age {
+    margin-top: 45px;
+}
+
+.patient-gender {
+    position: absolute;
+    top: 65px;
+    left: 136px;
+}
+
+.patient-case {
+    margin-top: 45px;
+}
+
+.locked-message {
+    color: red;
+    font-weight: bold;
+}
+
+.disease {
+    position: absolute;
+    top: 130px;
+    left: 330px;
+    max-width: 300px;
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+}
