@@ -41,8 +41,8 @@
 
 .room1-clipboard {
     width: 70px;
-    height: 120px;
-    bottom: 110px;
+    height: 95px;
+    bottom: 135px;
     right: 480px;
 }
 
@@ -51,6 +51,13 @@
     height: 120px;
     bottom: 90px;
     right: 340px;
+} 
+
+.room1-postit {
+    width: 35px;
+    height: 35px;
+    bottom: 360px;
+    right: 565px;
 }
 
 .room2-clipboard {

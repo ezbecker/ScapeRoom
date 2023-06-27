@@ -143,13 +143,14 @@ function fimGame(idPartida) {
 
 var audioFundoAtual;
 
+var audioFundoAtual;
+
 function reproduzirAudio(idAudio, fundo = false) {
   var audio = document.getElementById(idAudio);
 
   if (fundo) {
     if (audioFundoAtual) {
-      audioFundoAtual.pause();
-      audioFundoAtual.currentTime = 0;
+      pararAudioFundo();
     }
     audio.loop = true;
     audioFundoAtual = audio;
@@ -159,4 +160,12 @@ function reproduzirAudio(idAudio, fundo = false) {
   }
 
   audio.play();
+}
+
+function pararAudioFundo() {
+  if (audioFundoAtual) {
+    audioFundoAtual.pause();
+    audioFundoAtual.currentTime = 0;
+    audioFundoAtual = null;
+  }
 }

@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Execução do cenário 1 do jogo RadioEscape">
-        <meta name="keywords" content="scaperoom, radiologia, saúde, jogo, radioescape, radio escape,">
-        <link rel="icon" href="../assets/icon.png">
-        <title>RadioEscape | Jogando</title>
-        <link rel="stylesheet" href="game.css">
-        <link rel="stylesheet" href="default-positions.css">
-        <link rel="stylesheet" href="css/second-scenario.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
-    </head>
-
 <?php
 $paginaArmario = 0;
 if ($pagina == 44)
@@ -38,7 +21,7 @@ if (mysqli_num_rows($result) === 1) {
     $caderno = $row['caderno'];
 }
 
-$query = "SELECT * FROM puzzle natural join cenario2 natural join `cenario2-pacientes`  WHERE idPuzzle = $idPuzzle and paginaPac = $pagina or paginaPac = $paginaArmario";
+$query = "SELECT * FROM puzzle natural join cenario2 natural join `cenario2-pacientes`  WHERE idPuzzle = $idPuzzle and (paginaPac = $pagina or paginaPac = $paginaArmario)";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
@@ -49,7 +32,6 @@ if (mysqli_num_rows($result) === 1) {
     $genero = $row['genero'];
     $caso = $row['caso'];
 }
-
 $query = "SELECT * FROM puzzle natural join cenario2 WHERE idPuzzle = $idPuzzle and paginaExame = $pagina";
 $stmt = mysqli_prepare($conectado, $query);
 mysqli_stmt_execute($stmt);
@@ -161,9 +143,9 @@ if ($pagina == 24) {
     echo '<img src="../scenarios/scenario2/terminalCartao.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></button>';
     if ($inventario == 2) {
-        echo '<div id="areaClicavelLab1" onclick="salvarTempo(); atualizarVariavel(0); fimGame(' . $idPartida . '); redirecionarPagina(51,' . $idPuzzle . ');"></div>';
+        echo '<button class="cardDevice" onclick="salvarTempo(); atualizarVariavel(0); fimGame(' . $idPartida . '); redirecionarPagina(51,' . $idPuzzle . ');"></button>';
     } else {
-        echo '<div id="areaClicavelLab1" onclick="exibirMensagem(\'Cartão necessário\', 3000);"></div>';
+        echo '<button class="cardDevice" onclick="exibirMensagem(\'Cartão necessário\', 3000);"></button>';
     }
 } else if ($pagina == 43) { //corredor2
     echo '<img src="../scenarios/scenario2/corredor2.png">';
@@ -233,7 +215,24 @@ if ($pagina == 24) {
         echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="item-inventory" src="../assets/chave.png">';
 } else if ($pagina == 51) {
     echo '<p>Parabéns ' . $nome . ' você terminou em ' . $tempo . '</p>';
-    echo '<div id="areaClicavelSetaBaixo" onclick="redirecionarPagina(1,0);"></div>';
+    echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
+?>
+    <script>
+        window.onload = function() {
+            reproduzirAudio('win', false);
+        };
+    </script>
+<?php
+} else  if ($pagina == 52) {
+    echo '<p>Acabou o tempo</p>';
+    echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
+?>
+    <script>
+        window.onload = function() {
+            reproduzirAudio('gameOver', false);
+        };
+    </script>
+<?php
 }
 
 ?>

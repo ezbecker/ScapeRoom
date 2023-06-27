@@ -7,21 +7,26 @@
     <meta name="description" content="Execução do jogo RadioEscape">
     <meta name="keywords" content="scaperoom, radiologia, saúde, jogo, radioescape, radio escape,">
     <link rel="icon" href="../assets/icon.png">
-    <title>RadioEscape | Jogando</title>
-    <link rel="stylesheet" href="areasClicaveis.css">
     <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/ranking.css">
+    <link rel="stylesheet" href="css/default-positions.css">
+    <link rel="stylesheet" href="css/tutorial-scenario.css">
+    <link rel="stylesheet" href="css/first-scenario.css">
+    <link rel="stylesheet" href="css/puzzleLixo.css">
+    <link rel="stylesheet" href="css/second-scenario.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <title>RadioEscape | Jogando</title>
     <audio id="chuvaJogo" src="../assets/audios/chuvaJogo.mp3"></audio>
     <audio id="chuvaInicio" src="../assets/audios/chuvaInicio.mp3"></audio>
     <audio id="portaAbre" src="../assets/audios/portaAbre.mp3"></audio>
     <audio id="portaFecha" src="../assets/audios/portaFecha.mp3"></audio>
     <audio id="pcLigando" src="../assets/audios/pcLigando.mp3"></audio>
     <audio id="armarioAberto" src="../assets/audios/armarioAberto.mp3"></audio>
-    <link rel="stylesheet" href="css/game.css">
-    <link rel="stylesheet" href="css/default-positions.css">
-    <link rel="stylesheet" href="css/tutorial-scenario.css">
-    <link rel="stylesheet" href="css/first-scenario.css">
-    <link rel="stylesheet" href="css/ranking.css">
+    <audio id="win" src="../assets/audios/win.mp3"></audio>
+    <audio id="gameOver" src="../assets/audios/gameOver.mp3"></audio>
 </head>
 
 <body>
@@ -107,8 +112,9 @@
             <div class="menu-buttons">
                 <?php
                 echo '<button class="start-menu-button" onclick="redirecionar1()">INICIAR</button>';
-                echo '<button class="ranking-menu-button" onclick="redirecionarPagina(333,0);">INSTRUÇÕES</button>';
-                echo '<button class="exit-menu-button" onclick="redirecionarSair()">RANKING</button>';
+                echo '<button class="instructions-menu-button" onclick="redirecionarPagina(2,0);">INSTRUÇÕES</button>';
+                echo '<button class="ranking-menu-button" onclick="redirecionarPagina(333,0);">RANKING</button>';
+                echo '<button class="exit-menu-button" onclick="redirecionarSair()">SAIR</button>';
                 ?>
             </div>
             <script>
@@ -118,6 +124,7 @@
             </script>
         <?php
         } else if ($pagina == 2) {
+            echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
         } else if ($pagina == 333) {
             $query = "SELECT * FROM usuario natural join partida where terminou = 1 ORDER BY tempo DESC";
             $result = mysqli_query($conectado, $query);
@@ -144,7 +151,7 @@
             }
             echo '</ol>';
             echo '</div>';
-            echo '<div id="down-arrow-position" onclick="redirecionarPagina(1,0);"></div>';
+            echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
         }
         require_once "../view/initialRoom.php";
         require_once "../view/cenario1.php";

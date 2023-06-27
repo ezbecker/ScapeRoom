@@ -16,7 +16,10 @@ button {
 }
 
 .instructions-menu-button {
-    
+    width: 150px;
+    height: 25px;
+    top: 135px;
+    left: 80px;
 }
 
 .ranking-menu-button {

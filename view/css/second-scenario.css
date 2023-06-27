@@ -69,7 +69,7 @@
     left: 0px;
 }
 
-.terminal-position {
+.terminal-position { 
     width: 100px;
     height: 110px;
     top: 170px;
@@ -186,4 +186,11 @@
     max-width: 300px;
     font-family: 'Caveat', cursive;
     font-size: 32px;
+}
+
+.cardDevice {
+    width: 240px;
+    height: 380px;
+    bottom: 70px;
+    left: 360px;
 }
