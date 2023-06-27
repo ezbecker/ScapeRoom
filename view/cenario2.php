@@ -59,7 +59,7 @@ if ($pagina == 24) {
     } else if ($inventario > 0) {
         echo '<button class="lab2" onclick="salvarTempo(); reproduzirAudio(\'portaAbre\', false); redirecionarPagina(40,' . $idPuzzle . ');"></button>';
     } else {
-        echo '<button class="lab2" onclick="exibirMensagem(\'<p class=locked-message>A porta esta trancada</p>\', 3000);"></button>';
+        echo '<button class="lab2" onclick="exibirMensagem(\'A porta esta trancada\', 3000);"></button>';
     }
 } else if ($pagina == 25) {
     echo '<img src="../scenarios/scenario2/postit.png">';

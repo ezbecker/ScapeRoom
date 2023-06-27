@@ -175,8 +175,17 @@
 }
 
 .locked-message {
-    color: red;
+    position: absolute;
+    top: 17%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    color: white;
     font-weight: bold;
+    font-size: 22px;
+    background-color: black;
+    /* padding: 10px; */
+    z-index: 1;
+    border-radius: 10px
 }
 
 .disease {

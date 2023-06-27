@@ -157,13 +157,13 @@
         require_once "../view/cenario1.php";
         require_once "../view/cenario2.php";
         ?>
+        <div class="locked-message" id="mensagem"></div>
+
         <script>
             var pagina = <?php echo $pagina; ?>;
             var idPuzzle = <?php echo $idPuzzle; ?>;
         </script>
     </div>
-    <div id="mensagem"></div>
-
     <script src="../js/redirecionarPags.js"></script>
     <script src="../js/atualizarConteudo.js"></script>
     <script src="../js/cronometro.js"></script>

@@ -132,7 +132,7 @@ function fimGame(idPartida) {
     body: formData
   })
     .then(response => {
-      if (response.ok) {
+      if (response.ok) {a
         location.reload();
       } else {
         throw new Error('Erro ao atualizar o inventário.');
@@ -140,8 +140,6 @@ function fimGame(idPartida) {
     })
     .catch(error => console.log(error));
 }
-
-var audioFundoAtual;
 
 var audioFundoAtual;
 
