@@ -4,7 +4,6 @@
     max-width: 960px;
     top: 300px;
     font-family: Inter;
-    text-align: center;
     left: 32px;
 }
 
@@ -16,27 +15,25 @@
     font-size: 32px;
 }
 
-
-.podium-1 {
+.podium-1, .podium-2, .podium-3 {
     position: absolute;
     width: 150px;
-    top: -50px;
-    left: 373px;
+    text-align: center;
+}
+
+.podium-1 {
+    top: -90px;
+    left: 375px;
 }
 
 .podium-2 {
-    position: absolute;
-    width: 150px;
-    top: -50px;
-    left: 678px;
-
+    top: -55px;
+    left: 680px;
 }
 
 .podium-3 {
-    position:absolute;
-    width: 150px;
-    top: -50px;
-    left: 73px;
+    top: -55px;
+    left: 77px;
 }
 
 .text-4 {

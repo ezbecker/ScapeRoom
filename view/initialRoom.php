@@ -71,7 +71,7 @@ if ($pagina == 3) {
 } else if ($pagina == 0) {
 ?>
     <img src="../scenarios/inicialRoom/input.png">
-    <div class="terminal-input">
+    <div class="initial-terminal-input">
         <form action="../controller/respPuzzleRoom1.php" method="POST">
             <input type="text" name="respUser" class="form-control" placeholder="Resposta" required>
             <input type="hidden" name="idPuzzle" id="idPuzzle" value="<?php echo $idPuzzle ?>">

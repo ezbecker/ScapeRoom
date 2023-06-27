@@ -30,16 +30,13 @@
     border: none;
 }
 
-.paper {
+.trash-text {
     position: absolute;
-    top: 50%;
+    top: 240px;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.writingPaper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-family: 'Caveat', cursive;
+    max-width: 300px;
+    font-size: 32px;
+    line-height: 24px;
 }

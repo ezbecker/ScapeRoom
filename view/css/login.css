@@ -62,12 +62,13 @@ body {
   height: 64px;
   padding-left: 24px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   letter-spacing: 0.5px;
   width: 100%;
   border: 2px solid #696969;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+  font-family: 'Reem Kufi', sans-serif;
 }
 
 .passwordHelp {

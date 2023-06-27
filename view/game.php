@@ -14,10 +14,9 @@
     <link rel="stylesheet" href="css/first-scenario.css">
     <link rel="stylesheet" href="css/puzzleLixo.css">
     <link rel="stylesheet" href="css/second-scenario.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Reem+Kufi&display=swap" rel="stylesheet">
     <title>RadioEscape | Jogando</title>
     <audio id="chuvaJogo" src="../assets/audios/chuvaJogo.mp3"></audio>
     <audio id="chuvaInicio" src="../assets/audios/chuvaInicio.mp3"></audio>
