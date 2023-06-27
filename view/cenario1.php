@@ -99,7 +99,8 @@ if ($pagina == 10) {
     echo '<button class="scenario1-exit" onclick="salvarTempo(); redirecionarSetaSairCenario1();"></div>';
 } else if ($pagina == 23) {
 ?>
-    <img class="image" src="../assets/bilhete.png" width="305" height="104" />
+    <img class="paper" src="../assets/bilhete.png" width="305" height="104" />
+    <?php echo '<p class="writingPaper">A ordem do código do elevador é determinada pela <strong>idade</strong> dos pacientes em ordem <strong>'  . $bilheteLixo . '</strong></p>'; ?>
     <img class="image" src="../assets/papel1.png" width="150" height="150" />
     <img class="image" src="../assets/papel3.png" width="150" height="150" />
     <img class="image" src="../assets/papel2.png" width="150" height="150" />
