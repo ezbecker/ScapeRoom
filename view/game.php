@@ -126,6 +126,7 @@ session_start();
             </script>
         <?php
         } else if ($pagina == 2) {
+
             echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
         } else if ($pagina == 333) {
             $query = "SELECT * FROM usuario natural join partida where terminou = 1 ORDER BY tempo DESC";
@@ -136,17 +137,21 @@ session_start();
             echo '<ol start="4" id="ranking-list">';
             $count = 0;
             while ($row = mysqli_fetch_assoc($result)) {
+                $tempo1 = new DateTime('00:30:00');
+                $tempo2 = new DateTime($row['tempo']);
+                $intervalo = $tempo1->diff($tempo2);
+                $tempoFinal = $intervalo->format('%H:%I:%S');
                 if ($count < 10) {
                     $count++;
                     if ($count <= 3) {
                         echo '<div class="podium-' . $count . '">';
                         echo '<span class="name">' . $row['nome'] . "  " . '</span>';
-                        echo '<span class="time">' . $row['tempo'] . '</span>';
+                        echo '<span class="time">' . $tempoFinal . '</span>';
                         echo '</div>';
                     } else {
                         echo '<li class="text-' . $count . '">';
                         echo '<span class="name">' . $row['nome'] . "  " . '</span>';
-                        echo '<span class="time">' . $row['tempo'] . '</span>';
+                        echo '<span class="time">' . $tempoFinal . '</span>';
                         echo '</li>';
                     }
                 }

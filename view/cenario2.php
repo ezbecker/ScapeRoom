@@ -214,7 +214,21 @@ if ($pagina == 24) {
     if ($inventario == 0)
         echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="item-inventory" src="../assets/chave.png">';
 } else if ($pagina == 51) {
-    echo '<p>Parabéns ' . $nome . ' você terminou em ' . $tempo . '</p>';
+    echo '<img src="../scenarios/win.png">';
+    $tempo1 = new DateTime('00:30:00');
+    $tempo2 = new DateTime($tempo);
+    $intervalo = $tempo1->diff($tempo2);
+    $tempoFinal = $intervalo->format('%H:%I:%S');
+    $ouro = new DateTime('00:06:00');
+    $prata = new DateTime('00:12:00');
+    if ($tempoFinal < $ouro) {
+        echo '<img src="../assets/ouro.png">';
+    } else if ($tempoFinal < $prata) {
+        echo '<img src="../assets/prata.png">';
+    } else {
+        echo '<img src="../assets/bronze.png">';
+    }
+    echo '<p>Parabéns ' . $nome . ' você terminou em ' . $tempoFinal . '</p>';
     echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
 ?>
     <script>
@@ -224,7 +238,7 @@ if ($pagina == 24) {
     </script>
 <?php
 } else  if ($pagina == 52) {
-    echo '<p>Acabou o tempo</p>';
+    echo '<img src="../scenarios/gameOver.png">';
     echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
 ?>
     <script>
