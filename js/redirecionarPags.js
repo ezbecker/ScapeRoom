@@ -18,10 +18,6 @@ function redirecionarSetaSairCenario1() {
     window.location.replace('../controller/cenario2.php');
 }
 
-function redirecionarLixo() {
-    window.location.replace('../view/puzzleLixo.php');
-}
-
 function redirecionarTeclado() {
     window.location.replace('../view/puzzleTeclado.php?idPuzzle=' + idPuzzle);
 }

@@ -60,9 +60,9 @@ if (mysqli_num_rows($result2) === 1) {
     $exame = $row['exame'];
     $pacienteCodigo = $row['pacienteCodigo'];
 }
-if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $inventario == 1 && $_SESSION['vazio'] == 1)
+if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $pagina != 52 && $inventario == 1 && $_SESSION['vazio'] == 1)
     echo '<img class="item-scenario" src="../assets/chave.png">';
-else if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $inventario == 2 && $_SESSION['vazio'] == 1)
+else if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $pagina != 52 && $inventario == 2 && $_SESSION['vazio'] == 1)
     echo '<img class="item-scenario" src="../assets/cartao.png">';
 
 if ($pagina == 24) {
@@ -233,7 +233,7 @@ if ($pagina == 24) {
         echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="item-inventory" src="../assets/chave.png">';
 } else if ($pagina == 51) {
     echo '<p>Parabéns ' . $nome . ' você terminou em ' . $tempo . '</p>';
-    echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
+    echo '<div id="areaClicavelSetaBaixo" onclick="redirecionarPagina(1,0);"></div>';
 }
 
 ?>
