@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -30,7 +34,6 @@
 
 <body>
     <?php
-    session_start();
     require_once "../model/conexao.php";
 
     if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle']) && isset($_SESSION['email'])) {
