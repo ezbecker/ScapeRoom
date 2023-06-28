@@ -41,19 +41,23 @@ if (mysqli_num_rows($result) === 1) {
   <meta name="description" content="Execução do jogo RadioEscape">
   <meta name="keywords" content="scaperoom, radiologia, saúde, jogo, radioescape, radio escape,">
   <link rel="icon" href="../assets/icon.png">
-  <title>RadioEscape | Jogando</title>  
+  <title>RadioEscape | Jogando</title>
   <link rel="stylesheet" href="css/puzzleTeclado.css">
   <link rel="stylesheet" href="css/game.css">
   <link rel="stylesheet" href="css/default-positions.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Reem+Kufi&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/areasClicaveis.css">
   <link rel="stylesheet" href="css/first-scenario.css">
+  <link rel="stylesheet" href="css/puzzleLixo.css">
   <audio id="chuvaJogo" src="../assets/audios/chuvaJogo.mp3"></audio>
   <audio id="portaAbre" src="../assets/audios/portaAbre.mp3"></audio>
   <audio id="portaFecha" src="../assets/audios/portaFecha.mp3"></audio>
   <audio id="teclado" src="../assets/audios/teclado.mp3"></audio>
   <audio id="tecladoCorreto" src="../assets/audios/tecladoCorreto.mp3"></audio>
   <audio id="tecladoErrado" src="../assets/audios/tecladoErrado.mp3"></audio>
+  <audio id="book" src="../assets/audios/book.mp3"></audio>
+  <audio id="postit" src="../assets/audios/postit.mp3"></audio>
   <script>
     window.onbeforeunload = function() {
       salvarTempo();

@@ -200,6 +200,7 @@
     max-width: 300px;
     font-family: 'Caveat', cursive;
     font-size: 32px;
+    line-height: 32px;
 }
 
 .notebook-position {
@@ -213,9 +214,10 @@
     position: absolute;
     top: 50px;
     left: 370px;
-    max-width: 300px;
+    max-width: 270px;
     font-family: 'Caveat', cursive;
     font-size: 32px;
+    line-height: 30px;
 }
 
 .cardDevice {

@@ -6,6 +6,7 @@ function iniciarCronometro() {
             salvarTempo();
             clearInterval(intervalId);
             redirecionarPagina(52,0);
+            location.reload();
             return;
         }
         tempoRestante--;
