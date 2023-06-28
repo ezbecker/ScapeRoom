@@ -230,6 +230,7 @@ if ($pagina == 24) {
     }
     echo '<p class="congrats-text">Parabéns ' . $nome . ' !</p>';
     echo '<p class="time-text">Você terminou em ' . $tempoFinal . '</p>';
+    echo '<a target="_blank" class="feedback-button" href="https://forms.gle/aDLMhDkCbstbBxsy5">Avalie o jogo</a>';
     echo '<button class="right-arrow-position" onclick="reproduzirAudio(\'chuvaJogo\', true); redirecionarPagina(1,0);"></button>';
 ?>
     <script>

@@ -229,7 +229,7 @@
 
 .medal {
     position: absolute;
-    top: 200px;
+    top: 170px;
     left: 50%;
     width: 250px;
     transform: translate(-50%, -50%);
@@ -237,7 +237,7 @@
 
 .congrats-text {
     position: absolute;
-    top: 330px;
+    top: 300px;
     left: 50%;
     transform: translateX(-50%);
     color: #FFF;
@@ -249,11 +249,26 @@
 
 .time-text {
     position: absolute;
-    top: 400px;
+    top: 370px;
     left: 50%;
     transform: translateX(-50%);
     color: #FFF;
     font-size: 24px;
     text-align: center;
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+.feedback-button {
+    position: absolute;
+    top: 470px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 2px solid gray;
+    background-color: #110D24;
+    opacity: 100;
+    padding: 12px 32px;
     font-family: 'Reem Kufi', sans-serif;
 }
