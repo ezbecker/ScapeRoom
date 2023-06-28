@@ -49,7 +49,7 @@ else if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $pag
 
 if ($pagina == 24) {
     echo '<img src="../scenarios/scenario2/corredor.png">';
-    echo '<button class="postit-position" onclick="salvarTempo(); redirecionarPagina(25,' . $idPuzzle . ');"></button>';
+    echo '<button class="postit-position" onclick="salvarTempo(); reproduzirAudio(\'postit\', false); redirecionarPagina(25,' . $idPuzzle . ');"></button>';
     echo '<button class="lab1" onclick="salvarTempo(); reproduzirAudio(\'portaAbre\', false); redirecionarPagina(26,' . $idPuzzle . ');"></button>';
     echo '<button class="room" onclick="salvarTempo(); reproduzirAudio(\'portaAbre\', false); redirecionarPagina(33,' . $idPuzzle . ');"></button>';
     echo '<button class="door" onclick="salvarTempo(); redirecionarPagina(42,' . $idPuzzle . ');"></button>';
@@ -64,7 +64,7 @@ if ($pagina == 24) {
 } else if ($pagina == 25) {
     echo '<img src="../scenarios/scenario2/postit.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></button>';
-    echo '<p class="disease">' . $postit . '</p>';
+    echo '<p class="disease"> A chave do laboratório está no armário do paciente com ' . $postit . '. A senha é o código desse paciente</p>';
 } else if ($pagina == 26) { //lab1
     echo '<img src="../scenarios/scenario2/lab1.png">';
     echo '<button class="lab1-pc" onclick="salvarTempo(); reproduzirAudio(\'pcLigando\', false); redirecionarPagina(27,' . $idPuzzle . ');"></button>';
