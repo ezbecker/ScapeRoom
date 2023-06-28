@@ -59,24 +59,27 @@ if ($pagina == 3) {
 } else if ($pagina == 6 ||  $pagina == 7 ||  $pagina == 8) {
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(3,' . $idPuzzle . ');"></button>';
     if ($pagina == 6) {
+        $questao = 1;
         echo '<button class="right-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(7,' . $idPuzzle . ');"></button>';
         echo '<img src="../scenarios/inicialRoom/inicialRoom-book-1.png">';
     }
     if ($pagina == 7) {
+        $questao = 2;
         echo '<button class="right-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(8,' . $idPuzzle . ');"></button>';
         echo '<button class="left-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(6,' . $idPuzzle . ');"></button>';
         echo '<img src="../scenarios/inicialRoom/inicialRoom-book-2.png">';
     }
     if ($pagina == 8) {
+        $questao = 3;
         echo '<button class="left-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(7,' . $idPuzzle . ');"></button>';
         echo '<img src="../scenarios/inicialRoom/inicialRoom-book-3.png">';
     }
-    echo '<p class="question">' . $pergunta . '</p>';
+    echo '<p class="question">' . $questao . ") " . $pergunta . '</p>';
     echo '<div class="options">';
-    echo '<p class="option-1">' . $alternativa1 . '</p>';
-    echo '<p class="option-2">' . $alternativa2 . '</p>';
-    echo '<p class="option-3">' . $alternativa3 . '</p>';
-    echo '<p class="option-4">' . $alternativa4 . '</p>';
+    echo '<p class="option-1">a) ' . $alternativa1 . '</p>';
+    echo '<p class="option-2">b) ' . $alternativa2 . '</p>';
+    echo '<p class="option-3">c) ' . $alternativa3 . '</p>';
+    echo '<p class="option-4">d)' . $alternativa4 . '</p>';
     echo '</div>';
 } else if ($pagina == 9) {
     echo '<img src="../scenarios/inicialRoom/inicialRoom5.png">';
