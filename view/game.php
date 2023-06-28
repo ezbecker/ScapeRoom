@@ -30,6 +30,9 @@ session_start();
     <audio id="armarioAberto" src="../assets/audios/armarioAberto.mp3"></audio>
     <audio id="win" src="../assets/audios/win.mp3"></audio>
     <audio id="gameOver" src="../assets/audios/gameOver.mp3"></audio>
+    <audio id="mouseClick" src="../assets/audios/mouseClick.mp3"></audio>
+    <audio id="book" src="../assets/audios/book.mp3"></audio>
+    <audio id="postit" src="../assets/audios/postit.mp3"></audio>
 </head>
 
 <body>

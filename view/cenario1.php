@@ -33,7 +33,7 @@ if ($pagina == 10) {
     echo '<button class="down-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'portaFecha\', false); redirecionarPagina(10,' . $idPuzzle . ')"></button>';
     echo '<button class="room1-clipboard" onclick="salvarTempo(); redirecionarPagina(12,' . $idPuzzle . ')"></button>';
     echo '<button class="room1-trash" onclick="salvarTempo(); redirecionarPagina(23,' . $idPuzzle . ')"></button>';
-    echo '<button class="room1-postit" onclick="salvarTempo(); redirecionarPagina(311,' . $idPuzzle . ')"></button>';
+    echo '<button class="room1-postit" onclick="salvarTempo(); reproduzirAudio(\'postit\', false); redirecionarPagina(311,' . $idPuzzle . ')"></button>';
 } else if ($pagina == 12) { // Prancheta
     echo '<img src="../scenarios/scenario1/roomOne/Room1Clipboard.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(11,' . $idPuzzle . ')"></button>';
@@ -47,7 +47,7 @@ if ($pagina == 10) {
     echo '<img src="../scenarios/scenario1/roomTwo/roomTwo1.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'portaFecha\', false); redirecionarPagina(10,' . $idPuzzle . ')"></button>';
     echo '<button class="room2-clipboard" onclick="salvarTempo(); redirecionarPagina(14,' . $idPuzzle . ')"></button>';
-    echo '<button class="room2-paper" onclick="salvarTempo(); redirecionarPagina(15,' . $idPuzzle . ')"></button>';
+    echo '<button class="room2-paper" onclick="salvarTempo(); reproduzirAudio(\'postit\', false); redirecionarPagina(15,' . $idPuzzle . ')"></button>';
 } else if ($pagina == 14) { // Prancheta
     echo '<img src="../scenarios/scenario1/roomTwo/Room2Clipboard.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(13,' . $idPuzzle . ')"></button>';
@@ -81,7 +81,7 @@ if ($pagina == 10) {
     echo '<img src="../scenarios/scenario1/roomFour/roomFour2.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(18,' . $idPuzzle . ')"></button>';
     echo '<button class="room4-clipboard" onclick="salvarTempo(); redirecionarPagina(20,' . $idPuzzle . ')"></button>';
-    echo '<button class="room4-paper" onclick="salvarTempo(); redirecionarPagina(21,' . $idPuzzle . ')"></div>';
+    echo '<button class="room4-paper" onclick="salvarTempo(); reproduzirAudio(\'postit\', false); redirecionarPagina(21,' . $idPuzzle . ')"></div>';
 } else if ($pagina == 20) { // Prancheta
     echo '<img src="../scenarios/scenario1/roomFour/Room4Clipboard.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(19,' . $idPuzzle . ')"></button>';
