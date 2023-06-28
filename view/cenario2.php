@@ -133,12 +133,12 @@ if ($pagina == 24) {
     echo '</div>';
 } else if ($pagina == 40) { //lab2
     echo '<img src="../scenarios/scenario2/lab2.gif">';
-    echo '<div id="areaClicavelCaderno" onclick="salvarTempo(); redirecionarPagina(41,' . $idPuzzle . ');"></div>';
+    echo '<button class="notebook-position" onclick="salvarTempo(); redirecionarPagina(41,' . $idPuzzle . ');"></button>';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'portaFecha\', false); redirecionarPagina(24,' . $idPuzzle . ');"></button>';
 } else if ($pagina == 41) { //lab2-caderno
     echo '<img src="../scenarios/scenario2/lab2-caderno.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(40,' . $idPuzzle . ');"></button>';
-    echo '<p class="question-text">' . $caderno . '</p>';
+    echo '<p class="notebook-text">' . $caderno . '</p>';
 } else if ($pagina == 42) { //cartao
     echo '<img src="../scenarios/scenario2/terminalCartao.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></button>';
@@ -222,14 +222,15 @@ if ($pagina == 24) {
     $ouro = new DateTime('00:06:00');
     $prata = new DateTime('00:12:00');
     if ($tempoFinal < $ouro) {
-        echo '<img src="../assets/ouro.png">';
+        echo '<img class="medal" src="../assets/ouro.png">';
     } else if ($tempoFinal < $prata) {
-        echo '<img src="../assets/prata.png">';
+        echo '<img class="medal" src="../assets/prata.png">';
     } else {
-        echo '<img src="../assets/bronze.png">';
+        echo '<img class="medal" src="../assets/bronze.png">';
     }
-    echo '<p>Parabéns ' . $nome . ' você terminou em ' . $tempoFinal . '</p>';
-    echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
+    echo '<p class="congrats-text">Parabéns ' . $nome . ' !</p>';
+    echo '<p class="time-text">Você terminou em ' . $tempoFinal . '</p>';
+    echo '<button class="right-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
 ?>
     <script>
         window.onload = function() {
@@ -239,7 +240,7 @@ if ($pagina == 24) {
 <?php
 } else  if ($pagina == 52) {
     echo '<img src="../scenarios/gameOver.png">';
-    echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
+    echo '<button class="right-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
 ?>
     <script>
         window.onload = function() {

@@ -32,26 +32,26 @@ if ($pagina == 3) {
     while ($row = mysqli_fetch_assoc($result)) {
         if ($cont == 1 or $cont == 3) {
             if ($cont == 1) {
-                echo '<div class="options">';
-                echo '<p >' . $row['alternativa1'] . $row['cid1'] . '</p>';
-                echo '<p>' . $row['alternativa2'] . $row['cid2'] . '</p>';
-                echo '<p >' . $row['alternativa3'] . $row['cid3'] . '</p>';
-                echo '<p>' . $row['alternativa4'] . $row['cid4'] . '</p>';
+                echo '<div class="clipboard-1">';
+                echo '<p >' . $row['alternativa1'] ." " . "<strong>" . $row['cid1'] . "</strong>" .'</p>';
+                echo '<p>' . $row['alternativa2'] ." " ."<strong>" . $row['cid2'] . "</strong>" .'</p>';
+                echo '<p >' . $row['alternativa3'] ." " ."<strong>" . $row['cid3'] . "</strong>" .'</p>';
+                echo '<p>' . $row['alternativa4'] ." " ."<strong>" . $row['cid4'] . "</strong>" .'</p>';
             } else {
-                echo '<p >' . $row['alternativa1'] . $row['cid1'] . '</p>';
-                echo '<p>' . $row['alternativa2'] . $row['cid2'] . '</p>';
+                echo '<p >' . $row['alternativa1'] ." " ."<strong>" . $row['cid1'] . "</strong>" .'</p>';
+                echo '<p>' . $row['alternativa2'] ." " ."<strong>" . $row['cid2'] . "</strong>" .'</p>';
                 echo '</div>';
             }
         } else if ($cont == 2) {
-            echo '<div class="options">';
-            echo '<p >' . $row['alternativa1'] . $row['cid1'] . '</p>';
-            echo '<p>' . $row['alternativa2'] . $row['cid2'] . '</p>';
-            echo '<p >' . $row['alternativa3'] . $row['cid3'] . '</p>';
-            echo '<p>' . $row['alternativa4'] . $row['cid4'] . '</p>';
+            echo '<div class="clipboard-2">';
+            echo '<p >' . $row['alternativa1'] ." " ."<strong>" . $row['cid1'] . "</strong>" .'</p>';
+            echo '<p>' . $row['alternativa2'] ." " ."<strong>" . $row['cid2'] . "</strong>" .'</p>';
+            echo '<p >' . $row['alternativa3'] ." " ."<strong>" . $row['cid3'] . "</strong>" .'</p>';
+            echo '<p>' . $row['alternativa4'] ." " ."<strong>" . $row['cid4'] . "</strong>" .'</p>';
         }
         if ($cont == 3) {
-            echo '<p >' . $row['alternativa3'] . $row['cid3'] . '</p>';
-            echo '<p>' . $row['alternativa4'] . $row['cid4'] . '</p>';
+            echo '<p >' . $row['alternativa3'] ." " ."<strong>" . $row['cid3'] . "</strong>" .'</p>';
+            echo '<p>' . $row['alternativa4'] ." " ."<strong>" . $row['cid4'] . "</strong>" .'</p>';
             echo '</div>';
         }
         $cont++;

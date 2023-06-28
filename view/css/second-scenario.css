@@ -130,16 +130,16 @@
 
 .item-scenario {
     position: absolute;
-    width: 200px;
-    top: 200px;
-    left: 150px;
+    width: 60px;
+    top: 28px;
+    left: 28px;
 }
 
 .item-inventory {
     position: absolute;
-    width: 200px;
-    top: 200px;
-    left: 150px;
+    width: 50px;
+    top: 150px;
+    left: 470px;
 }
 
 .code-exam {
@@ -203,9 +203,56 @@
     line-height: 32px;
 }
 
+.notebook-position {
+    width: 90px;
+    height: 50px;
+    bottom: 120px;
+    right: 340px;
+}
+
+.notebook-text {
+    position: absolute;
+    top: 50px;
+    left: 370px;
+    max-width: 300px;
+    font-family: 'Caveat', cursive;
+    font-size: 32px;
+}
+
 .cardDevice {
     width: 240px;
     height: 380px;
     bottom: 70px;
     left: 360px;
+}
+
+.medal {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    width: 250px;
+    transform: translate(-50%, -50%);
+}
+
+.congrats-text {
+    position: absolute;
+    top: 330px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFF;
+    font-size: 42px;
+    text-align: center;
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+
+.time-text {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFF;
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Reem Kufi', sans-serif;
 }
