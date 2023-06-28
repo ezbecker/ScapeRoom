@@ -46,16 +46,16 @@ if ($pagina == 3) {
 } else if ($pagina == 6 ||  $pagina == 7 ||  $pagina == 8) {
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(3,' . $idPuzzle . ');"></button>';
     if ($pagina == 6) {
-        echo '<button class="right-arrow-position" onclick="salvarTempo(); redirecionarPagina(7,' . $idPuzzle . ');"></button>';
+        echo '<button class="right-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(7,' . $idPuzzle . ');"></button>';
         echo '<img src="../scenarios/inicialRoom/inicialRoom-book-1.png">';
     }
     if ($pagina == 7) {
-        echo '<button class="right-arrow-position" onclick="salvarTempo(); redirecionarPagina(8,' . $idPuzzle . ');"></button>';
-        echo '<button class="left-arrow-position" onclick="salvarTempo(); redirecionarPagina(6,' . $idPuzzle . ');"></button>';
+        echo '<button class="right-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(8,' . $idPuzzle . ');"></button>';
+        echo '<button class="left-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(6,' . $idPuzzle . ');"></button>';
         echo '<img src="../scenarios/inicialRoom/inicialRoom-book-2.png">';
     }
     if ($pagina == 8) {
-        echo '<button class="left-arrow-position" onclick="salvarTempo(); redirecionarPagina(7,' . $idPuzzle . ');"></button>';
+        echo '<button class="left-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(7,' . $idPuzzle . ');"></button>';
         echo '<img src="../scenarios/inicialRoom/inicialRoom-book-3.png">';
     }
     echo '<p class="question">' . $pergunta . '</p>';
