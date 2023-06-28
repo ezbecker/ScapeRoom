@@ -64,7 +64,7 @@ if ($pagina == 24) {
 } else if ($pagina == 25) {
     echo '<img src="../scenarios/scenario2/postit.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></button>';
-    echo '<p class="disease"> A chave do laboratório está no armário do paciente com ' . $postit . '. A senha é o código desse paciente</p>';
+    echo '<p class="disease"> A chave do laboratório está no armário do paciente com ' . $postit . '. A senha é o código desse paciente.</p>';
 } else if ($pagina == 26) { //lab1
     echo '<img src="../scenarios/scenario2/lab1.png">';
     echo '<button class="lab1-pc" onclick="salvarTempo(); reproduzirAudio(\'pcLigando\', false); redirecionarPagina(27,' . $idPuzzle . ');"></button>';
