@@ -28,34 +28,47 @@ if ($pagina == 3) {
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(3,' . $idPuzzle . ');"></button>';
     $query = "SELECT * FROM puzzle natural join initialroom WHERE idPuzzle = $idPuzzle";
     $result = mysqli_query($conectado, $query);
-    $cont = 0;
+    $cont = 1;
     while ($row = mysqli_fetch_assoc($result)) {
-        if ($cont < 6) {
-            echo '<p class="option-1">' . $row['alternativa1'] . $row['cid1'] . '</p>';
-            echo '<p class="option-2">' . $row['alternativa2'] . $row['cid2'] . '</p>';
-            echo '<p class="option-3">' . $row['alternativa3'] . $row['cid3'] . '</p>';
-            echo '<p class="option-4">' . $row['alternativa4'] . $row['cid4'] . '</p>';
-        } else {
-            echo '<p class="option-1">' . $row['alternativa1'] . $row['cid1'] . '</p>';
-            echo '<p class="option-2">' . $row['alternativa2'] . $row['cid2'] . '</p>';
-            echo '<p class="option-3">' . $row['alternativa3'] . $row['cid3'] . '</p>';
-            echo '<p class="option-4">' . $row['alternativa4'] . $row['cid4'] . '</p>';
+        if ($cont == 1 or $cont == 3) {
+            if ($cont == 1) {
+                echo '<div class="clipboard-1">';
+                echo '<p >' . $row['alternativa1'] ." " . "<strong>" . $row['cid1'] . "</strong>" .'</p>';
+                echo '<p>' . $row['alternativa2'] ." " ."<strong>" . $row['cid2'] . "</strong>" .'</p>';
+                echo '<p >' . $row['alternativa3'] ." " ."<strong>" . $row['cid3'] . "</strong>" .'</p>';
+                echo '<p>' . $row['alternativa4'] ." " ."<strong>" . $row['cid4'] . "</strong>" .'</p>';
+            } else {
+                echo '<p >' . $row['alternativa1'] ." " ."<strong>" . $row['cid1'] . "</strong>" .'</p>';
+                echo '<p>' . $row['alternativa2'] ." " ."<strong>" . $row['cid2'] . "</strong>" .'</p>';
+                echo '</div>';
+            }
+        } else if ($cont == 2) {
+            echo '<div class="clipboard-2">';
+            echo '<p >' . $row['alternativa1'] ." " ."<strong>" . $row['cid1'] . "</strong>" .'</p>';
+            echo '<p>' . $row['alternativa2'] ." " ."<strong>" . $row['cid2'] . "</strong>" .'</p>';
+            echo '<p >' . $row['alternativa3'] ." " ."<strong>" . $row['cid3'] . "</strong>" .'</p>';
+            echo '<p>' . $row['alternativa4'] ." " ."<strong>" . $row['cid4'] . "</strong>" .'</p>';
+        }
+        if ($cont == 3) {
+            echo '<p >' . $row['alternativa3'] ." " ."<strong>" . $row['cid3'] . "</strong>" .'</p>';
+            echo '<p>' . $row['alternativa4'] ." " ."<strong>" . $row['cid4'] . "</strong>" .'</p>';
+            echo '</div>';
         }
         $cont++;
     }
 } else if ($pagina == 6 ||  $pagina == 7 ||  $pagina == 8) {
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(3,' . $idPuzzle . ');"></button>';
     if ($pagina == 6) {
-        echo '<button class="right-arrow-position" onclick="salvarTempo(); redirecionarPagina(7,' . $idPuzzle . ');"></button>';
+        echo '<button class="right-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(7,' . $idPuzzle . ');"></button>';
         echo '<img src="../scenarios/inicialRoom/inicialRoom-book-1.png">';
     }
     if ($pagina == 7) {
-        echo '<button class="right-arrow-position" onclick="salvarTempo(); redirecionarPagina(8,' . $idPuzzle . ');"></button>';
-        echo '<button class="left-arrow-position" onclick="salvarTempo(); redirecionarPagina(6,' . $idPuzzle . ');"></button>';
+        echo '<button class="right-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(8,' . $idPuzzle . ');"></button>';
+        echo '<button class="left-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(6,' . $idPuzzle . ');"></button>';
         echo '<img src="../scenarios/inicialRoom/inicialRoom-book-2.png">';
     }
     if ($pagina == 8) {
-        echo '<button class="left-arrow-position" onclick="salvarTempo(); redirecionarPagina(7,' . $idPuzzle . ');"></button>';
+        echo '<button class="left-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'book\', false); redirecionarPagina(7,' . $idPuzzle . ');"></button>';
         echo '<img src="../scenarios/inicialRoom/inicialRoom-book-3.png">';
     }
     echo '<p class="question">' . $pergunta . '</p>';

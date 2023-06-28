@@ -133,12 +133,12 @@ if ($pagina == 24) {
     echo '</div>';
 } else if ($pagina == 40) { //lab2
     echo '<img src="../scenarios/scenario2/lab2.gif">';
-    echo '<div id="areaClicavelCaderno" onclick="salvarTempo(); redirecionarPagina(41,' . $idPuzzle . ');"></div>';
+    echo '<button class="notebook-position" onclick="salvarTempo(); redirecionarPagina(41,' . $idPuzzle . ');"></button>';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); reproduzirAudio(\'portaFecha\', false); redirecionarPagina(24,' . $idPuzzle . ');"></button>';
 } else if ($pagina == 41) { //lab2-caderno
     echo '<img src="../scenarios/scenario2/lab2-caderno.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(40,' . $idPuzzle . ');"></button>';
-    echo '<p class="question-text">' . $caderno . '</p>';
+    echo '<p class="notebook-text">' . $caderno . '</p>';
 } else if ($pagina == 42) { //cartao
     echo '<img src="../scenarios/scenario2/terminalCartao.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></button>';
