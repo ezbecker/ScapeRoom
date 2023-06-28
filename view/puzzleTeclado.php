@@ -56,6 +56,8 @@ if (mysqli_num_rows($result) === 1) {
   <audio id="teclado" src="../assets/audios/teclado.mp3"></audio>
   <audio id="tecladoCorreto" src="../assets/audios/tecladoCorreto.mp3"></audio>
   <audio id="tecladoErrado" src="../assets/audios/tecladoErrado.mp3"></audio>
+  <audio id="book" src="../assets/audios/book.mp3"></audio>
+  <audio id="postit" src="../assets/audios/postit.mp3"></audio>
   <script>
     window.onbeforeunload = function() {
       salvarTempo();

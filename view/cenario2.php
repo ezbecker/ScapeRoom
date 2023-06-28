@@ -138,7 +138,7 @@ if ($pagina == 24) {
 } else if ($pagina == 41) { //lab2-caderno
     echo '<img src="../scenarios/scenario2/lab2-caderno.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(40,' . $idPuzzle . ');"></button>';
-    echo '<p class="notebook-text">' . $caderno . '</p>';
+    echo '<p class="notebook-text">O cartão de acesso está no armário do paciente com ' . $caderno . '.</p>';
 } else if ($pagina == 42) { //cartao
     echo '<img src="../scenarios/scenario2/terminalCartao.png">';
     echo '<button class="down-arrow-position" onclick="salvarTempo(); redirecionarPagina(24,' . $idPuzzle . ');"></button>';
@@ -238,9 +238,9 @@ if ($pagina == 24) {
         };
     </script>
 <?php
-} else  if ($pagina == 52) {
+} else if ($pagina == 52) {
     echo '<img src="../scenarios/gameOver.png">';
-    echo '<button class="right-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
+    echo '<button class="right-arrow-position" onclick="reproduzirAudio(\'chuvaJogo\', true); redirecionarPagina(1,0);"></button>';
 ?>
     <script>
         window.onload = function() {

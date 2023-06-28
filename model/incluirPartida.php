@@ -14,7 +14,7 @@ if (mysqli_num_rows($result) === 1) {
 }
 
 if (mysqli_num_rows($result) === 1) {
-    $tempo = '00:30:00';
+    $tempo = '00:00:05';
     $inv = 0;
     $terminou = 0;
 
