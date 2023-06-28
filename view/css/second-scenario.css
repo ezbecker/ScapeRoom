@@ -224,3 +224,34 @@
     bottom: 70px;
     left: 360px;
 }
+
+.medal {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    width: 250px;
+    transform: translate(-50%, -50%);
+}
+
+.congrats-text {
+    position: absolute;
+    top: 330px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFF;
+    font-size: 42px;
+    text-align: center;
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+
+.time-text {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFF;
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Reem Kufi', sans-serif;
+}

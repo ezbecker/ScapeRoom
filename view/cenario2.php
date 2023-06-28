@@ -222,14 +222,15 @@ if ($pagina == 24) {
     $ouro = new DateTime('00:06:00');
     $prata = new DateTime('00:12:00');
     if ($tempoFinal < $ouro) {
-        echo '<img src="../assets/ouro.png">';
+        echo '<img class="medal" src="../assets/ouro.png">';
     } else if ($tempoFinal < $prata) {
-        echo '<img src="../assets/prata.png">';
+        echo '<img class="medal" src="../assets/prata.png">';
     } else {
-        echo '<img src="../assets/bronze.png">';
+        echo '<img class="medal" src="../assets/bronze.png">';
     }
-    echo '<p>Parabéns ' . $nome . ' você terminou em ' . $tempoFinal . '</p>';
-    echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
+    echo '<p class="congrats-text">Parabéns ' . $nome . ' !</p>';
+    echo '<p class="time-text">Você terminou em ' . $tempoFinal . '</p>';
+    echo '<button class="right-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
 ?>
     <script>
         window.onload = function() {
@@ -239,7 +240,7 @@ if ($pagina == 24) {
 <?php
 } else  if ($pagina == 52) {
     echo '<img src="../scenarios/gameOver.png">';
-    echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
+    echo '<button class="right-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
 ?>
     <script>
         window.onload = function() {
