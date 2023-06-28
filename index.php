@@ -16,7 +16,7 @@
 <body>
   <div class="container">
     <div class="image">
-      <img src="assets/hospitalLogo.png" alt="Imagem de segurança">
+      <img src="assets/logo.png" alt="Imagem de segurança">
     </div>
     <div class="form">
       <p class="title">Entrar</p>
