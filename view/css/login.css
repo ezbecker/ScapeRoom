@@ -19,10 +19,10 @@ body {
 }
 
 .image img {
-  width: 100%;
-  max-width: 400px;
+  width: 200%;
+  max-width: 500px;
   height: auto;
-  right: 0px;;
+  right: 0px;
 }
 
 .form {
