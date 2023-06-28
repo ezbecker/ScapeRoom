@@ -129,7 +129,7 @@ session_start();
             </script>
         <?php
         } else if ($pagina == 2) {
-
+            echo '<img src="../scenarios/instrucao.png">';
             echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
         } else if ($pagina == 333) {
             $query = "SELECT * FROM usuario natural join partida where terminou = 1 ORDER BY tempo DESC";
