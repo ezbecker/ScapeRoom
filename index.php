@@ -22,7 +22,7 @@
       <p class="title">Entrar</p>
       <p class="subtitle">Digite as suas informações</p>
       <div class="container-fluid">
-        <form name="frmUsuario" action="controller/autenticar.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <form name="frmUsuario" action="controller/authenticate_user.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
           <div class="emailTextField">
             <input name="email" type="email" class="form-control" placeholder="E-mail" required>
           </div>

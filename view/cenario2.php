@@ -175,7 +175,7 @@ if ($pagina == 24) {
     echo '<p class="locker-name">' . $pacienteNome . '</p>';
 ?>
     <div class="terminal-input">
-        <form action="../controller/respPuzzleArmario.php" method="POST">
+        <form action="../controller/answer_closet_scenario3.php" method="POST">
             <div class="nomeTextField">
                 <input type="text" name="respUser" class="form-control" placeholder="Resposta" required>
             </div>

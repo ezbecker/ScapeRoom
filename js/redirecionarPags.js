@@ -1,21 +1,21 @@
 function redirecionar1() {
-    window.location.replace('../controller/room1.php');
+    window.location.replace('../controller/draw_scenario1.php');
+}
+
+function redirecionarSetaSairRoom1() {
+  window.location.replace('../controller/draw_scenario2.php');
+}
+
+function redirecionarSetaSairCenario1() {
+  window.location.replace('../controller/draw_scenario3.php');
 }
 
 function redirecionarSair() {
-    window.location.replace('../controller/sair.php');
+    window.location.replace('../controller/logout.php');
 }
 
 function redirecionarPerg1() {
     window.location.replace('../view/puzzleRoom1.php?idPuzzle=' + idPuzzle);
-}
-
-function redirecionarSetaSairRoom1() {
-    window.location.replace('../controller/cenario1.php');
-}
-
-function redirecionarSetaSairCenario1() {
-    window.location.replace('../controller/cenario2.php');
 }
 
 function redirecionarTeclado() {
@@ -27,7 +27,7 @@ function redirecionarPagina(pagina, puzzle) {
   formData.append('pagina', pagina);
   formData.append('idPuzzle', puzzle);
 
-  fetch('../controller/sessao.php', {
+  fetch('../controller/update_session.php', {
     method: 'POST',
     body: formData
   })

@@ -1,5 +1,5 @@
 function redirecionarPagina(pagina, puzzle) {
-    fetch("../controller/sessao.php", {
+    fetch("../controller/update_session.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",

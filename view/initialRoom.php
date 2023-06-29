@@ -33,25 +33,25 @@ if ($pagina == 3) {
         if ($cont == 1 or $cont == 3) {
             if ($cont == 1) {
                 echo '<div class="clipboard-1">';
-                echo '<p >' . $row['alternativa1'] ." " . "<strong>" . $row['cid1'] . "</strong>" .'</p>';
-                echo '<p>' . $row['alternativa2'] ." " ."<strong>" . $row['cid2'] . "</strong>" .'</p>';
-                echo '<p >' . $row['alternativa3'] ." " ."<strong>" . $row['cid3'] . "</strong>" .'</p>';
-                echo '<p>' . $row['alternativa4'] ." " ."<strong>" . $row['cid4'] . "</strong>" .'</p>';
+                echo '<p >' . $row['alternativa1'] . " " . "<strong>" . $row['cid1'] . "</strong>" . '</p>';
+                echo '<p>' . $row['alternativa2'] . " " . "<strong>" . $row['cid2'] . "</strong>" . '</p>';
+                echo '<p >' . $row['alternativa3'] . " " . "<strong>" . $row['cid3'] . "</strong>" . '</p>';
+                echo '<p>' . $row['alternativa4'] . " " . "<strong>" . $row['cid4'] . "</strong>" . '</p>';
             } else {
-                echo '<p >' . $row['alternativa1'] ." " ."<strong>" . $row['cid1'] . "</strong>" .'</p>';
-                echo '<p>' . $row['alternativa2'] ." " ."<strong>" . $row['cid2'] . "</strong>" .'</p>';
+                echo '<p >' . $row['alternativa1'] . " " . "<strong>" . $row['cid1'] . "</strong>" . '</p>';
+                echo '<p>' . $row['alternativa2'] . " " . "<strong>" . $row['cid2'] . "</strong>" . '</p>';
                 echo '</div>';
             }
         } else if ($cont == 2) {
             echo '<div class="clipboard-2">';
-            echo '<p >' . $row['alternativa1'] ." " ."<strong>" . $row['cid1'] . "</strong>" .'</p>';
-            echo '<p>' . $row['alternativa2'] ." " ."<strong>" . $row['cid2'] . "</strong>" .'</p>';
-            echo '<p >' . $row['alternativa3'] ." " ."<strong>" . $row['cid3'] . "</strong>" .'</p>';
-            echo '<p>' . $row['alternativa4'] ." " ."<strong>" . $row['cid4'] . "</strong>" .'</p>';
+            echo '<p >' . $row['alternativa1'] . " " . "<strong>" . $row['cid1'] . "</strong>" . '</p>';
+            echo '<p>' . $row['alternativa2'] . " " . "<strong>" . $row['cid2'] . "</strong>" . '</p>';
+            echo '<p >' . $row['alternativa3'] . " " . "<strong>" . $row['cid3'] . "</strong>" . '</p>';
+            echo '<p>' . $row['alternativa4'] . " " . "<strong>" . $row['cid4'] . "</strong>" . '</p>';
         }
         if ($cont == 3) {
-            echo '<p >' . $row['alternativa3'] ." " ."<strong>" . $row['cid3'] . "</strong>" .'</p>';
-            echo '<p>' . $row['alternativa4'] ." " ."<strong>" . $row['cid4'] . "</strong>" .'</p>';
+            echo '<p >' . $row['alternativa3'] . " " . "<strong>" . $row['cid3'] . "</strong>" . '</p>';
+            echo '<p>' . $row['alternativa4'] . " " . "<strong>" . $row['cid4'] . "</strong>" . '</p>';
             echo '</div>';
         }
         $cont++;
@@ -88,7 +88,7 @@ if ($pagina == 3) {
 ?>
     <img src="../scenarios/inicialRoom/input.png">
     <div class="initial-terminal-input">
-        <form action="../controller/respPuzzleRoom1.php" method="POST">
+        <form action="../controller/answer_scenario1.php" method="POST">
             <input type="text" name="respUser" class="form-control" placeholder="Resposta" required>
             <input type="hidden" name="idPuzzle" id="idPuzzle" value="<?php echo $idPuzzle ?>">
             <button type="submit" class="enviar">Enviar</button>

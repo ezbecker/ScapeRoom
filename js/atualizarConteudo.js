@@ -91,7 +91,7 @@ function atualizarInventario() {
   formData.append('idPartida', idPartida);
   formData.append('inventario', inventario);
   
-  fetch('../model/atualizar_inventario.php', {
+  fetch('../model/update_inventory.php', {
     method: 'POST',
     body: formData
   })
@@ -109,7 +109,7 @@ function atualizarVariavel(vazio) {
   let formData = new FormData();
   formData.append('vazio', vazio);
   
-  fetch('../controller/atualizar_inventarioVazio.php', {
+  fetch('../controller/update_empty_inventory.php', {
     method: 'POST',
     body: formData
   })
