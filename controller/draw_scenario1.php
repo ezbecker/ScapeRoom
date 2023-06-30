@@ -1,5 +1,5 @@
 <?php
-require_once "../model/incluirPartida.php";
+require_once "../model/insert_new_game.php";
 ?>
 
 <body onload="redirecionarPagina(paginaSelecionada, idPuzzleSelecionado)">

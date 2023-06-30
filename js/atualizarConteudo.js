@@ -4,7 +4,7 @@ function salvarTempo() {
     formData.append('tempo', formatarTempo(tempoAtual));
     formData.append('idPartida', idPartida);
   
-    fetch('../model/salvarTempo.php', {
+    fetch('../model/save_time.php', {
       method: 'POST',
       body: formData
     })
@@ -127,7 +127,7 @@ function fimGame(idPartida) {
   let formData = new FormData();
   formData.append('idPartida', idPartida);
   
-  fetch('../model/fimGame.php', {
+  fetch('../model/game_over.php', {
     method: 'POST',
     body: formData
   })

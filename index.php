@@ -36,7 +36,7 @@
       </div>
 
       <p class="helpText">Se você é novo aqui, crie uma conta!</p>
-      <a href="view/cadastroUser.php" class="criar">Criar uma conta</a>
+      <a href="view/user_registration.php" class="criar">Criar uma conta</a>
     </div>
   </div>
 

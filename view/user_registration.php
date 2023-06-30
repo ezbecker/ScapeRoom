@@ -22,7 +22,7 @@
       <p class="title">Registrar</p>
       <p class="subtitle">Digite as suas informações</p>
       <div class="container-fluid">
-        <form name="frmUsuario" action="../model/incluirUser.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <form name="frmUsuario" action="../model/insert_new_user.php" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
           <div class="nomeTextField">
             <input type="text" name="nome" class="form-control" placeholder="Nome" required>
           </div>
