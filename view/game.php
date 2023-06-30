@@ -11,6 +11,8 @@ session_start();
     <meta name="description" content="Execução do jogo RadioEscape">
     <meta name="keywords" content="scaperoom, radiologia, saúde, jogo, radioescape, radio escape,">
     <link rel="icon" href="../assets/icon.png">
+    <title>RadioEscape | Jogando</title>
+    <!-- css -->
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/ranking.css">
     <link rel="stylesheet" href="css/default-positions.css">
@@ -21,7 +23,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Reem+Kufi&display=swap" rel="stylesheet">
-    <title>RadioEscape | Jogando</title>
+    <!-- audios -->
     <audio id="chuvaJogo" src="../assets/audios/chuvaJogo.mp3"></audio>
     <audio id="chuvaInicio" src="../assets/audios/chuvaInicio.mp3"></audio>
     <audio id="portaAbre" src="../assets/audios/portaAbre.mp3"></audio>
@@ -111,6 +113,8 @@ session_start();
 
     <div class="game-area" id="content">
         <?php
+        require_once "../controller/render_object.php";
+
         if ($pagina == 1) {
             echo '<img src="../scenarios/menu.gif">';
         ?>
@@ -163,9 +167,10 @@ session_start();
             echo '</div>';
             echo '<button class="down-arrow-position" onclick="redirecionarPagina(1,0);"></button>';
         }
-        require_once "../view/initialRoom.php";
-        require_once "../view/cenario1.php";
-        require_once "../view/cenario2.php";
+        require_once "../view/scenario1.php";
+        require_once "../view/scenario2.php";
+        require_once "../view/scenario3.php";
+        require_once "../view/end_game.php";
         ?>
         <div class="locked-message" id="mensagem"></div>
 

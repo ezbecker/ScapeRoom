@@ -8,7 +8,7 @@ require_once "../model/insert_new_game.php";
 
 <script>
     var puzzle = [
-        "1", "20", "21", "22", "23", "24", "25"
+        "1", //"20", "21", "22", "23", "24", "25"
     ];
     var index = Math.floor(Math.random() * puzzle.length);
     var paginaSelecionada = 3;
