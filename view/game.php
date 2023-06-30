@@ -1,5 +1,24 @@
 <?php
 session_start();
+require_once "../model/conexao.php";
+require_once "../model/game_select_user.php";
+
+if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle']) && isset($_SESSION['email'])) {
+    $pagina = $_SESSION['pagina'];
+    $idPuzzle = $_SESSION['idPuzzle'];
+    $email = $_SESSION['email'];
+}
+
+$user = search_user($conectado, $email);
+
+if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
+    $game = search_game($conectado, $user['idUsuario']);
+    $inventory = $game['inventario'];
+    $idPartida = $game['idPartida'];
+    $totalTime = array_reduce(explode(':', $game['tempo']), function ($total, $time) {
+        return $total * 60 + $time;
+    }, 0);
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,64 +38,33 @@ session_start();
     <link rel="stylesheet" href="css/tutorial-scenario.css">
     <link rel="stylesheet" href="css/first-scenario.css">
     <link rel="stylesheet" href="css/puzzleLixo.css">
+    <link rel="stylesheet" href="css/puzzleTeclado.css">
     <link rel="stylesheet" href="css/second-scenario.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Reem+Kufi&display=swap" rel="stylesheet">
     <!-- audios -->
-    <audio id="chuvaJogo" src="../assets/audios/chuvaJogo.mp3"></audio>
-    <audio id="chuvaInicio" src="../assets/audios/chuvaInicio.mp3"></audio>
-    <audio id="portaAbre" src="../assets/audios/portaAbre.mp3"></audio>
-    <audio id="portaFecha" src="../assets/audios/portaFecha.mp3"></audio>
-    <audio id="pcLigando" src="../assets/audios/pcLigando.mp3"></audio>
-    <audio id="armarioAberto" src="../assets/audios/armarioAberto.mp3"></audio>
-    <audio id="win" src="../assets/audios/win.mp3"></audio>
-    <audio id="gameOver" src="../assets/audios/gameOver.mp3"></audio>
-    <audio id="mouseClick" src="../assets/audios/mouseClick.mp3"></audio>
-    <audio id="book" src="../assets/audios/book.mp3"></audio>
-    <audio id="postit" src="../assets/audios/postit.mp3"></audio>
+    <?php
+    $audios = [
+        'chuvaJogo', 'chuvaInicio', 'portaAbre', 'portaFecha', 'pcLigando',
+        'armarioAberto', 'win', 'gameOver', 'mouseClick', 'book', 'postit',
+        'teclado', 'tecladoCorreto', 'tecladoErrado'
+    ];
+    foreach ($audios as $audio) {
+        echo '<audio id="' . $audio . '" src="../assets/audios/' . $audio . '.mp3"></audio>' . PHP_EOL;
+    }
+    ?>
 </head>
 
 <body>
-    <?php
-    require_once "../model/conexao.php";
-
-    if (isset($_SESSION['pagina']) && isset($_SESSION['idPuzzle']) && isset($_SESSION['email'])) {
-        $pagina = $_SESSION['pagina'];
-        $idPuzzle = $_SESSION['idPuzzle'];
-        $email = $_SESSION['email'];
-    }
-    $query = "SELECT * FROM usuario WHERE email = '$email'";
-    $stmt = mysqli_prepare($conectado, $query);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    if (mysqli_num_rows($result) === 1) {
-        $row = mysqli_fetch_assoc($result);
-        $idUsuario = $row["idUsuario"];
-        $nome = $row["nome"];
-    }
-    if ($pagina != 1 && $pagina != 333 && $pagina != 2) {
-        $query = "SELECT * FROM partida WHERE idUsuario = '$idUsuario' ORDER BY idPartida DESC LIMIT 1";
-        $stmt = mysqli_prepare($conectado, $query);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        $row = mysqli_fetch_assoc($result);
-        $tempo = $row["tempo"];
-        $idPartida = $row["idPartida"];
-        $inventario = $row["inventario"];
-        $totalSegundos = array_reduce(explode(':', $tempo), function ($total, $tempo) {
-            return $total * 60 + $tempo;
-        }, 0);
-    }
-    ?>
     <div class="current-game-data">
         <div class="now-playing">
             <h1>Jogando</h1>
-            <p><?php echo $nome; ?></p>
+            <p><?php echo $user['nome']; ?></p>
         </div>
 
         <?php
-        if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $pagina != 52) {
+        if (playing($pagina)) {
         ?>
             <script>
                 window.onbeforeunload = function() {
@@ -85,10 +73,11 @@ session_start();
                 window.onload = function() {
                     reproduzirAudio('chuvaJogo', true);
                     attachDragEvents();
+                    initializeKeyboard();
                 };
-                var tempoRestante = <?php echo $totalSegundos; ?>;
+                var tempoRestante = <?php echo $totalTime; ?>;
                 var idPartida = <?php echo $idPartida; ?>;
-                var inventario = <?php echo $inventario; ?>;
+                var inventario = <?php echo $inventory; ?>;
             </script>
             <div class="current-goal">
                 <h1>Objetivo atual</h1>
@@ -128,6 +117,7 @@ session_start();
             var idPuzzle = <?php echo $idPuzzle; ?>;
         </script>
     </div>
+    <script src="../js/keyboard_scenario2.js"></script>
     <script src="../js/redirecionarPags.js"></script>
     <script src="../js/atualizarConteudo.js"></script>
     <script src="../js/cronometro.js"></script>

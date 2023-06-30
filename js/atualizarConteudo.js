@@ -8,7 +8,7 @@ function salvarTempo() {
       method: 'POST',
       body: formData
     })
-      .catch(error => console.log(error));
+    .catch(error => console.error(error));
   }
 
   function attachDragEvents() {
@@ -67,6 +67,7 @@ function salvarTempo() {
             document.body.appendChild(script);
           }
           attachDragEvents();
+          initializeKeyboard();
         } else {
           console.log('Elemento de conteúdo não encontrado na resposta.');
         }
@@ -86,7 +87,6 @@ function salvarTempo() {
 }
 
 function atualizarInventario() {
-
   let formData = new FormData();
   formData.append('idPartida', idPartida);
   formData.append('inventario', inventario);
@@ -97,12 +97,12 @@ function atualizarInventario() {
   })
     .then(response => {
       if (response.ok) {
-        location.reload();
+        atualizarConteudo('../view/game.php');
       } else {
         throw new Error('Erro ao atualizar o inventário.');
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => console.error(error));
 }
 
 function atualizarVariavel(vazio) {
@@ -115,12 +115,12 @@ function atualizarVariavel(vazio) {
   })
     .then(response => {
       if (response.ok) {
-        location.reload();
+        atualizarConteudo('../view/game.php');
       } else {
         throw new Error('Erro ao atualizar o inventário.');
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => console.error(error));
 }
 
 function fimGame(idPartida) {
@@ -133,12 +133,12 @@ function fimGame(idPartida) {
   })
     .then(response => {
       if (response.ok) {a
-        location.reload();
+        atualizarConteudo('../view/game.php');
       } else {
         throw new Error('Erro ao atualizar o inventário.');
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => console.error(error));
 }
 
 var audioFundoAtual;

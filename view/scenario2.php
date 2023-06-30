@@ -3,10 +3,11 @@ require_once '../model/scenario2_select_question.php';
 
 $puzzle = searchQuestion_scenario2($conectado, $idPuzzle, $pagina);
 $trash = searchTrash_scenario2($conectado, $idPuzzle);
+$keyboard = searchKeyboard_scenario2($conectado, $idPuzzle);
 
 if ($pagina == 10) {
     renderImage("../scenarios/scenario1/corridor/corridor1.png");
-    renderButton("keyboard-position", "salvarTempo(); redirecionarTeclado();");
+    renderButton("keyboard-position", "salvarTempo(); redirecionarPagina(312," . $idPuzzle . ")");
     renderButton("room1", "salvarTempo(); reproduzirAudio('portaAbre', false); redirecionarPagina(11," . $idPuzzle . ")");
     renderButton("room2", "salvarTempo(); reproduzirAudio('portaAbre', false); redirecionarPagina(13," . $idPuzzle . ")");
     renderButton("room3", "salvarTempo(); reproduzirAudio('portaAbre', false); redirecionarPagina(16," . $idPuzzle . ")");
@@ -61,7 +62,7 @@ if ($pagina == 10) {
 } else if ($pagina == 22) {
     renderImage("../scenarios/scenario1/corridor/corridor2.png");
     renderButton("scenario1-exit", "salvarTempo(); redirecionarSetaSairCenario1();");
-} else if ($pagina == 23) {
+} else if ($pagina == 23) { // Lixeira
     echo '<p class="trash-text">A ordem do código do elevador é determinada pela <strong>idade</strong> dos pacientes em ordem <strong>' . $trash['caderno'] . '</strong></p>';
     echo '<img class="image" src="../assets/papel1.png" width="150" height="150" />';
     echo '<img class="image" src="../assets/papel3.png" width="150" height="150" />';
@@ -71,7 +72,27 @@ if ($pagina == 10) {
     echo '<img class="image" src="../assets/papel3.png" width="150" height="150" />';
     renderImage("../scenarios/scenario1/roomOne/Room1Trash.png");
     renderButton("down-arrow-position", "salvarTempo(); redirecionarPagina(11," . $idPuzzle . ")");
-} else if ($pagina == 311) {
+} else if ($pagina == 311) { //postit
     renderImage("../scenarios/scenario1/roomOne/Room1Postit.png");
     renderButton("down-arrow-position", "salvarTempo(); redirecionarPagina(11," . $idPuzzle . ")");
+} else if ($pagina == 312) { //keyboard
+    renderImage("../scenarios/scenario1/corridor/puzzleTeclado.png");
+    renderButton("down-arrow-position", "salvarTempo(); redirecionarPagina(10," . $idPuzzle . ")");
+?>
+    <div class="container">
+        <div class="button" data-symbol="1">Θ</div>
+        <div class="button" data-symbol="2">ψ</div>
+        <div class="button" data-symbol="3">Δ</div>
+        <div class="button" data-symbol="4">δ</div>
+        <div class="button" data-symbol="5">λ</div>
+        <div class="button" data-symbol="6">μ</div>
+        <div class="button" data-symbol="7">Ω</div>
+        <div class="button" data-symbol="8">Φ</div>
+        <div class="button" data-symbol="9">η</div>
+    </div>
+<?php
 }
+?>
+<script>
+    var asw = "<?php echo $keyboard['resposta']; ?>";
+</script>

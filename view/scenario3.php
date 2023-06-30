@@ -17,9 +17,9 @@ $postit_caderno = searchQuestion_scenario3($conectado, $idPuzzle, $pagina);
 $patient_exam = searchExam_scenario3($conectado, $idPuzzle, $pagina);
 $patient = searchPatient_scenario3($conectado, $idPuzzle, $pagina, $paginaArmario);
 
-if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $pagina != 52 && $inventario == 1 && $_SESSION['vazio'] == 1)
+if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $pagina != 52 && $inventory == 1 && $_SESSION['vazio'] == 1)
     echo '<img class="item-scenario" src="../assets/chave.png">';
-else if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $pagina != 52 && $inventario == 2 && $_SESSION['vazio'] == 1)
+else if ($pagina != 1 && $pagina != 51 && $pagina != 333 && $pagina != 2 && $pagina != 52 && $inventory == 2 && $_SESSION['vazio'] == 1)
     echo '<img class="item-scenario" src="../assets/cartao.png">';
 
 if ($pagina == 24) {
@@ -30,9 +30,9 @@ if ($pagina == 24) {
     renderButton("door", "salvarTempo(); redirecionarPagina(42," . $idPuzzle . ");");
     renderButton("corridor2", "salvarTempo(); redirecionarPagina(43," . $idPuzzle . ");");
 
-    if ($inventario == 1) {
+    if ($inventory == 1) {
         renderButton("lab2", "salvarTempo(); reproduzirAudio('portaAbre', false); atualizarVariavel(0); redirecionarPagina(40," . $idPuzzle . ");");
-    } else if ($inventario > 0) {
+    } else if ($inventory > 0) {
         renderButton("lab2", "salvarTempo(); reproduzirAudio('portaAbre', false); redirecionarPagina(40," . $idPuzzle . ");");
     } else {
         renderButton("lab2", "exibirMensagem('A porta esta trancada', 3000);");
@@ -118,8 +118,8 @@ if ($pagina == 24) {
 } else if ($pagina == 42) { //cartao
     renderImage("../scenarios/scenario2/terminalCartao.png");
     renderButton("down-arrow-position", "salvarTempo(); redirecionarPagina(24," . $idPuzzle . ");");
-    if ($inventario == 2) {
-        renderButton("cardDevice", "salvarTempo(); atualizarVariavel(0); fimGame(" . $idPartida . "); redirecionarPagina(51," . $idPuzzle . ");");
+    if ($inventory == 2) {
+        renderButton("cardDevice", "salvarTempo(); atualizarVariavel(0); fimGame(" . $idPartida . "); redirecionarPagina(51," . $idPuzzle . "); location.reload();");
     } else {
         renderButton("cardDevice", "exibirMensagem('Cartão necessário', 3000);");
     }
@@ -171,7 +171,7 @@ if ($pagina == 24) {
     </script>
 <?php
     renderButton("down-arrow-position", "salvarTempo(); redirecionarPagina(43, " . $idPuzzle . ")");
-    if ($inventario == 1)
+    if ($inventory == 1)
         echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="item-inventory" src="../assets/cartao.png">';
 } else if ($pagina == 50) { //armarioAberto
     renderImage("../scenarios/scenario2/armarioAberto.png");
@@ -185,7 +185,7 @@ if ($pagina == 24) {
     </script>
 <?php
     renderButton("down-arrow-position", "salvarTempo(); redirecionarPagina(43, " . $idPuzzle . ")");
-    if ($inventario == 0)
+    if ($inventory == 0)
         echo '<img onclick="salvarTempo(); atualizarInventario(); atualizarVariavel(1);" class="item-inventory" src="../assets/chave.png">';
 }
 

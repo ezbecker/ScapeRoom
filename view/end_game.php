@@ -2,7 +2,7 @@
 if ($pagina == 51) {
     renderImage("../scenarios/win.png");
     $tempo1 = new DateTime('00:30:00');
-    $tempo2 = new DateTime($tempo);
+    $tempo2 = new DateTime($game['tempo']);
     $intervalo = $tempo1->diff($tempo2);
     $tempoFinal = $intervalo->format('%H:%I:%S');
     $ouro = new DateTime('00:06:00');
@@ -14,7 +14,7 @@ if ($pagina == 51) {
     } else {
         echo '<img class="medal" src="../assets/bronze.png">';
     }
-    echo '<p class="congrats-text">Parabéns ' . $nome . ' !</p>';
+    echo '<p class="congrats-text">Parabéns ' . $user['nome'] . ' !</p>';
     echo '<p class="time-text">Você terminou em ' . $tempoFinal . '</p>';
     echo '<a target="_blank" class="feedback-button" href="https://forms.gle/aDLMhDkCbstbBxsy5">Avalie o jogo</a>';
     renderButton("right-arrow-position", "reproduzirAudio('chuvaJogo', true); redirecionarPagina(1,0);");

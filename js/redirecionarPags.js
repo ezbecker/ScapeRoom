@@ -14,14 +14,6 @@ function redirecionarSair() {
     window.location.replace('../controller/logout.php');
 }
 
-function redirecionarPerg1() {
-    window.location.replace('../view/puzzleRoom1.php?idPuzzle=' + idPuzzle);
-}
-
-function redirecionarTeclado() {
-    window.location.replace('../view/puzzleTeclado.php?idPuzzle=' + idPuzzle);
-}
-
 function redirecionarPagina(pagina, puzzle) {
   const formData = new FormData();
   formData.append('pagina', pagina);
