@@ -17,7 +17,7 @@ if ($pagina == 51) {
     echo '<p class="congrats-text">Parabéns ' . $user['nome'] . ' !</p>';
     echo '<p class="time-text">Você terminou em ' . $tempoFinal . '</p>';
     echo '<a target="_blank" class="feedback-button" href="https://forms.gle/aDLMhDkCbstbBxsy5">Avalie o jogo</a>';
-    renderButton("right-arrow-position", "reproduzirAudio('chuvaJogo', true); redirecionarPagina(1,0);");
+    renderButton("right-arrow-position", "reproduzirAudio('chuvaInicio', true); redirecionarPagina(1,0);");
 ?>
     <script>
         window.onload = function() {
@@ -27,7 +27,7 @@ if ($pagina == 51) {
 <?php
 } else if ($pagina == 52) {
     renderImage("../scenarios/gameOver.png");
-    renderButton("right-arrow-position", "reproduzirAudio('chuvaJogo', true); redirecionarPagina(1,0);");
+    renderButton("right-arrow-position", "reproduzirAudio('chuvaInicio', true); redirecionarPagina(1,0);");
 ?>
     <script>
         window.onload = function() {

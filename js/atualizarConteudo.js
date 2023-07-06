@@ -68,6 +68,10 @@ function salvarTempo() {
           }
           attachDragEvents();
           initializeKeyboard();
+          if (pagina == 500) {
+            pararAudioFundo();
+            showCutscene_Initial();
+          }
         } else {
           console.log('Elemento de conteúdo não encontrado na resposta.');
         }

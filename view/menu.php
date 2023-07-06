@@ -4,7 +4,7 @@ if ($pagina == 1) {
 ?>
     <div class="menu-buttons">
         <?php
-        echo '<button class="start-menu-button" onclick="redirecionar1()">INICIAR</button>';
+        echo '<button class="start-menu-button" onclick="redirecionarPagina(500,0);">INICIAR</button>';
         echo '<button class="instructions-menu-button" onclick="redirecionarPagina(2,0);">INSTRUÇÕES</button>';
         echo '<button class="ranking-menu-button" onclick="redirecionarPagina(333,0);">RANKING</button>';
         echo '<button class="exit-menu-button" onclick="redirecionarSair()">SAIR</button>';
@@ -50,4 +50,29 @@ if ($pagina == 1) {
     echo '</ol>';
     echo '</div>';
     renderButton("down-arrow-position", "redirecionarPagina(1,0);");
+} else if ($pagina == 500) { //cutscene inicial
+?>
+    <div class="cutscene" id="cutscene" style="display: none;">
+        <video autoplay>
+            <source src="../cutscene/cutscene_initial.mp4" type="video/mp4">
+        </video>
+    </div>
+    <script>
+        window.onload = function() {
+            redirecionar1();
+        };
+    </script>
+<?php
 }
+?>
+<script>
+    function showCutscene_Initial() {
+        if (pagina == 500) {
+            document.getElementById("cutscene").style.display = "block";
+
+            setTimeout(function() {
+                redirecionar1();
+            }, 38000);
+        }
+    }
+</script>

@@ -57,3 +57,7 @@ button {
     top: 230px;
     left: 0px;
 }
+
+.cutscene video {
+    border-radius: 16px; 
+}
