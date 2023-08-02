@@ -23,7 +23,6 @@ if (mysqli_num_rows($result) === 1) {
 
     try {
         $stmt->execute();
-        console.log("ok");
     } catch (Exception $e) {
         die('Erro ao iniciar partida ' . $e->getMessage());
     }
