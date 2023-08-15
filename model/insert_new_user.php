@@ -24,3 +24,4 @@ try {
 } catch (Exception $e) {
 	die('Erro ao inserir dados: ' . $e->getMessage());
 }
+ 

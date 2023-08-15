@@ -46,7 +46,6 @@ function salvarTempo() {
         const parser = new DOMParser();
         const newDocument = parser.parseFromString(data, 'text/html');
         const contentElement = newDocument.getElementById('content');
-  
         if (contentElement) {
           document.getElementById('content').innerHTML = contentElement.innerHTML;
   

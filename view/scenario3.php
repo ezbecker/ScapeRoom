@@ -121,7 +121,7 @@ switch ($pagina) {
         echo '<p class="patient-name">' . $patient['pacienteNome'] . '</p>';
         echo '<p class="patient-age">' . $patient['idade'] . '</p>';
         echo '<p class="patient-gender">' . $patient['genero'] . '</p>';
-        echo '<p class="patient-case">' . $patient['pacienteNome'] . '</p>';
+        echo '<p class="patient-case">' . $patient['caso'] . '</p>';
         echo '</div>';
         break;
     case 40: //lab2
